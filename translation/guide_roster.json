@@ -1,0 +1,441 @@
+{
+ "about": "Inputs of tools/guidedata.py that exist only as pictures or as the patch's own wording. height_cm/weight_kg: as drawn in the original bio boxes (SHINKOU_069-128), read by digit templates; Ultimo Dragon 172/66 and Bas Rutten 185/66 are what the game shows (owner decision 2026-11-06). tag: the promotion tag of the real-names variant's bio box. star: the star move named in the bio box (real-names variant). parody_moves: wording the parody variant uses instead. track_seconds: length of each CD audio track, 2 s pregap included.",
+ "promotions": [
+  {
+   "abbr": "NSW",
+   "name": "Neo Strong Wrestling",
+   "ids": [
+    1,
+    13
+   ]
+  },
+  {
+   "abbr": "EWF",
+   "name": "Empire Pro Wrestling",
+   "ids": [
+    14,
+    22
+   ]
+  },
+  {
+   "abbr": "WOU",
+   "name": "Wrestle Universe",
+   "ids": [
+    23,
+    32
+   ]
+  },
+  {
+   "abbr": "DAW",
+   "name": "Dead or Alive",
+   "ids": [
+    33,
+    38
+   ]
+  },
+  {
+   "abbr": "ILW",
+   "name": "Local Wrestling",
+   "ids": [
+    39,
+    43
+   ]
+  },
+  {
+   "abbr": "IAWA",
+   "name": "Inter-American",
+   "ids": [
+    44,
+    52
+   ]
+  }
+ ],
+ "wrestlers": {
+  "1": {
+   "height_cm": 170,
+   "weight_kg": 93,
+   "tag": "NJPW",
+   "star": "Lyger Bomb"
+  },
+  "2": {
+   "height_cm": 180,
+   "weight_kg": 103,
+   "tag": "NJPW",
+   "star": "Diving Headbutt"
+  },
+  "3": {
+   "height_cm": 186,
+   "weight_kg": 105,
+   "tag": "NJPW",
+   "star": "Dragon Sleeper"
+  },
+  "4": {
+   "height_cm": 184,
+   "weight_kg": 118,
+   "tag": "NJPW",
+   "star": "Scorpion Lock"
+  },
+  "5": {
+   "height_cm": 180,
+   "weight_kg": 110,
+   "tag": "NJPW",
+   "star": "N. Lights"
+  },
+  "6": {
+   "height_cm": 184,
+   "weight_kg": 125,
+   "tag": "NJPW",
+   "star": "Mountain Bomb"
+  },
+  "7": {
+   "height_cm": 174,
+   "weight_kg": 93,
+   "tag": "NJPW",
+   "star": "Tiger Bomb"
+  },
+  "8": {
+   "height_cm": 183,
+   "weight_kg": 100,
+   "tag": "NJPW",
+   "star": "N. Lights"
+  },
+  "9": {
+   "height_cm": 188,
+   "weight_kg": 110,
+   "tag": "NJPW",
+   "star": "Dragon Screw"
+  },
+  "10": {
+   "height_cm": 188,
+   "weight_kg": 112,
+   "tag": "NJPW",
+   "star": "STF"
+  },
+  "11": {
+   "height_cm": 185,
+   "weight_kg": 105,
+   "tag": "NJPW",
+   "star": "Hip Attack"
+  },
+  "12": {
+   "height_cm": 183,
+   "weight_kg": 135,
+   "tag": "NJPW",
+   "star": "DDT"
+  },
+  "13": {
+   "height_cm": 195,
+   "weight_kg": 162,
+   "tag": "NJPW",
+   "star": "Powerbomb"
+  },
+  "14": {
+   "height_cm": 185,
+   "weight_kg": 110,
+   "tag": "AJPW",
+   "star": "Tiger Driver"
+  },
+  "15": {
+   "height_cm": 183,
+   "weight_kg": 110,
+   "tag": "AJPW",
+   "star": "Stretch Plum"
+  },
+  "16": {
+   "height_cm": 189,
+   "weight_kg": 134,
+   "tag": "AJPW",
+   "star": "Doctor Bomb"
+  },
+  "17": {
+   "height_cm": 196,
+   "weight_kg": 127,
+   "tag": "AJPW",
+   "star": "Backdrop Hold"
+  },
+  "18": {
+   "height_cm": 192,
+   "weight_kg": 120,
+   "tag": "AJPW",
+   "star": "Choke Drop"
+  },
+  "19": {
+   "height_cm": 187,
+   "weight_kg": 118,
+   "tag": "AJPW",
+   "star": "Burning Hammer"
+  },
+  "20": {
+   "height_cm": 200,
+   "weight_kg": 150,
+   "tag": "AJPW",
+   "star": "Lariat"
+  },
+  "21": {
+   "height_cm": 192,
+   "weight_kg": 158,
+   "tag": "AJPW",
+   "star": "German Suplex"
+  },
+  "22": {
+   "height_cm": 209,
+   "weight_kg": 135,
+   "tag": "AJPW",
+   "star": "Giant Boot"
+  },
+  "23": {
+   "height_cm": 186,
+   "weight_kg": 103,
+   "tag": "PWFG",
+   "star": "Armbar"
+  },
+  "24": {
+   "height_cm": 182,
+   "weight_kg": 90,
+   "tag": "PANC",
+   "star": "Palm Strike"
+  },
+  "25": {
+   "height_cm": 178,
+   "weight_kg": 86,
+   "tag": "PANC",
+   "star": "Heel Hold"
+  },
+  "26": {
+   "height_cm": 188,
+   "weight_kg": 103,
+   "tag": "NJPW",
+   "star": "German Suplex"
+  },
+  "27": {
+   "height_cm": 192,
+   "weight_kg": 115,
+   "tag": "RINGS",
+   "star": "Capture Suplex"
+  },
+  "28": {
+   "height_cm": 183,
+   "weight_kg": 94,
+   "tag": "UWFI",
+   "star": "High Kick"
+  },
+  "29": {
+   "height_cm": 190,
+   "weight_kg": 105,
+   "tag": "PANC",
+   "star": "Heel Hold"
+  },
+  "30": {
+   "height_cm": 183,
+   "weight_kg": 95,
+   "tag": "PANC",
+   "star": "Sleeper Hold"
+  },
+  "31": {
+   "height_cm": 180,
+   "weight_kg": 100,
+   "tag": "UWFI",
+   "star": "Crossface"
+  },
+  "32": {
+   "height_cm": 185,
+   "weight_kg": 66,
+   "tag": "PANC",
+   "star": "Palm Strike"
+  },
+  "33": {
+   "height_cm": 179,
+   "weight_kg": 112,
+   "tag": "FMW",
+   "star": "DDT"
+  },
+  "34": {
+   "height_cm": 178,
+   "weight_kg": 125,
+   "tag": "FMW",
+   "star": "Facebuster"
+  },
+  "35": {
+   "height_cm": 183,
+   "weight_kg": 106,
+   "tag": "FMW",
+   "star": "Phoenix Splash"
+  },
+  "36": {
+   "height_cm": 183,
+   "weight_kg": 101,
+   "tag": "FMW",
+   "star": "Arabian Buster"
+  },
+  "37": {
+   "height_cm": 189,
+   "weight_kg": 120,
+   "tag": "WAR",
+   "star": "Powerbomb"
+  },
+  "38": {
+   "height_cm": 200,
+   "weight_kg": 170,
+   "tag": "KPW",
+   "star": "Back Throw"
+  },
+  "39": {
+   "height_cm": 180,
+   "weight_kg": 90,
+   "tag": "MPW",
+   "star": "Sasuke Special"
+  },
+  "40": {
+   "height_cm": 172,
+   "weight_kg": 88,
+   "tag": "MPW",
+   "star": "Delphin Dive"
+  },
+  "41": {
+   "height_cm": 178,
+   "weight_kg": 88,
+   "tag": "MPW",
+   "star": "Plancha"
+  },
+  "42": {
+   "height_cm": 180,
+   "weight_kg": 100,
+   "tag": "MPW",
+   "star": "Final Cut"
+  },
+  "43": {
+   "height_cm": 172,
+   "weight_kg": 66,
+   "tag": "WAR",
+   "star": "La Magistral"
+  },
+  "44": {
+   "height_cm": 180,
+   "weight_kg": 110,
+   "tag": "NJPW",
+   "star": "Power Slam"
+  },
+  "45": {
+   "height_cm": 205,
+   "weight_kg": 172,
+   "tag": "WWF",
+   "star": "Chokeslam"
+  },
+  "46": {
+   "height_cm": 183,
+   "weight_kg": 128,
+   "tag": "WCW",
+   "star": "Front Suplex"
+  },
+  "47": {
+   "height_cm": 186,
+   "weight_kg": 107,
+   "tag": "WCW",
+   "star": "Figure Four"
+  },
+  "48": {
+   "height_cm": 188,
+   "weight_kg": 110,
+   "tag": "WCW",
+   "star": "Moonsault Press"
+  },
+  "49": {
+   "height_cm": 201,
+   "weight_kg": 135,
+   "tag": "WCW",
+   "star": "Leg Drop"
+  },
+  "50": {
+   "height_cm": 190,
+   "weight_kg": 115,
+   "tag": "WCW",
+   "star": "Screwdriver"
+  },
+  "51": {
+   "height_cm": 192,
+   "weight_kg": 125,
+   "tag": "WCW",
+   "star": "Scorpion Death Lock"
+  },
+  "52": {
+   "height_cm": 190,
+   "weight_kg": 120,
+   "tag": "WCW",
+   "star": "Clothesline"
+  },
+  "53": {
+   "height_cm": 178,
+   "weight_kg": 105,
+   "tag": "NJPW",
+   "star": "Headbutt"
+  },
+  "54": {
+   "height_cm": 180,
+   "weight_kg": 100,
+   "tag": null,
+   "star": "Body Attack"
+  },
+  "55": {
+   "height_cm": 188,
+   "weight_kg": 109,
+   "tag": "NWA",
+   "star": "Toe Hold"
+  },
+  "56": {
+   "height_cm": 190,
+   "weight_kg": 102,
+   "tag": "NJPW",
+   "star": "Octopus Hold"
+  },
+  "57": {
+   "height_cm": 187,
+   "weight_kg": 107,
+   "tag": "NWA",
+   "star": "German Suplex"
+  },
+  "58": {
+   "height_cm": 201,
+   "weight_kg": 145,
+   "tag": "AJPW",
+   "star": "Knee Drop"
+  },
+  "59": {
+   "height_cm": 177,
+   "weight_kg": 98,
+   "tag": "NJPW",
+   "star": "Tiger Suplex"
+  },
+  "60": {
+   "height_cm": 223,
+   "weight_kg": 210,
+   "tag": "WWF",
+   "star": "Body Press"
+  }
+ },
+ "parody_moves": {
+  "Lyger Bomb": "Gaia Bomb",
+  "Sasuke Special": "Tasuke Special",
+  "Delphin Dive": "Erwin Dive",
+  "Delphin Special": "Erwin Special",
+  "Delphin Clutch": "Erwin Clutch"
+ },
+ "track_seconds": {
+  "2": 202.6,
+  "3": 74.7,
+  "4": 8.1,
+  "5": 194.3,
+  "6": 202.6,
+  "7": 75.4,
+  "8": 73.4,
+  "9": 196.5,
+  "10": 189.8,
+  "11": 13.3,
+  "12": 75.2,
+  "13": 196.4,
+  "14": 191.7,
+  "15": 197.7,
+  "16": 198.1,
+  "17": 188.4,
+  "18": 202.6
+ }
+}

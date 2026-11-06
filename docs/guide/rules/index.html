@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virtual Pro Wrestling: Rules and Systems</title>
+<meta name="description" content="How matches are won and lost in Virtual Pro Wrestling: damage, spirit, pins, holds, KOs, ring-outs, the CPU and every option.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap">
+<script>
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+/* Colours. Recolour the whole page here: --accent (links, highlights, the current section) and
+   --accent-2 (tips, the second stripe). Each token has a light value here and a dark value in the
+   two dark blocks below (keep those two identical); the print block at the end sets its own.
+   Recolour all four places - changing only this one leaves the dark theme in the starter's red and
+   blue, and the page looks like two different sites when the reader switches theme. */
+:root {
+  --bg: #f3f4ef;
+  --panel: #ffffff;
+  --ink: #14201a;
+  --muted: #56645b;
+  --rule: #d2d9d0;
+  --frame: #7f9a8a;
+  --accent: #c2570a;
+  --accent-2: #1c7a52;
+  --accent-ink: #ffffff;
+  --code: #e6ece5;
+  --focus: #1c7a52;
+  --hero-bg: #14201a;
+  --hero-ink: #f3f4ef;
+  --hero-muted: #a9c0b2;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1713;
+    --panel: #16211b;
+    --ink: #e8efe9;
+    --muted: #9fb5a8;
+    --rule: #2b3d33;
+    --frame: #5d7d6c;
+    --accent: #ff9a3c;
+    --accent-2: #58c79a;
+    --accent-ink: #0f1713;
+    --code: #1e2d25;
+    --focus: #8fe0bb;
+    --hero-bg: #08110c;
+    --hero-ink: #f3f4ef;
+    --hero-muted: #9fb5a8;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1713;
+  --panel: #16211b;
+  --ink: #e8efe9;
+  --muted: #9fb5a8;
+  --rule: #2b3d33;
+  --frame: #5d7d6c;
+  --accent: #ff9a3c;
+  --accent-2: #58c79a;
+  --accent-ink: #0f1713;
+  --code: #1e2d25;
+  --focus: #8fe0bb;
+  --hero-bg: #08110c;
+  --hero-ink: #f3f4ef;
+  --hero-muted: #9fb5a8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.62 "Atkinson Hyperlegible", system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+:lang(ja), .jp { font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+.display { font-family: "Big Shoulders Display", "Arial Narrow", sans-serif; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--hero-bg);
+  color: var(--hero-ink);
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: 1680px; margin: 0 auto; padding: 56px 24px 0;
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 28px; align-items: start;
+}
+.hero-jp {
+  writing-mode: vertical-rl;
+  font-family: "Noto Sans JP", sans-serif; font-weight: 900;
+  font-size: 25px; line-height: 1.25; letter-spacing: .06em;
+  color: var(--hero-muted);
+  margin: 4px 0 0;
+}
+.hero-title { margin: 0; font-weight: 800; line-height: .86; }
+.hero-title .pre {
+  display: block; font-size: clamp(24px, 3.6vw, 40px); font-weight: 700; letter-spacing: .01em;
+  color: var(--hero-muted); margin-bottom: 10px;
+}
+.hero-title .main {
+  display: block; font-size: clamp(56px, 12vw, 168px); font-weight: 900; text-transform: uppercase;
+  letter-spacing: -.005em; overflow-wrap: anywhere;
+}
+.band { display: grid; grid-template-columns: repeat(2, 1fr); height: 14px; margin: 26px 0 0; }
+.band span { display: block; transform-origin: left; }
+.band span:nth-child(1) { background: var(--accent); }
+.band span:nth-child(2) { background: var(--accent-2); }
+@media (prefers-reduced-motion: no-preference) {
+  .band span { animation: stripe .5s cubic-bezier(.2, .7, .2, 1) both; }
+  .band span:nth-child(2) { animation-delay: .15s; }
+  @keyframes stripe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+.hero-lede { font-size: 19px; max-width: 46ch; margin: 26px 0 0; color: var(--hero-ink); }
+.hero-about { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 4px 22px; }
+.about-btn {
+  display: inline-flex; align-items: center; gap: 7px; padding: 4px 0;
+  background: none; border: 0; cursor: pointer;
+  font: inherit; font-size: 15px; color: var(--hero-muted);
+  text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px;
+}
+.about-btn svg { width: 17px; height: 17px; flex: none; }
+.about-btn:hover, .about-btn[aria-expanded="true"] { color: var(--hero-ink); }
+.about-card {
+  position: absolute; inset: auto; margin: 0; width: min(540px, calc(100vw - 32px));
+  padding: 18px 22px 20px; border: 1px solid var(--frame); border-top: 4px solid var(--accent);
+  background: var(--panel); color: var(--ink); font-size: 15.5px; line-height: 1.55;
+  box-shadow: 0 14px 40px rgba(10, 12, 30, .35);
+}
+.about-card p { margin: 0 0 10px; }
+.about-card p:last-child { margin: 0; }
+.about-card h2 { font: 800 19px/1.1 "Big Shoulders Display", "Arial Narrow", sans-serif; margin: 14px 0 4px; color: var(--ink); }
+.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 30px 0 0; padding: 0 0 44px; list-style: none; }
+.doors li { border-left: 1px solid rgba(255,255,255,.16); }
+.doors li:first-child { border-left: 0; }
+.doors a { display: block; padding: 4px 22px 6px; text-decoration: none; color: var(--hero-ink); }
+.doors li:first-child a { padding-left: 0; }
+.door-name { display: block; font: 900 30px/1.05 "Big Shoulders Display", "Arial Narrow", sans-serif; }
+.door-note { display: block; margin-top: 4px; font-size: 15px; line-height: 1.4; color: var(--hero-muted); }
+.doors a:hover .door-name { color: var(--accent); }
+.doors a:focus-visible { outline-offset: 4px; }
+.theme-btn {
+  position: absolute; top: 14px; right: 16px;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: transparent; color: var(--hero-muted); border: 1px solid rgba(255,255,255,.22);
+  cursor: pointer;
+}
+.theme-btn:hover { color: var(--hero-ink); border-color: var(--hero-muted); }
+.theme-btn svg { width: 20px; height: 20px; }
+.theme-btn .sun { display: none; }
+.is-dark .theme-btn .sun { display: block; }
+.is-dark .theme-btn .moon { display: none; }
+@media (max-width: 640px) {
+  .hero-inner { grid-template-columns: minmax(0, 1fr); padding: 64px 16px 0; gap: 0; }
+  .hero-jp { writing-mode: horizontal-tb; font-size: 15px; letter-spacing: .02em; order: 2; margin: 18px 0 0; }
+  .hero-body { display: contents; }
+  .hero-title { order: 1; }
+  .band-wrap { order: 3; }
+  .hero-lede { order: 4; font-size: 17px; }
+  .hero-about { order: 5; }
+  .about-card { order: 6; }
+  .doors { order: 7; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; }
+  .doors li:nth-child(3) { border-left: 0; }
+  .doors li:nth-child(3) a { padding-left: 0; }
+}
+
+/* ---------- Layout ---------- */
+.wrap { max-width: 1680px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 48px; }
+@media (min-width: 960px) { .wrap { grid-template-columns: 260px minmax(0, 1fr); } }
+@media (max-width: 640px) { .wrap { padding: 0 16px; } }
+main { min-width: 0; padding: 40px 0 96px; }
+
+/* ---------- Contents ---------- */
+.toc { font-size: 15px; line-height: 1.45; }
+.toc summary {
+  cursor: pointer; font-weight: 700; padding: 14px 0; list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--rule);
+}
+.toc summary::-webkit-details-marker { display: none; }
+.toc summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--muted); }
+.toc[open] summary::after { content: "–"; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0; }
+.toc ol ol { padding: 0 0 6px 12px; font-size: 14px; }
+.toc-group {
+  font: 800 19px/1 "Big Shoulders Display", "Arial Narrow", sans-serif; letter-spacing: .01em;
+  color: var(--muted); margin: 20px 0 6px 11px; display: block;
+}
+.toc a {
+  display: block;
+  color: var(--ink); text-decoration: none; padding: 2.5px 8px; border-left: 3px solid transparent;
+}
+/* Sub-entries show only for the section being read (or while a keyboard user is inside them) */
+@media (min-width: 960px) {
+  .toc ol ol { display: none; }
+  .toc li.open > ol, .toc li:focus-within > ol { display: block; }
+}
+.toc ol ol a { color: var(--muted); }
+.toc a:hover { color: var(--accent); }
+.toc a[aria-current="true"] { border-left-color: var(--accent); color: var(--ink); font-weight: 700; background: var(--code); }
+@media (min-width: 960px) {
+  .toc { position: sticky; top: 0; align-self: start; max-height: 100vh; overflow: auto; padding: 24px 0 24px; overscroll-behavior: contain; }
+  .toc summary { display: none; }
+}
+
+/* ---------- Content ---------- */
+section { padding-top: 40px; margin-top: 40px; border-top: 1px solid var(--rule); }
+main > section:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+h2, h3 { font-family: "Big Shoulders Display", "Arial Narrow", sans-serif; letter-spacing: .005em; }
+h2 { font-size: 46px; line-height: 1; font-weight: 900; margin: 0 0 18px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+h3 { font-size: 29px; line-height: 1.1; font-weight: 800; margin: 38px 0 10px; }
+h4 { font-size: 18px; margin: 24px 0 6px; }
+@media (max-width: 640px) { h2 { font-size: 38px; } h3 { font-size: 26px; } }
+p, li, dl { max-width: 70ch; }
+ul, ol { padding-left: 1.3em; }
+li { margin: 4px 0; }
+li > ul, li > ol { margin: 4px 0; }
+.small { font-size: 14.5px; color: var(--muted); }
+code { font-size: .92em; background: var(--code); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; }
+.top-link { display: inline-block; margin-top: 18px; font-size: 14px; }
+
+.callout {
+  background: var(--panel); border: 1px solid var(--rule); border-left: 5px solid var(--accent);
+  padding: 12px 16px; margin: 18px 0; border-radius: 0 6px 6px 0; max-width: 70ch;
+}
+.callout.tip { border-left-color: var(--accent-2); }
+.callout strong.label { display: block; font-size: 15px; margin-bottom: 2px; }
+.callout p { margin: 0; }
+
+/* Keys and buttons: <kbd>Start</kbd>, and <kbd class="btn">A</kbd> for a round face button */
+kbd {
+  font: 700 13.5px/1 "Atkinson Hyperlegible", sans-serif;
+  display: inline-block; min-width: 1.75em; padding: 4px 6px; text-align: center;
+  border-radius: 6px; background: var(--code); color: var(--ink);
+  border: 1px solid var(--rule); border-bottom-width: 2px; vertical-align: 1px; white-space: nowrap;
+}
+kbd.btn { border-radius: 50%; width: 1.95em; min-width: 0; padding: 4px 0; border: 0; background: var(--ink); color: var(--bg); box-shadow: inset 0 -2px 0 rgba(0,0,0,.22); }
+
+/* ---------- Tables ---------- */
+.tablewrap { overflow-x: auto; margin: 14px 0 22px; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 15.5px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+th { font-size: 13.5px; font-weight: 700; color: var(--muted); background: var(--code); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td .jp, h3 .jp { color: var(--muted); font-size: .88em; font-weight: 400; }
+.gloss-table .jp-term { font-family: "Noto Sans JP", sans-serif; font-weight: 700; white-space: nowrap; }
+.gloss-table .r { display: block; font: 400 13.5px "Atkinson Hyperlegible", sans-serif; color: var(--muted); }
+
+/* A filterable data table (filled from the data block): search box, group chips, status line */
+.table-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 16px 0 6px; }
+.table-tools[hidden] { display: none; }
+.chip {
+  font: 700 14.5px "Atkinson Hyperlegible", sans-serif; cursor: pointer;
+  padding: 7px 14px; border-radius: 999px; border: 1.5px solid var(--rule);
+  background: var(--panel); color: var(--ink);
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--bg); }
+.search {
+  flex: 1 1 220px; min-width: 0; font: 15.5px "Atkinson Hyperlegible", sans-serif;
+  padding: 8px 12px; border-radius: 8px; border: 1.5px solid var(--rule); background: var(--panel); color: var(--ink);
+}
+.search::placeholder { color: var(--muted); }
+.status { font-size: 14.5px; color: var(--muted); margin: 4px 0 0; min-height: 1.4em; }
+.datatable-wrap { max-height: 70vh; overflow: auto; }
+.datatable thead th { position: sticky; top: 0; z-index: 1; }
+.datatable td:first-child { font-weight: 700; }
+.datatable tr[hidden] { display: none; }
+.datatable .empty td { color: var(--muted); font-weight: 400; }
+tr.flash > td { animation: flash 1.6s ease-out; }
+@keyframes flash { from { background: color-mix(in srgb, var(--accent) 25%, transparent); } to { background: transparent; } }
+@media (prefers-reduced-motion: reduce) { tr.flash > td { animation: none; outline: 2px solid var(--accent); } }
+
+/* ---------- Screenshots: native-size pixel art at whole-number scales only, sharp ----------
+   Set --shot-w to the game's native screenshot width (GBA 240px, SNES 256px, Saturn 320px, PS1 320px...).
+   --shot-x is the scale of a "side" screenshot on a wide screen, --row-x the scale in rows of
+   screenshots; keep both whole numbers (1.6x smears the pixels and the in-game text). */
+:root { --shot-w: 320px; --shot-x: 2; --row-x: 1; }
+.shots { display: grid; gap: 14px; margin: 14px 0 22px;
+  grid-template-columns: repeat(auto-fill, calc(var(--shot-w) * var(--row-x))); }
+@media (max-width: 640px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.shots figure { margin: 0; }
+.shots img, figure.shot img {
+  display: block; width: 100%; height: auto; image-rendering: pixelated;
+  border-radius: 4px; border: 1px solid var(--rule); background: var(--code); cursor: zoom-in;
+}
+.shots figcaption { font-size: 14px; line-height: 1.4; color: var(--muted); margin-top: 6px; }
+figure.shot { margin: 14px 0 18px; width: calc(var(--shot-w) * var(--shot-x)); max-width: 100%; }
+figure.shot figcaption { font-size: 14.5px; color: var(--muted); margin-top: 6px; }
+/* Desktop first: on a wide screen a screenshot marked "side" sits beside the text that follows it
+   (prose stays at 70ch), so a section reads without scrolling past every picture. Headings and
+   tables start below it. Narrower screens show it in line. */
+@media (min-width: 1500px) {
+  figure.shot.side { float: right; margin: 4px 0 18px 40px; }
+  main h2, main h3, main .tablewrap, main .datatable-wrap, main .shots { clear: both; }
+  main > section::after { content: ""; display: block; clear: both; }
+}
+
+/* ---------- Spoilers ---------- */
+details.spoiler { margin: 18px 0; border: 1px solid var(--rule); border-radius: 8px; background: var(--panel); padding: 0 16px; max-width: 70ch; }
+details.spoiler > summary { cursor: pointer; font-weight: 700; padding: 14px 0; color: var(--accent); }
+details.spoiler[open] > summary { border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
+details.spoiler[open] { padding-bottom: 16px; }
+
+/* ---------- Dialog: a screenshot enlarged (click any screenshot) ---------- */
+#zoom {
+  width: calc(100vw - 32px); height: calc(100vh - 32px); max-width: none; max-height: none;
+  padding: 0; border: 1px solid var(--rule); border-radius: 10px; background: var(--bg); color: var(--ink);
+  overflow: hidden;
+}
+#zoom[open] { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+#zoom::backdrop { background: rgba(6, 7, 22, .72); }
+.dlg-head { display: flex; align-items: center; gap: 12px 20px; padding: 10px 12px 10px 20px; border-bottom: 1px solid var(--rule); background: var(--panel); }
+.dlg-head p { margin: 0; font-size: 15px; color: var(--muted); min-width: 0; }
+.dlg-close {
+  margin-left: auto; flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; cursor: pointer;
+  background: transparent; color: var(--ink); border: 1.5px solid var(--rule); font-size: 20px; line-height: 1;
+}
+.dlg-close:hover { border-color: var(--accent); color: var(--accent); }
+.dlg-body { overflow: auto; padding: 16px; display: grid; place-items: center; }
+.dlg-body img { display: block; image-rendering: pixelated; }
+
+footer { border-top: 1px solid var(--rule); padding: 28px 24px 56px; color: var(--muted); font-size: 14.5px; }
+footer .band { max-width: 1632px; margin: 0 auto 22px; height: 6px; }
+footer p { max-width: 1632px; margin: 4px auto; }
+
+/* ---------- Guide search ---------- */
+.gsearch { position: relative; margin: 0 0 4px; }
+.gsearch .search { width: 100%; padding-right: 34px; }
+.gs-key { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 12px; padding: 2px 6px; color: var(--muted); pointer-events: none; }
+.gsearch .search:focus + .gs-key, .gsearch .search:not(:placeholder-shown) + .gs-key { display: none; }
+@media (min-width: 960px) { .gsearch { margin-top: 2px; } }
+@media (max-width: 959px) { .gsearch { margin-top: 12px; } }
+.gres {
+  position: fixed; inset: auto; margin: 0; padding: 6px; width: min(460px, calc(100vw - 32px)); max-height: min(70vh, 560px); overflow: auto;
+  background: var(--panel); color: var(--ink); border: 1px solid var(--frame); border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(10, 12, 30, .3); font-size: 15px; line-height: 1.4;
+}
+.gr { display: grid; grid-template-columns: 5.6em minmax(0, 1fr); column-gap: 10px; padding: 7px 10px; border-radius: 6px; cursor: pointer; }
+.gr[aria-selected="true"] { background: var(--code); box-shadow: inset 3px 0 0 var(--accent); }
+.gr-kind { grid-row: span 2; font-size: 12.5px; font-weight: 700; color: var(--muted); padding-top: 2px; }
+.gr-t { font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
+.gr-t.txt { font-weight: 400; }
+.gr-s { font-size: 13.5px; color: var(--muted); min-width: 0; }
+.gr mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: inherit; border-radius: 2px; padding: 0 1px; }
+.gr-none { padding: 10px; color: var(--muted); }
+.hit-flash { animation: flash 2s ease-out; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { .hit-flash { animation: none; outline: 2px solid var(--accent); } }
+
+/* ---------- Section links ---------- */
+.anchor {
+  display: inline-grid; place-items: center; width: 1.1em; height: 1.1em; margin-left: .25em; vertical-align: middle;
+  color: var(--muted); opacity: 0; text-decoration: none; position: relative; border-radius: 4px; transition: opacity .12s;
+}
+h2 .anchor { align-self: center; margin-left: -.15em; width: 28px; height: 28px; }
+.anchor svg { width: .62em; height: .62em; }
+h2 .anchor svg { width: 20px; height: 20px; }
+:is(h2, h3, h4):hover > .anchor, .anchor:focus-visible, .anchor.copied { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+@media (hover: none) { .anchor { opacity: .45; } }
+.anchor.copied::after {
+  content: "Link copied"; position: absolute; left: calc(100% + 6px); top: 50%; transform: translateY(-50%); white-space: nowrap;
+  font: 700 13px/1 "Atkinson Hyperlegible", sans-serif; letter-spacing: 0; color: var(--accent-ink); background: var(--accent);
+  padding: 5px 8px; border-radius: 4px;
+}
+
+/* ---------- Print ---------- */
+@media print {
+  :root:root:root {
+    --bg: #fff; --panel: #fff; --ink: #000; --muted: #4a5a50; --rule: #c8d1c7; --frame: #7f9a8a;
+    --accent: #a34a08; --accent-2: #16623f; --accent-ink: #fff; --code: #eef2ec;
+    --hero-bg: #fff; --hero-ink: #000; --hero-muted: #4a5a50;
+  }
+  @page { margin: 14mm 12mm; }
+  html { scroll-behavior: auto; }
+  body { font-size: 10.5pt; line-height: 1.45; background: #fff; }
+  .theme-btn, .hero-about, .doors, .toc, .anchor, .top-link, .table-tools, .status,
+  #zoom, .gres, .about-card, .gs-key { display: none !important; }
+  .hero { overflow: visible; }
+  .hero-inner { padding: 0 0 6mm; max-width: none; }
+  .hero-title .main { font-size: 54pt; }
+  .hero-title .pre { font-size: 20pt; }
+  .band, kbd, .chip { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .wrap { display: block; max-width: none; padding: 0; }
+  main { padding: 0; }
+  section { padding-top: 0; margin-top: 8mm; border-top: 0; }
+  main > section > h2 { break-before: page; }
+  main > section:first-child > h2 { break-before: auto; }
+  h2 { font-size: 26pt; }
+  h3 { font-size: 17pt; margin-top: 6mm; }
+  h2, h3, h4 { break-after: avoid; }
+  p, li { orphans: 3; widows: 3; max-width: none; }
+  tr, figure, .callout, .shots { break-inside: avoid; }
+  figure.shot.side { float: none; width: auto; margin: 14px 0 18px; }
+  .tablewrap, .datatable-wrap { overflow: visible; max-height: none; border-radius: 0; }
+  .datatable thead th { position: static; }
+  thead { display: table-header-group; }
+  details.spoiler { border: 0; padding: 0; }
+  details.spoiler > summary { list-style: none; color: var(--ink); padding: 0; }
+  main a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8.5pt; color: var(--muted); overflow-wrap: anywhere; }
+  .hit-flash, tr.flash > td { animation: none; }
+}
+
+/* Optional: a names switch for projects with two name versions (real / parody). Markup in the
+   hero (commented out), names map in the data block ("names": {token: [first, second]}), and every
+   switchable name written as <span class="nm" data-k="token">first</span>. */
+.names-switch { display: inline-flex; align-items: center; gap: 4px; margin-left: 14px; }
+.ns-label { color: var(--hero-muted); font-size: 14px; margin-right: 2px; }
+.ns-btn { font: inherit; font-size: 14px; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--hero-muted); background: transparent; color: var(--hero-ink); cursor: pointer; }
+.ns-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+.hero-title .main { font-size: clamp(44px, 7.4vw, 112px); line-height: .9; }
+.doors a[aria-current="page"] .door-name { color: var(--accent); }
+.toc-pages a { font-weight: 700; }
+/* The game's own look: section headings are orange title bars (Mode Select, Rule Settings...), and the
+   band under the title runs through the six promotion colours of the Wrestler Select tiles. */
+main > section > h2 { background: var(--accent); color: var(--accent-ink); padding: 8px 18px 4px; border-radius: 2px;
+  box-shadow: 0 5px 0 color-mix(in srgb, var(--accent) 55%, #000); margin-bottom: 28px; letter-spacing: .01em; font-size: 42px; }
+main > section > h2 .anchor { color: inherit; }
+.band { grid-template-columns: repeat(6, 1fr); }
+.band span:nth-child(1) { background: #e4506b; } .band span:nth-child(2) { background: #2f6bd8; }
+.band span:nth-child(3) { background: #ec7a1d; } .band span:nth-child(4) { background: #e9c81c; }
+.band span:nth-child(5) { background: #8b4fd8; } .band span:nth-child(6) { background: #2fae5c; }
+
+/* PlayStation face buttons as the pad prints them: coloured discs with white symbols (text kept for readers and search) */
+kbd.psx { display: inline-block; width: 24px; height: 24px; min-width: 0; padding: 0; border: 0; border-radius: 50%; font-size: 0; line-height: 0; vertical-align: -6px;
+  background: center / contain no-repeat; box-shadow: none; overflow: hidden; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+kbd.psx.circle { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23cf3138'/%3E%3Ccircle cx='12' cy='12' r='5.2' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E"); }
+kbd.psx.cross { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%233567c9'/%3E%3Cpath d='M7.6 7.6l8.8 8.8M16.4 7.6l-8.8 8.8' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E"); }
+kbd.psx.square { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23c4448f'/%3E%3Crect x='7.4' y='7.4' width='9.2' height='9.2' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E"); }
+kbd.psx.triangle { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23128a62'/%3E%3Cpath d='M12 6.2L17.6 16.4H6.4Z' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+
+/* ---- Layout (design review 2026-11-06): screenshots at native size beside the text, no wasted bands ---- */
+:root { --shot-x: 1; }
+@media (min-width: 1100px) {
+  figure.shot.side { float: right; margin: 4px 0 16px 32px; }
+  main h2, main h3, main .tablewrap, main .datatable-wrap, main .shots { clear: both; }
+  main > section::after { content: ""; display: block; clear: both; }
+}
+figure.shot.side figcaption, figure.shot figcaption { max-width: var(--shot-w); }
+figure.shot.crop figcaption { max-width: none; }
+.shots.strip { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: var(--shot-w); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.shots.strip figure { scroll-snap-align: start; }
+figure.crop { margin: 14px 0 18px; width: calc(var(--shot-w) * var(--k, 2)); max-width: 100%; }
+figure.crop .win { height: calc(var(--ch) * var(--k, 2)); overflow: hidden; border-radius: 4px; border: 1px solid var(--rule); background: var(--code); }
+figure.crop img { display: block; width: calc(var(--shot-w) * var(--k, 2)); max-width: none; height: auto; border: 0; border-radius: 0; image-rendering: pixelated;
+  transform: translateY(calc(var(--cy) * var(--k, 2))); cursor: zoom-in; }
+.tablewrap.fit { width: fit-content; max-width: 100%; }
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 0 32px; align-items: start; }
+th, td { padding: 8px 12px; }
+.zebra tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--code) 55%, transparent); }
+@media (min-width: 1500px) {
+  .callout.means { float: right; clear: right; width: calc(100% - 70ch - 40px); max-width: 460px; margin: 0 0 16px 40px; font-size: 15px; }
+}
+section { border-top: 0; margin-top: 48px; padding-top: 0; }
+main > section:first-child { margin-top: 0; }
+main > section > h2 { margin-bottom: 18px; }
+.hero.compact .hero-inner { padding-top: 30px; }
+.hero.compact .hero-lede { display: none; }
+.hero.compact .hero-title .main { font-size: clamp(36px, 4.6vw, 68px); }
+.hero.compact .hero-title .pre { font-size: clamp(18px, 2vw, 26px); margin-bottom: 4px; }
+.hero.compact .hero-jp { font-size: 17px; }
+.hero.compact .band { margin-top: 14px; }
+.hero.compact .hero-about { margin-top: 8px; }
+.hero.compact .doors { margin-top: 14px; padding-bottom: 24px; }
+@media print {
+  .callout.means { float: none; width: auto; max-width: none; margin: 14px 0; }
+  .shots.strip { grid-auto-flow: row; grid-template-columns: repeat(2, var(--shot-w)); overflow: visible; }
+  .zebra tbody tr:nth-child(even) td { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  figure.shot.side { float: none; }
+}
+.callout, details.spoiler { display: flow-root; }
+@media print {
+  main > section > h2 { background: none; color: #000; box-shadow: none; border-bottom: 3px solid #000; padding-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero compact">
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+  </button>
+  <div class="hero-inner">
+    <!-- The Japanese title, set vertically on wide screens; <br> splits it into columns -->
+    <p class="hero-jp" lang="ja">バーチャル・<br>プロレスリング</p>
+    <div class="hero-body">
+      <h1 class="hero-title display">
+        <span class="pre">AKI Corporation · 13 September 1996 · PlayStation</span>
+        <span class="main">Virtual Pro Wrestling</span>
+      </h1>
+      <div class="band-wrap">
+        <div class="band" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <p class="hero-lede">A fan-made English guide to Asmik's 1996 PlayStation wrestling game, written alongside the English fan translation.</p>
+      <p class="hero-about"><button type="button" class="about-btn" id="aboutBtn" aria-expanded="false" aria-controls="aboutCard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5v.01"/></svg>About this guide</button><button type="button" class="about-btn" id="printBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><path d="M6 14h12v7H6z"/></svg>Print or save as PDF</button><span class="names-switch" role="group" aria-label="Names"><span class="ns-label">Names:</span><button type="button" class="ns-btn" data-v="0" aria-pressed="true">Real names</button><button type="button" class="ns-btn" data-v="1" aria-pressed="false">Parody names</button></span></p>
+      <div class="about-card" id="aboutCard" popover="manual" role="dialog" aria-label="About this guide">
+        <p>A fan-written guide to <i>Virtual Pro Wrestling</i>, a Japan-only PlayStation game from Asmik (1996). It was written alongside the English fan translation, so names and menu labels are the ones the translation shows. The <a href="../index.html#glossary">Japanese glossary</a> helps if you play the original.</p>
+        <p>The guide has four pages: Play (how to play), Rules (how matches work), Wrestlers (the database) and Secrets.</p>
+      </div>
+      <ul class="doors">
+        <li><a href="../index.html"><span class="door-name">Play</span><span class="door-note">Controls, modes, your first match</span></a></li>
+        <li><a href="../rules/index.html" aria-current="page"><span class="door-name">Rules</span><span class="door-note">Damage, spirit, pins, the CPU, options</span></a></li>
+        <li><a href="../wrestlers/index.html"><span class="door-name">Wrestlers</span><span class="door-note">All 60 with stats and moves</span></a></li>
+        <li><a href="../secrets/index.html"><span class="door-name">Secrets</span><span class="door-note">Hidden wrestlers and unlockables</span></a></li>
+        </ul>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<details class="toc" id="toc" open>
+  <summary>Contents</summary>
+  <nav aria-label="Contents">
+  <div class="gsearch" role="search">
+    <input class="search" id="gq" type="search" placeholder="Search the guide" autocomplete="off" spellcheck="false"
+      role="combobox" aria-expanded="false" aria-controls="gres" aria-autocomplete="list" aria-label="Search the guide">
+    <kbd class="gs-key" aria-hidden="true">/</kbd>
+  </div>
+  <h2 class="toc-group" id="g-pages">Guide pages</h2>
+  <ol aria-labelledby="g-pages"><li class="toc-pages"><a href="../index.html">Play</a></li><li class="toc-pages"><a href="../rules/index.html" aria-current="page">Rules</a></li><li class="toc-pages"><a href="../wrestlers/index.html">Wrestlers</a></li><li class="toc-pages"><a href="../secrets/index.html">Secrets</a></li></ol>
+  <h2 class="toc-group" id="g-rules">Rules and Systems</h2>
+  <ol aria-labelledby="g-rules">
+    <li><a href="#winning">Winning and Losing</a>
+      <ol>
+        <li><a href="#health">Hidden health</a></li>
+        <li><a href="#endings">How a match ends</a></li>
+        <li><a href="#ko">KO and the TKO rule</a></li>
+        <li><a href="#ringout">Ring-out</a></li>
+        <li><a href="#draws">Time limit and draws</a></li>
+        <li><a href="#falls">One fall or three</a></li>
+      </ol>
+    </li>
+    <li><a href="#spirit">Spirit and the Special</a>
+      <ol>
+        <li><a href="#spirit-icon">The SPIRIT icon</a></li>
+        <li><a href="#spirit-gain">Gaining and losing spirit</a></li>
+        <li><a href="#spirit-levels">The levels that matter</a></li>
+        <li><a href="#special">The special move</a></li>
+      </ol>
+    </li>
+    <li><a href="#damage">Damage</a>
+      <ol>
+        <li><a href="#damage-rule">How much a move hurts</a></li>
+        <li><a href="#six-stats">The six stats</a></li>
+        <li><a href="#wear">Body-part wear</a></li>
+        <li><a href="#move-power">Move power by input</a></li>
+        <li><a href="#combos">Strike strings</a></li>
+      </ol>
+    </li>
+    <li><a href="#pins">Pins, Holds and Getting Up</a>
+      <ol>
+        <li><a href="#getting-up">Getting up</a></li>
+        <li><a href="#pinning">Pins and kickouts</a></li>
+        <li><a href="#holds">Holds and escapes</a></li>
+        <li><a href="#give-up">Give Up!</a></li>
+        <li><a href="#counters">Counters</a></li>
+      </ol>
+    </li>
+    <li><a href="#cpu">The CPU</a>
+      <ol>
+        <li><a href="#cpu-close">Up close</a></li>
+        <li><a href="#cpu-ground">When you are down</a></li>
+        <li><a href="#cpu-reactions">Reactions</a></li>
+        <li><a href="#cpu-mashing">Escapes and mashing</a></li>
+        <li><a href="#cpu-outside">Outside the ring</a></li>
+        <li><a href="#cpu-levels">Easy, Normal, Hard</a></li>
+      </ol>
+    </li>
+    <li><a href="#options">Options</a>
+      <ol>
+        <li><a href="#game-settings">Game Settings</a></li>
+        <li><a href="#rule-settings">Rule Settings</a></li>
+      </ol>
+    </li>
+    <li><a href="#summary">Strategy at a Glance</a></li>
+  </ol>
+
+  </nav>
+</details>
+
+<main>
+<section id="winning">
+  <h2>Winning and Losing</h2>
+  <p>This page explains how a match of <i>Virtual Pro Wrestling</i> works: what hurts, what makes a pin stick, when a man gives up, how the computer opponent thinks, and what every option does. The buttons themselves are on the <a href="../index.html#controls">Play page</a>; each wrestler's stats and moves are in the <a href="../wrestlers/index.html">Wrestler Database</a>.</p>
+
+  <h3 id="health">Hidden health</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>A match is a long climb from 255 down to about −100, some 355 points. Big throws do 20 to 30 at a time, so expect a dozen or more good moves before the finish.</p></div>
+  <p>Every wrestler starts the match with <b>255 points of hidden health</b>, whatever his size. There is no health bar: the only gauge on screen is the SPIRIT icon in each bottom corner. You read your opponent's health from how long he stays down and how fast he kicks out.</p>
+  <p>Health keeps falling below zero. Around <b>−100</b> a wrestler is finished: that is where pins stick, holds make him give up and KO moves can end the match.</p>
+
+  <h3 id="endings">How a match ends</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Ending</th><th>When it happens</th><th>Winner</th><th>On screen</th></tr>
+    <tr><td><b>Submission</b></td><td>A hold squeezes a man whose health is below −100 and whose spirit is below 90 (<a href="#give-up">Give Up!</a>)</td><td>The man applying the hold</td><td>Give Up!</td></tr>
+    <tr><td><b>Pinfall</b></td><td>The referee counts three before the pinned man kicks out (<a href="#pinning">Pins</a>)</td><td>The pinner</td><td>Pin Fall!</td></tr>
+    <tr><td><b>KO</b></td><td>With the TKO rule on, a KO move lands on a man at −100 health or lower (<a href="#ko">KO</a>)</td><td>The man still standing</td><td>He collapses</td></tr>
+    <tr><td><b>Ring-out</b></td><td>One man is still outside when the count reaches 20 (<a href="#ringout">Ring-out</a>)</td><td>The man inside the ring</td><td>Ring Out!</td></tr>
+    <tr><td><b>Double ring-out</b></td><td>Both men are outside when the count reaches 20</td><td>Nobody: a draw</td><td></td></tr>
+    <tr><td><b>Time up</b></td><td>The match clock reaches the Time Limit</td><td>Nobody: a draw</td><td>Time Up!</td></tr>
+  </table></div>
+  <p>There is no tag-team match: every bout is one against one, including the 5-a-side Elimination Match.</p>
+
+  <h3 id="ko">KO and the TKO rule</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>With a KO wrestler, a beaten opponent can drop at any moment, even while he still kicks out of pins. Against a KO wrestler, keep your health above −100 or keep your spirit up for the special, during which you cannot be knocked out.</p></div>
+  <p>With <b>TKO</b> on in Rule Settings, a match can end by knockout. All four of these must be true at once:</p>
+  <ul>
+    <li>the move is one of the wrestler's <b>KO moves</b> (listed below);</li>
+    <li>the man it hits is left at <b>−100 health or lower</b>;</li>
+    <li>he is inside the ring and not in his special;</li>
+    <li>a <b>1 in 4</b> roll succeeds.</li>
+  </ul>
+  <p>Ordinary throws and throws that end in a pin can never KO. Only 100 moves, belonging to 42 wrestlers, are KO moves; the other 18 wrestlers cannot win by KO at all. With TKO off there are no KOs.</p>
+  <details class="spoiler">
+    <summary>Every KO move, by wrestler</summary>
+    <div class="tablewrap"><table class="ko-table zebra">
+    <tr><th>Wrestler</th><th>KO moves</th></tr>
+    <tr><td><span class="nm" data-k="w1">Jyushin Thunder Lyger</span></td><td>Ultra Slap Combo, Super Fisherman Buster</td></tr>
+    <tr><td><span class="nm" data-k="w2">Chris Benoit</span></td><td>Top Rope Spinning Power Bomb</td></tr>
+    <tr><td><span class="nm" data-k="w4">Riki Chosu</span></td><td>Clothesline</td></tr>
+    <tr><td><span class="nm" data-k="w5">Kensuke Sasaki</span></td><td>Fisherman&#x27;s Brainbuster, Rolling Shoulder Throw</td></tr>
+    <tr><td><span class="nm" data-k="w7">Black Tiger</span></td><td>Reverse Brainbuster, Top Rope Razor&#x27;s Edge</td></tr>
+    <tr><td><span class="nm" data-k="w8">Hiroshi Hase</span></td><td>Uranage Slam</td></tr>
+    <tr><td><span class="nm" data-k="w12">Shinya Hashimoto</span></td><td>Brainbuster, Front Leg Roundhouse, Super Fisherman Buster</td></tr>
+    <tr><td><span class="nm" data-k="w13">Scott Norton</span></td><td>Jackknife Powerbomb, High Angle German Suplex</td></tr>
+    <tr><td><span class="nm" data-k="w14">Mitsuharu Misawa</span></td><td>Rolling Elbow, Spinning Elbow</td></tr>
+    <tr><td><span class="nm" data-k="w15">Toshiaki Kawada</span></td><td>Release Tiger Suplex</td></tr>
+    <tr><td><span class="nm" data-k="w16">Steve Williams</span></td><td>Backdrop Suplex, Release Tiger Suplex</td></tr>
+    <tr><td><span class="nm" data-k="w17">Jumbo Tsuruta</span></td><td>Vertical Suplex to Body Slam, Lift-up Backdrop</td></tr>
+    <tr><td><span class="nm" data-k="w18">Akira Taue</span></td><td>Chokeslam Drop</td></tr>
+    <tr><td><span class="nm" data-k="w20">Stan Hansen</span></td><td>Jackknife Powerbomb, Short-Arm Lariat, Lariat</td></tr>
+    <tr><td><span class="nm" data-k="w21">Gary Albright</span></td><td>Rolling Belly-to-Belly Suplexes, Rolling Front Dragon Suplex, Locomotion German Suplexes, Quick Release German Suplex, Release Full Nelson Suplex</td></tr>
+    <tr><td><span class="nm" data-k="w22">Giant Baba</span></td><td>Clubbing Chop, Standing Big Boot, Torpedo Dropkick</td></tr>
+    <tr><td><span class="nm" data-k="w23">Yoshiaki Fujiwara</span></td><td>Power Headbutt, Neck Wringer</td></tr>
+    <tr><td><span class="nm" data-k="w24">Masakatsu Funaki</span></td><td>Slap Combo to Knee Strike, Spinning Backhand Chop</td></tr>
+    <tr><td><span class="nm" data-k="w25">Minoru Suzuki</span></td><td>Neck Wringer, Standing Roundhouse</td></tr>
+    <tr><td><span class="nm" data-k="w26">Kazuo Yamazaki</span></td><td>Foot Sweep to Kick Combo, Locomotion German Suplexes</td></tr>
+    <tr><td><span class="nm" data-k="w27">Akira Maeda</span></td><td>Spin Kick Combo, Brutal Kick Combo, Rolling Kick</td></tr>
+    <tr><td><span class="nm" data-k="w28">Nobuhiko Takada</span></td><td>Slap to Triple Kick Combo, Knee Strike to Double Slap to Three Kick Combo, Standing Roundhouse, Jump Spinning Back Kick to Gut</td></tr>
+    <tr><td><span class="nm" data-k="w30">Ken Shamrock</span></td><td>Release Full Nelson Suplex, Standing Roundhouse</td></tr>
+    <tr><td><span class="nm" data-k="w31">Yoji Anjoh</span></td><td>Foot Stomps to Kick</td></tr>
+    <tr><td><span class="nm" data-k="w32">Bas Rutten</span></td><td>Palm Thrust</td></tr>
+    <tr><td><span class="nm" data-k="w34">Tarzan Goto</span></td><td>Power Headbutt, Headbutt</td></tr>
+    <tr><td><span class="nm" data-k="w35">Hayabusa</span></td><td>Fisherman&#x27;s Buster, Screwdriver</td></tr>
+    <tr><td><span class="nm" data-k="w37">Genichiro Tenryu</span></td><td>Sumo Slap Combo to Rolling Heel Kick</td></tr>
+    <tr><td><span class="nm" data-k="w38">Koji Kitao</span></td><td>Axe Kick Combo, Uranage Slam, Standing Axe Kick</td></tr>
+    <tr><td><span class="nm" data-k="w44">Power Warrior</span></td><td>Rolling Shoulder Throw, Fisherman&#x27;s Brainbuster, Standing Clothesline</td></tr>
+    <tr><td><span class="nm" data-k="w45">Vader</span></td><td>Choke Slam, Jackknife Powerbomb, Standing Lariat, German Back Drop, High Angle German Suplex, Standing Enzuigiri Slam</td></tr>
+    <tr><td><span class="nm" data-k="w46">Rick Steiner</span></td><td>Release Full Nelson Suplex</td></tr>
+    <tr><td><span class="nm" data-k="w48">The Great Muta</span></td><td>Neck Wringer</td></tr>
+    <tr><td><span class="nm" data-k="w49">Hulk Hogan</span></td><td>Forearm Smash, Standing Lariat</td></tr>
+    <tr><td><span class="nm" data-k="w50">Scott Steiner</span></td><td>Screwdriver, Reverse Brainbuster</td></tr>
+    <tr><td><span class="nm" data-k="w52">Hawk</span></td><td>Flying Clothesline</td></tr>
+    <tr><td><span class="nm" data-k="w53">Dynamite Kid</span></td><td>Snap Suplex, Cradle Piledriver, Screwdriver, Snap Belly-to-Back Suplex, Reverse Brainbuster, Top Rope Razor&#x27;s Edge, Diving Headbutt</td></tr>
+    <tr><td><span class="nm" data-k="w55">Terry Funk</span></td><td>Stiff Jabs to Punch</td></tr>
+    <tr><td><span class="nm" data-k="w56">Antonio Inoki</span></td><td>Elbow Breaker, Stiff Right Punch, Left/Right Hook Combo to Thigh Kick to Scissors, Neck Wringer, Jumping Roundhouse</td></tr>
+    <tr><td><span class="nm" data-k="w58">Bruiser Brody</span></td><td>Top Rope Razor&#x27;s Edge, Leg Drop, Double Knee Drop</td></tr>
+    <tr><td><span class="nm" data-k="w59">Tiger Mask</span></td><td>Tombstone Piledriver</td></tr>
+    <tr><td><span class="nm" data-k="w60">Andre the Giant</span></td><td>Smash Face on Knee, High Angle German Suplex, Standing Big Boot, Hip Check, Big Splash, Body Splash</td></tr>
+    </table></div>
+    <p>No KO move: <span class="nm" data-k="w3">Tatsumi Fujinami</span>, <span class="nm" data-k="w6">Hiroyoshi Tenzan</span>, <span class="nm" data-k="w9">Keiji Mutoh</span>, <span class="nm" data-k="w10">Masahiro Chono</span>, <span class="nm" data-k="w11">Shiro Koshinaka</span>, <span class="nm" data-k="w19">Kenta Kobashi</span>, <span class="nm" data-k="w29">Volk Han</span>, <span class="nm" data-k="w33">Atsushi Onita</span>, <span class="nm" data-k="w36">Sabu</span>, <span class="nm" data-k="w39">The Great Sasuke</span>, <span class="nm" data-k="w40">Super Delphin</span>, <span class="nm" data-k="w41">TAKA Michinoku</span>, <span class="nm" data-k="w42">Jinsei Shinzaki</span>, <span class="nm" data-k="w43">Ultimo Dragon</span>, <span class="nm" data-k="w47">Ric Flair</span>, <span class="nm" data-k="w51">Sting</span>, <span class="nm" data-k="w54">Mil Mascaras</span>, <span class="nm" data-k="w57">Karl Gotch</span>.</p>
+  </details>
+
+  <h3 id="ringout">Ring-out</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>Outside the ring the count gives you plenty of time: 40 seconds. A computer wrestler alone outside comes back in by count 17, so it never loses by ring-out on its own. Pins do not count outside the ring.</p></div>
+  <p>With <b>Ringout Count</b> on, the referee counts while either wrestler is outside: <b>one number every 2 seconds</b>, shown big on screen. At <b>20</b> (40 seconds) the man outside loses; if both are outside, the match is a draw. When both are back inside, the next count starts again from 0. With Ringout Count off you can stay outside as long as you like.</p>
+  <p>Going over the top rope to the floor, thrown or by a fall, costs <b>7 health and 5 spirit</b>.</p>
+
+  <h3 id="draws">Time limit and draws</h3>
+  <figure class="shot side"><img src="../../screenshots/guide-draw.webp" alt="Result screen reading Heartbreaking Time-Out, Neither Gives Way!, with a triangle beside both names and Time Up Draw in the time box" width="320" height="240" loading="lazy"><figcaption>A drawn bout: a triangle beside both names.</figcaption></figure>
+  <p>The <b>Time Limit</b> can be Unlimited, 5, 10, 30 or 60 minutes. The clock at the top right always counts up, in real time; when it reaches the limit the bout ends as a draw (Time Up!). A match is also drawn by a double ring-out.</p>
+  <p>The result screen shows the winner's name with a phrase such as Total Victory!, then a bar with the time and how it ended: <b>○</b> beside the winner, <b>×</b> beside the loser, <b>△</b> beside both after a draw. Choosing <b>Skip Match</b> on the pause menu (<kbd>Start</kbd>) ends the bout as a Time Up Draw.</p>
+
+  <h3 id="falls">One fall or three</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>The man who just lost a fall starts the next one healthier than he ended the last: anyone below 50 comes back with 100 or more. Winning the first fall barely puts you ahead on health, so open the second fall as carefully as the first.</p></div>
+  <p>With <b>Falls</b> set to 3 Falls, a match is best of three. It ends when one man leads 2-0; otherwise all three falls are wrestled. A drawn fall counts as a fall won by both men.</p>
+  <p>Between falls, <b>spirit and body parts start fresh</b> (50 each), but health carries over, topped up:</p>
+  <div class="tablewrap fit"><table>
+    <tr><th>Health at the end of a fall</th><th>Health at the start of the next</th></tr>
+    <tr><td>100 or more</td><td>Unchanged</td></tr>
+    <tr><td>50 to 99</td><td>150</td></tr>
+    <tr><td>0 to 49</td><td>125</td></tr>
+    <tr><td>Below 0</td><td>100</td></tr>
+  </table></div>
+</section>
+
+<section id="spirit">
+  <h2>Spirit and the Special</h2>
+  <p>Spirit is each wrestler's fighting spirit, from <b>0 to 100</b>. Everyone starts every fall at <b>50</b>. It decides whether you can be pinned, whether you give up, whether you can counter, and at 100 it gives you the special move.</p>
+
+  <h3 id="spirit-icon">The SPIRIT icon</h3>
+  <p>The SPIRIT icon in your corner of the screen (bottom left for 1P, bottom right for 2P) changes colour with your spirit, in steps of 10 (table below).</p>
+  <p>Spirit drifts back toward 50 on its own: about every 4 seconds it drops by 1 if it is above 50, and rises by 2 if it is below 50 (by 3 if it is below 31). The <b>Spirit Gauge</b> option in Game Settings only hides the icons; spirit still works the same.</p>
+  <figure class="shot crop" style="--cy:-190px; --ch:34px; --k:2"><div class="win"><img src="../../screenshots/guide-spirit-full.webp" alt="The bottom of the match screen: the 1P SPIRIT icon at left is white, the 2P icon at right is red" width="320" height="240" loading="lazy"></div><figcaption>Left: white, at full spirit. Right: bright red, around 50.</figcaption></figure>
+  <div class="tablewrap fit"><table>
+    <tr><th>Spirit</th><th>Icon colour</th><th>What it means</th></tr>
+    <tr><td>0 to 29</td><td><span class="swatch" style="background:#3b0d0d"></span>Almost black red</td><td>No counters; easy to pin</td></tr>
+    <tr><td>30 to 49</td><td><span class="swatch" style="background:#7c1717"></span>Dark red</td><td>Counters possible from 36</td></tr>
+    <tr><td>50 to 69</td><td><span class="swatch" style="background:#d82424"></span>Bright red</td><td>Where every fall starts</td></tr>
+    <tr><td>70 to 89</td><td><span class="swatch" style="background:#f39a8e"></span>Salmon pink</td><td>Counters likely; harder to pin</td></tr>
+    <tr><td>90 to 99</td><td><span class="swatch" style="background:#ffffff"></span>White</td><td>Cannot be pinned, cannot give up</td></tr>
+    <tr><td>100</td><td><span class="swatch" style="background:#ffffff"></span>Flashing white</td><td>The special</td></tr>
+  </table></div>
+
+  <h3 id="spirit-gain">Gaining and losing spirit</h3>
+  <div class="tablewrap fit"><table>
+    <tr><th>What happens</th><th>Spirit</th></tr>
+    <tr><td>Your move lands</td><td>0 to +7, by move (see <a href="#move-power">Move power</a>)</td></tr>
+    <tr><td>Your move lands while your health is below 48</td><td>3 more on top</td></tr>
+    <tr><td>You are hit</td><td>−2 to −7 for most moves</td></tr>
+    <tr><td>You are hit by a far tap grapple</td><td>+8</td></tr>
+    <tr><td>Each squeeze of a ground hold on you</td><td>+4</td></tr>
+    <tr><td>Taunt (<kbd>L2</kbd>)</td><td>+5 (+2 outside the ring)</td></tr>
+    <tr><td>Leapfrog a running opponent (<kbd>L1</kbd>)</td><td>+3</td></tr>
+    <tr><td>Your guard (<kbd class="psx square" title="Square">Square</kbd>) blocks a strike</td><td>+2</td></tr>
+    <tr><td>You kick out of a pin</td><td>+10</td></tr>
+    <tr><td>You get back up after some knockdowns</td><td>+10</td></tr>
+    <tr><td>You go over the top rope to the floor</td><td>−5</td></tr>
+  </table></div>
+
+  <h3 id="spirit-levels">The levels that matter</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Level</th><th>Effect</th></tr>
+    <tr><td><b>Spirit 36</b></td><td>Below it you cannot counter a grab, an Irish whip or a corner move. From 36 up, the chance to counter a close grab is your spirit in percent.</td></tr>
+    <tr><td><b>Health 48</b></td><td>Below 48 health, every move you land gives 3 extra spirit: the comeback rule.</td></tr>
+    <tr><td><b>Spirit 90</b></td><td>From 90 you <b>cannot be pinned</b> and <b>cannot be made to give up</b>.</td></tr>
+    <tr><td><b>Spirit 100</b></td><td>The special: 30 seconds with your finishing move on call.</td></tr>
+  </table></div>
+
+  <h3 id="special">The special move</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>Spirit is the real gauge of the match. Taunt when you are safe, block strikes, and kick out of pins to build it; at 90 you are safe from pins and submissions, and at 100 you have 30 seconds to land the special and pin on top of it. Watch his icon too: a white icon means pinning him is useless.</p></div>
+  <p>When your spirit reaches 100, your wrestler strikes a short flash pose (you cannot act for about a second), his SPIRIT icon flashes white, and for <b>30 seconds</b> he is in his special. After exactly 30 seconds his spirit drops back to 50.</p>
+  <p>During the special, <b>hold <kbd class="psx circle" title="Circle">Circle</kbd> on the opponent for about a second and release</b>: that is the special move, power 30. Six wrestlers have a hold as their special, which squeezes for 8 per second instead. While in the special:</p>
+  <ul>
+    <li>your spirit cannot fall: no losses from hits and no drift;</li>
+    <li>you cannot be knocked out;</li>
+    <li>every light strike knocks the opponent hard, as if it were the end of a long string;</li>
+    <li>your pins are stronger: your spirit of 100 adds 25 to his kickout time, against 12 at spirit 50 (see <a href="#pinning">Pins</a>).</li>
+  </ul>
+</section>
+
+<section id="damage">
+  <h2>Damage</h2>
+
+  <h3 id="damage-rule">How much a move hurts</h3>
+  <div class="pair">
+  <div class="rule-box">
+    <p class="eq">Damage = the move's power + 10% of its power for every point your offence stat is above his defence stat</p>
+    <p>Each move has a <b>power</b> and uses one of your six offence stats against one of his six defence stats. If his defence is equal to or higher than your offence, the move does exactly its power: a high defence never takes anything off. The extra is rounded down. Spirit does not change damage.</p>
+    <p>The power is also scaled by the condition of <b>your own body part</b> that the move uses: full at the bell, down to <b>half power</b> when that part is worn out (see <a href="#wear">wear</a>).</p>
+  </div>
+  <div>
+  <p class="pair-lead">Damage with fresh body parts, by how far your offence is above his defence:</p>
+  <div class="tablewrap fit"><table>
+    <tr><th>Move (power)</th><th class="num">Equal or lower</th><th class="num">+1</th><th class="num">+2</th><th class="num">+3</th><th class="num">+4</th></tr>
+    <tr><td>Light strikes (2-3)</td><td class="num">2-3</td><td class="num">2-3</td><td class="num">2-3</td><td class="num">2-3</td><td class="num">2-4</td></tr>
+    <tr><td>Far tap grapple (8)</td><td class="num">8</td><td class="num">8</td><td class="num">9</td><td class="num">10</td><td class="num">11</td></tr>
+    <tr><td>Close tap grapple (14)</td><td class="num">14</td><td class="num">15</td><td class="num">16</td><td class="num">18</td><td class="num">19</td></tr>
+    <tr><td>Close tap + <kbd>Down</kbd> (18)</td><td class="num">18</td><td class="num">19</td><td class="num">21</td><td class="num">23</td><td class="num">25</td></tr>
+    <tr><td>Hold grapple (20)</td><td class="num">20</td><td class="num">22</td><td class="num">24</td><td class="num">26</td><td class="num">28</td></tr>
+    <tr><td>Hold + <kbd>Down</kbd> (24)</td><td class="num">24</td><td class="num">26</td><td class="num">28</td><td class="num">31</td><td class="num">33</td></tr>
+    <tr><td>Special (30)</td><td class="num">30</td><td class="num">33</td><td class="num">36</td><td class="num">39</td><td class="num">42</td></tr>
+  </table></div>
+  </div>
+  </div>
+
+  <h3 id="six-stats">The six stats</h3>
+  <p>Every wrestler has six offence and six defence stats, each from 1 to 5, and six body parts that go with them. Which stat a move uses depends on the move, not on the button:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Stat</th><th>Offence powers</th><th>Defence guards against</th></tr>
+    <tr><td><b>Head</b></td><td>Headbutts, and every counter</td><td>Slaps and punches to the face, brainbusters, piledrivers, high kicks, dropkicks</td></tr>
+    <tr><td><b>Neck/Back</b></td><td>Snapmares, suplexes, neckbreakers</td><td>German and backdrop suplexes, neckbreakers, chops to the chest</td></tr>
+    <tr><td><b>Arms</b></td><td>Slaps, punches, elbows, chops, body slams, arm locks</td><td>Arm breakers, arm bars, shoulder breakers</td></tr>
+    <tr><td><b>Body</b></td><td>Piledrivers, German suplexes, powerbombs, Boston crab, gut wrench</td><td>Body slams, kicks and knees to the body, crabs, camel clutch</td></tr>
+    <tr><td><b>Legs</b></td><td>Kicks, knees, leg drops, dropkicks</td><td>Low kicks, leg locks, drop toe holds, dragon screw</td></tr>
+    <tr><td><b>Aerial</b></td><td>Top-rope attacks, dives, splashes</td><td>Top-rope attacks only</td></tr>
+  </table></div>
+  <p>Body is only ever 1 or 2, for everyone, on both offence and defence. Example: <span class="nm" data-k="w20">Stan Hansen</span> has Arms offence 5 and <span class="nm" data-k="w47">Ric Flair</span> has Arms defence 2, so every arm move Hansen lands on Flair does 30% more than its power. 40 of the 60 wrestlers have no dives at all; for them the dive inputs do nothing. Each wrestler's twelve numbers are in the <a href="../wrestlers/index.html">Wrestler Database</a>.</p>
+
+  <h3 id="wear">Body-part wear</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>Pick moves that use your best offence stat against his weakest defence: four points of difference is +40%. Wearing down a body part is a way to blunt his offence, not to hurt him faster: work the legs of a kicker and his kicks lose up to half their power.</p></div>
+  <p>Every move also <b>wears down</b> one of the victim's body parts, from 50 at the bell toward 0: 1 point for a light strike, up to 5 for a special (see the table below). Wear does <b>not</b> make the victim take more damage. It weakens <b>his own moves</b> that use that part: a part at 0 makes those moves do half their power. Body parts are fresh again at the start of each fall.</p>
+
+  <h3 id="move-power">Move power by input</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>The far tap grapple is a poor move: little damage and +8 spirit for the man you throw. The close tap and the hold grapple are where the damage is, and the corner grab (25) and the hold from behind (24-26) are the biggest moves outside the special. Strikes are for building strings, not damage.</p></div>
+  <p>Power and spirit change are set by the input, the same for nearly every wrestler (the move names for each wrestler are in the <a href="../wrestlers/index.html">database</a>):</p>
+  <div class="tablewrap fit"><table class="zebra">
+    <tr><th>Input</th><th class="num">Power</th><th class="num">Your spirit</th><th class="num">His spirit</th><th class="num">Wear</th></tr>
+    <tr><td><kbd class="psx cross" title="Cross">Cross</kbd> tap, near or far</td><td class="num">2</td><td class="num">+2</td><td class="num">−2</td><td class="num">1</td></tr>
+    <tr><td><kbd class="psx cross" title="Cross">Cross</kbd> held, near or far</td><td class="num">3</td><td class="num">+3</td><td class="num">−3</td><td class="num">1</td></tr>
+    <tr><td>Far tap / + <kbd>Up</kbd> / + <kbd>Down</kbd></td><td class="num">8 / 10 / 12</td><td class="num">+3</td><td class="num">+8</td><td class="num">2</td></tr>
+    <tr><td>Close tap / + <kbd>Up</kbd> / + <kbd>Down</kbd></td><td class="num">14 / 16 / 18</td><td class="num">+5</td><td class="num">−3</td><td class="num">3</td></tr>
+    <tr><td>Hold / + <kbd>Up</kbd> / + <kbd>Down</kbd></td><td class="num">20 / 22 / 24</td><td class="num">+1</td><td class="num">−5</td><td class="num">4</td></tr>
+    <tr><td>Special</td><td class="num">30</td><td class="num">0</td><td class="num">−7</td><td class="num">5</td></tr>
+    <tr><td>From behind, tap</td><td class="num">18-20</td><td class="num">+3</td><td class="num">−3</td><td class="num">3</td></tr>
+    <tr><td>From behind, hold</td><td class="num">24-26</td><td class="num">+2</td><td class="num">−5</td><td class="num">4</td></tr>
+    <tr><td><kbd class="psx triangle" title="Triangle">Triangle</kbd> + <kbd class="psx circle" title="Circle">Circle</kbd> from standing</td><td class="num">6-8</td><td class="num">+3</td><td class="num">−3</td><td class="num">2</td></tr>
+    <tr><td><kbd class="psx cross" title="Cross">Cross</kbd> while running</td><td class="num">12-15</td><td class="num">+5</td><td class="num">−5</td><td class="num">3</td></tr>
+    <tr><td>Tap <kbd class="psx circle" title="Circle">Circle</kbd> as he runs at you</td><td class="num">10</td><td class="num">+1</td><td class="num">+2</td><td class="num">2</td></tr>
+    <tr><td>Hold <kbd class="psx circle" title="Circle">Circle</kbd> as he runs at you</td><td class="num">15</td><td class="num">0</td><td class="num">−2</td><td class="num">3</td></tr>
+    <tr><td>Punch reversal (<kbd class="psx square" title="Square">Square</kbd> + <kbd class="psx cross" title="Cross">Cross</kbd>)</td><td class="num">10</td><td class="num">+5</td><td class="num">−5</td><td class="num">2</td></tr>
+    <tr><td>Kick reversal (<kbd class="psx square" title="Square">Square</kbd> + <kbd class="psx cross" title="Cross">Cross</kbd>)</td><td class="num">10</td><td class="num">+7</td><td class="num">−7</td><td class="num">2</td></tr>
+    <tr><td>Strong grab on a dazed man in the corner</td><td class="num">25</td><td class="num">+5</td><td class="num">−5</td><td class="num">4</td></tr>
+    <tr><td>Reversal of the corner grab</td><td class="num">10</td><td class="num">+2</td><td class="num">−3</td><td class="num">1</td></tr>
+    <tr><td>Counter to a close tap</td><td class="num">0</td><td class="num">+7</td><td class="num">−5</td><td class="num">0</td></tr>
+    <tr><td>Ground hold, each squeeze</td><td class="num">3</td><td class="num">0</td><td class="num">+4</td><td class="num">1</td></tr>
+    <tr><td><kbd class="psx cross" title="Cross">Cross</kbd> on a lying man</td><td class="num">2-4</td><td class="num">0</td><td class="num">+1</td><td class="num">1</td></tr>
+    <tr><td>Top-rope attack, lying man</td><td class="num">18</td><td class="num">+5</td><td class="num">−4</td><td class="num">3</td></tr>
+    <tr><td>Top-rope attack, standing man</td><td class="num">12</td><td class="num">+3</td><td class="num">−2</td><td class="num">2</td></tr>
+  </table></div>
+    <p>The hold grapple of some wrestlers is 22 to 24 even without a direction. A hold from behind is a squeezing hold for some wrestlers (6 per squeeze). Your spirit gain is 3 more when your health is below 48, and nothing changes the spirit of a wrestler in his special.</p>
+
+  <h3 id="combos">Strike strings</h3>
+  <p>Each light strike in a row raises a hit count, and the reaction gets bigger the longer the string goes. Being knocked down resets the count.</p>
+  <div class="tablewrap fit"><table>
+    <tr><th>Strike in the string</th><th>Reaction</th></tr>
+    <tr><td>1st to 3rd</td><td>Small flinch</td></tr>
+    <tr><td>4th</td><td>15% chance of a medium reaction</td></tr>
+    <tr><td>5th</td><td>25% medium</td></tr>
+    <tr><td>6th</td><td>50% medium</td></tr>
+    <tr><td>7th</td><td>50% big, 10% medium</td></tr>
+    <tr><td>8th to 11th</td><td>80% big, 20% medium</td></tr>
+    <tr><td>12th</td><td>Always big</td></tr>
+  </table></div>
+  <p>A wrestler in his special always causes the big reaction.</p>
+</section>
+
+<section id="pins">
+  <h2>Pins, Holds and Getting Up</h2>
+  <p>Times on this page are in seconds; the game's own timers run in thirtieths of a second, and the formulas below use that unit.</p>
+
+  <h3 id="getting-up">Getting up</h3>
+  <div class="pair">
+  <div class="rule-box">
+    <p class="eq">Time on the mat = 200 − his spirit − half his health (no less than 0), in thirtieths of a second</p>
+    <p>Every further knockdown before he has stood up again takes another 2 seconds off. Mashing face buttons takes off 1/30 s for every three presses; holding <kbd class="psx square" title="Square">Square</kbd> doubles the time (stay down on purpose).</p>
+  </div>
+  <div class="tablewrap fit"><table>
+    <tr><th>Health</th><th class="num">Spirit 20</th><th class="num">Spirit 50</th><th class="num">Spirit 80</th></tr>
+    <tr><td>255 (fresh)</td><td class="num">1.8 s</td><td class="num">0.8 s</td><td class="num">at once</td></tr>
+    <tr><td>150</td><td class="num">3.5 s</td><td class="num">2.5 s</td><td class="num">1.5 s</td></tr>
+    <tr><td>50</td><td class="num">5.2 s</td><td class="num">4.2 s</td><td class="num">3.2 s</td></tr>
+    <tr><td>0 or less</td><td class="num">6.0 s</td><td class="num">5.0 s</td><td class="num">4.0 s</td></tr>
+  </table></div>
+  </div>
+
+  <h3 id="pinning">Pins and kickouts</h3>
+  <p>Press <kbd class="psx triangle" title="Triangle">Triangle</kbd> next to a lying opponent to cover him, whatever put him down. Throws marked † in the move lists end in a pin by themselves. Once the cover is on, the pinned man has a <b>kickout time</b>:</p>
+  <div class="rule-box">
+    <p class="eq">Kickout time = 110 + the pinner's spirit ÷ 4 − his health − his spirit, in thirtieths of a second</p>
+    <p>His health counts no lower than −100. The referee counts once a second, so it is a <b>Pin Fall!</b> only when the kickout time is more than 90 (three seconds). Every three face buttons he presses take 1/30 s off. A wrestler with spirit 90 or more always kicks out before three.</p>
+  </div>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>A fresh opponent always kicks out at once. Pin when he is below 0 health <i>and</i> his spirit is low, right after a big move has drained both, and pin while your own spirit is high: best of all with your special. Every failed pin hands him 10 spirit. When you are pinned, mash, and keep your own spirit at 90 or more when you are hurt.</p></div>
+  <p>The highest health at which a pin still wins, without mashing:</p>
+  <div class="tablewrap fit"><table>
+    <tr><th>His spirit</th><th class="num">Your spirit 0</th><th class="num">Your spirit 50</th><th class="num">Your spirit 100 (special)</th></tr>
+    <tr><td>0</td><td class="num">19</td><td class="num">31</td><td class="num">44</td></tr>
+    <tr><td>25</td><td class="num">−6</td><td class="num">6</td><td class="num">19</td></tr>
+    <tr><td>50</td><td class="num">−31</td><td class="num">−19</td><td class="num">−6</td></tr>
+    <tr><td>75</td><td class="num">−56</td><td class="num">−44</td><td class="num">−31</td></tr>
+    <tr><td>89</td><td class="num">−70</td><td class="num">−58</td><td class="num">−45</td></tr>
+    <tr><td>90 or more</td><td class="num">never</td><td class="num">never</td><td class="num">never</td></tr>
+  </table></div>
+    <p>A kickout gives the man who kicked out <b>+10 spirit</b>. The pinner can let go with <kbd class="psx square" title="Square">Square</kbd>. With <b>Rope Break</b> on, a pin is broken when the man underneath is at the ropes. Outside the ring the referee does not count.</p>
+
+  <h3 id="holds">Holds and escapes</h3>
+  <p>A hold (ground holds, holds from behind, and the specials that are holds) squeezes about once a second: 3 per squeeze for a ground hold, 8 for a submission special. The man in the hold has an <b>escape time</b>:</p>
+  <div class="pair">
+  <div class="rule-box">
+    <p class="eq">Escape time = (300 − his health (no less than 0) − his spirit ÷ 4) ÷ 2, in thirtieths of a second</p>
+    <p>At most 5 seconds. Every three face buttons he presses take 1/30 s off. He can also crawl: a face button with a direction moves him that way, toward the ropes for a rope break.</p>
+  </div>
+  <div class="tablewrap fit"><table>
+    <tr><th>His health</th><th class="num">Spirit 0</th><th class="num">Spirit 50</th></tr>
+    <tr><td>255 (fresh)</td><td class="num">0.7 s</td><td class="num">0.5 s</td></tr>
+    <tr><td>150</td><td class="num">2.5 s</td><td class="num">2.3 s</td></tr>
+    <tr><td>50</td><td class="num">4.2 s</td><td class="num">4.0 s</td></tr>
+    <tr><td>0 or less</td><td class="num">5.0 s</td><td class="num">4.8 s</td></tr>
+  </table></div>
+  </div>
+  <p>With <b>Rope Break</b> on, a hold whose victim reaches the ropes is broken (<b>Rope Break!</b>).</p>
+
+  <h3 id="give-up">Give Up!</h3>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>Holds are finishers, not a way to wear him down: a ground hold does 3 a second for a few seconds and gives him 4 spirit with every squeeze. Put one on only when he is already near −100 health and his icon is not white; with Rope Break on, apply it away from the ropes.</p></div>
+  <p>After each squeeze of a submission hold (marked ‡ in the move lists), the victim gives up if <b>his health is below −100</b> and <b>his spirit is below 90</b>, as long as the man applying the hold is inside the ring. There is no give-up button: you cannot surrender, and the computer never taps early.</p>
+
+  <h3 id="counters">Counters</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Situation</th><th>What to press</th><th>Chance</th></tr>
+    <tr><td>Grabbed with a close tap, or a tap from behind</td><td>Any face button right at the grab</td><td>Your spirit in percent, from spirit 36</td></tr>
+    <tr><td>Strong grab on you while dazed in the corner</td><td>Face buttons straight away</td><td>Each press: 3 × your spirit in 1000 (30% at spirit 100)</td></tr>
+    <tr><td>A <kbd class="psx cross" title="Cross">Cross</kbd> strike coming</td><td><kbd class="psx square" title="Square">Square</kbd> to guard, or <kbd class="psx square" title="Square">Square</kbd> + <kbd class="psx cross" title="Cross">Cross</kbd> to catch it</td><td>A caught strike is reversed</td></tr>
+    <tr><td>A grab coming</td><td><kbd>R1</kbd> to step back</td><td>The grab misses</td></tr>
+  </table></div>
+</section>
+
+<section id="cpu">
+  <h2>The CPU</h2>
+  <p><b>Difficulty</b> (Easy, Normal or Hard, in Game Settings) changes only how the computer wrestler plays. Damage, health, spirit and the rules are the same on every level. The computer presses the same buttons you do, through the same rules: every number on this page applies to it too.</p>
+
+  <h3 id="cpu-close">Up close</h3>
+  <p>When the computer is close to you, both of you are in the ring and it is free to act, 80% of its decisions are an attack:</p>
+  <div class="tablewrap fit"><table>
+    <tr><th>Attack</th><th class="num">Share</th></tr>
+    <tr><td>Tap grapple (<kbd class="psx circle" title="Circle">Circle</kbd>; with <kbd>Up</kbd> 35%, <kbd>Down</kbd> 32%, no direction 33%)</td><td class="num">25%</td></tr>
+    <tr><td><kbd class="psx cross" title="Cross">Cross</kbd> strike (55% tapped, 45% held)</td><td class="num">20%</td></tr>
+    <tr><td><kbd class="psx circle" title="Circle">Circle</kbd> grapple with a direction</td><td class="num">20%</td></tr>
+    <tr><td>Hold grapple, or the special while it has one</td><td class="num">10%</td></tr>
+    <tr><td>Guard (<kbd class="psx square" title="Square">Square</kbd>)</td><td class="num">10%</td></tr>
+    <tr><td>Catch stance (<kbd class="psx square" title="Square">Square</kbd> + <kbd class="psx cross" title="Cross">Cross</kbd>)</td><td class="num">10%</td></tr>
+    <tr><td>Dash attack (<kbd class="psx triangle" title="Triangle">Triangle</kbd> + <kbd class="psx circle" title="Circle">Circle</kbd>)</td><td class="num">5%</td></tr>
+  </table></div>
+  <p>From further away it walks in: straight at you 40% of the time on Easy, 60% on Normal, 80% on Hard, otherwise it wanders. When you run at it off the ropes, it meets you with the <kbd class="psx circle" title="Circle">Circle</kbd> counter-throw 70% of the time.</p>
+
+  <h3 id="cpu-ground">When you are down</h3>
+  <div class="tablewrap fit"><table>
+    <tr><th>Its choice, with you lying close by</th><th class="num">Easy</th><th class="num">Normal and Hard</th></tr>
+    <tr><td>Stomp (<kbd class="psx cross" title="Cross">Cross</kbd>)</td><td class="num">20%</td><td class="num">40%</td></tr>
+    <tr><td>Pull you up (<kbd class="psx square" title="Square">Square</kbd>)</td><td class="num">20%</td><td class="num">37%, always when its health is below 120</td></tr>
+    <tr><td>Ground hold (<kbd class="psx circle" title="Circle">Circle</kbd>)</td><td class="num">20%</td><td class="num">20%</td></tr>
+    <tr><td>Taunt</td><td class="num">20%</td><td class="num">3%</td></tr>
+    <tr><td>Pin (<kbd class="psx triangle" title="Triangle">Triangle</kbd>)</td><td class="num">15%</td><td class="num">never from close by</td></tr>
+    <tr><td>Walk about</td><td class="num">5%</td><td class="num">never</td></tr>
+  </table></div>
+  <p>On Normal and Hard the computer pins only from further off, and only once its own health is below 30. After pulling you up on Normal and Hard, with its health at 100 or more it goes for a tap grapple 40%, a hold grapple 20%, steps back 20%, dashes 12%, walks 5% and strikes 3%; with its health below 100 it steps back.</p>
+
+  <h3 id="cpu-reactions">Reactions</h3>
+  <p>On <b>Easy the computer never reacts</b> to what you do. On Normal and Hard, while it is standing free:</p>
+  <div class="tablewrap fit"><table>
+    <tr><th>You</th><th>It answers with</th><th class="num">Normal</th><th class="num">Hard</th></tr>
+    <tr><td>Run at it</td><td>Guard</td><td class="num">20%</td><td class="num">80%</td></tr>
+    <tr><td>Throw a <kbd class="psx cross" title="Cross">Cross</kbd> strike</td><td>Catch stance, reversing the strike</td><td class="num">30%</td><td class="num">90%</td></tr>
+    <tr><td>Start a <kbd class="psx circle" title="Circle">Circle</kbd> grapple</td><td>A strike to interrupt you</td><td class="num">40%</td><td class="num">90%</td></tr>
+    <tr><td>Start a grapple, otherwise, when not too far</td><td>Step back (<kbd>R1</kbd>), so the grab misses</td><td class="num">40%</td><td class="num">90%</td></tr>
+  </table></div>
+
+  <h3 id="cpu-mashing">Escapes and mashing</h3>
+  <p>How often the computer presses a button, every thirtieth of a second, when it is caught:</p>
+  <div class="tablewrap fit"><table>
+    <tr><th>Situation</th><th class="num">Easy</th><th class="num">Normal</th><th class="num">Hard</th></tr>
+    <tr><td>Being grabbed (its counter chance, at spirit 36 or more)</td><td class="num">10%</td><td class="num">50%</td><td class="num">80%</td></tr>
+    <tr><td>Whipped into the ropes or a corner</td><td class="num">5%</td><td class="num">20%</td><td class="num">50%</td></tr>
+    <tr><td>Lying down, in a hold, dazed</td><td class="num">3%</td><td class="num">30%</td><td class="num">80%</td></tr>
+  </table></div>
+  <p>When pinned, it keeps pressing buttons, which counts as mashing.</p>
+
+  <h3 id="cpu-outside">Outside the ring</h3>
+  <p>A computer wrestler alone outside heads back in when the count reaches 17 or its spirit is 71 or more. Before that it wanders about (80% on Easy, 40% on Normal, 30% on Hard), or goes back in, or taunts. If it has you in a hold outside, it lets go at count 16 to get back in.</p>
+
+  <h3 id="cpu-levels">Easy, Normal, Hard</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Level</th><th>How it plays</th><th>How to beat it</th></tr>
+    <tr><td><b>Easy</b> <span class="small">"For fighting-game beginners"</span></td><td>Never reacts to what you do (it guards only at random), mashes slowly, pins early and often, and fails.</td><td>Throw and strike freely.</td></tr>
+    <tr><td><b>Normal</b> <span class="small">"Start here!"</span></td><td>Blocks or reverses about a third of the time; gets up and escapes holds faster. Beats you down, pulls you up and pins late.</td><td>Mix strikes and grapples; pin after your biggest moves.</td></tr>
+    <tr><td><b>Hard</b> <span class="small">"For fans and hardcore gamers"</span></td><td>Guards running attacks, catches strikes and answers grabs 80-90% of the time; mashes almost constantly, so pins and holds end early.</td><td>Grab it when it is busy: just after its own move or as it gets up. Work it over while it is on the mat.</td></tr>
+  </table></div>
+</section>
+
+<section id="options">
+  <h2>Options</h2>
+  <div class="callout means"><strong class="label">What this means for you</strong><p>Ringout Count off removes the ring-out finish; TKO off leaves pins, submissions and time as the only endings. With Rope Break off, nothing at the ropes saves the man underneath, you included.</p></div>
+  <p>On the title screen, <b>Options</b> holds Load, Save, Belt Record, <b>Game Settings</b>, <b>Rules</b> and End. Press <kbd class="psx circle" title="Circle">Circle</kbd> on a two-value setting to switch it; on a setting with more values it opens a list. Defaults are in bold.</p>
+
+  <h3 id="game-settings">Game Settings</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Setting</th><th>Values</th><th>What it does</th></tr>
+    <tr><td><b>Difficulty</b></td><td>Easy / <b>Normal</b> / Hard</td><td>How well the computer wrestlers play (<a href="#cpu">The CPU</a>). Nothing else changes.</td></tr>
+    <tr><td><b>Spirit Gauge</b></td><td><b>ON</b> / OFF</td><td>OFF hides the SPIRIT icons. Spirit and the special still work.</td></tr>
+    <tr><td><b>Camera Angle</b></td><td><b>ON</b> / OFF</td><td>ON: the view changes when a big move connects.</td></tr>
+    <tr><td><b>Sound Setup</b></td><td><b>Stereo</b> / Mono</td><td>Music and sound effects in stereo or mono.</td></tr>
+  </table></div>
+
+  <h3 id="rule-settings">Rule Settings</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Setting</th><th>Values</th><th>What it does</th><th>Where it applies</th></tr>
+    <tr><td><b>Mat Select</b></td><td><b>Random</b> / NSW / EWF / WOU / DAW / ILW / IAWA</td><td>The ring mat. A promotion gives its own mat (one of its two, ILW has one). Random picks from 21 mats, including 10 you can get no other way (see <a href="../secrets/index.html">Secrets</a>).</td><td>Official Match always uses the promotion's mat.</td></tr>
+    <tr><td><b>Time Limit</b></td><td><b>Unlimited</b> / 5 Min / 10 Min / 30 Min / 60 Min</td><td>At the limit the bout is a draw (<a href="#draws">Time Up!</a>).</td><td>Official, Exhibition, Elimination and Tournament.</td></tr>
+    <tr><td><b>Falls</b></td><td><b>1 Fall</b> / 3 Falls</td><td>3 Falls: best of three, with health carried over (<a href="#falls">falls</a>).</td><td>Exhibition only; Official, Elimination and Tournament are always 1 Fall.</td></tr>
+    <tr><td><b>Ringout Count</b></td><td><b>ON</b> / OFF</td><td>ON: the 20-count outside the ring (<a href="#ringout">Ring Out!</a>). OFF: no count, no ring-outs.</td><td></td></tr>
+    <tr><td><b>Rope Break</b></td><td><b>ON</b> / OFF</td><td>ON: pins and holds are broken when the man underneath is at the ropes.</td><td></td></tr>
+    <tr><td><b>TKO</b></td><td><b>ON</b> / OFF</td><td>ON: KO moves can end the match (<a href="#ko">KO</a>). OFF: no KOs.</td><td></td></tr>
+  </table></div>
+</section>
+
+<section id="summary">
+  <h2>Strategy at a Glance</h2>
+  <div class="tablewrap"><table class="zebra">
+    <tr><th>Situation</th><th>Do this</th><th>Because</th></tr>
+    <tr><td>Start of the match</td><td>Close tap and hold grapples; avoid far taps</td><td>Grapples do 14-24; a far tap does 8 and gives him 8 spirit</td></tr>
+    <tr><td>Choosing moves</td><td>Use moves of your best offence stat on his weakest defence</td><td>Each point of difference is +10% damage</td></tr>
+    <tr><td>Safe moment, spirit low</td><td>Taunt (<kbd>L2</kbd>)</td><td>+5 spirit; 36 is needed for counters, 90 makes you pin-proof</td></tr>
+    <tr><td>Your spirit reaches 100</td><td>Hold <kbd class="psx circle" title="Circle">Circle</kbd> about a second and release within 30 seconds, then pin</td><td>The special does 30, and your spirit of 100 makes the pin stronger</td></tr>
+    <tr><td>He is down after a big move</td><td>Pin (<kbd class="psx triangle" title="Triangle">Triangle</kbd>) only when he is below 0 health and his icon is dark</td><td>A fresh or high-spirit man kicks out and gains 10 spirit</td></tr>
+    <tr><td>His icon is white</td><td>Keep hitting; do not pin or hold</td><td>At 90+ he cannot be pinned or give up</td></tr>
+    <tr><td>He is around −100 health</td><td>Submission hold away from the ropes, or a KO move with TKO on</td><td>Give Up! needs health below −100 and spirit below 90</td></tr>
+    <tr><td>You are pinned or in a hold</td><td>Mash face buttons; crawl to the ropes in a hold</td><td>Mashing shortens the count and the hold; Rope Break frees you</td></tr>
+    <tr><td>Strikes coming at you</td><td>Guard with <kbd class="psx square" title="Square">Square</kbd> or catch with <kbd class="psx square" title="Square">Square</kbd> + <kbd class="psx cross" title="Cross">Cross</kbd></td><td>A block gives +2 spirit; a caught strike is reversed</td></tr>
+    <tr><td>Grabs coming at you</td><td>Step back with <kbd>R1</kbd></td><td>The guard does not stop grabs</td></tr>
+    <tr><td>Against Hard</td><td>Grab just after its move or as it gets up</td><td>It answers 80-90% of grabs and strikes while it stands free</td></tr>
+    <tr><td>Three falls</td><td>Treat the second fall like a new match</td><td>Health is topped up to 100 or more for anyone hurt</td></tr>
+  </table></div>
+  <p>More tips, and how the controls work, on the <a href="../index.html#strategy">Play page</a>.</p>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <div class="band" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <p>Virtual Pro Wrestling: a fan guide.</p>
+  <p>A non-commercial fan project, not affiliated with or endorsed by Asmik Ace Entertainment, AKI Corporation or their successors. Guide text: <a href="../LICENSE">CC BY-SA 4.0</a>.</p>
+</footer>
+
+<div class="gres" id="gres" popover="manual" role="listbox" aria-label="Search results"></div>
+
+<dialog id="zoom" aria-label="Screenshot">
+  <div class="dlg-head"><p id="zoomCap"></p><button class="dlg-close" type="button" aria-label="Close">×</button></div>
+  <div class="dlg-body"><img id="zoomImg" alt=""></div>
+</dialog>
+
+<script>
+/* Page UI: theme toggle, the Contents (open on wide screens, collapsed on phones), the
+   current-section highlight, and the "About this guide" card. Nothing to edit here: the
+   Contents links are read from the markup. */
+(function () {
+  var root = document.documentElement;
+
+  /* Theme toggle */
+  var btn = document.getElementById('themeBtn');
+  var mqDark = window.matchMedia('(prefers-color-scheme: dark)');
+  function isDark() {
+    var t = root.getAttribute('data-theme');
+    return t ? t === 'dark' : mqDark.matches;
+  }
+  function syncTheme() {
+    var dark = isDark();
+    root.classList.toggle('is-dark', dark);
+    btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+  btn.addEventListener('click', function () {
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncTheme();
+  });
+  mqDark.addEventListener && mqDark.addEventListener('change', syncTheme);
+  syncTheme();
+
+  /* Contents: open on wide screens, collapsed on phones */
+  var toc = document.getElementById('toc');
+  var mqWide = window.matchMedia('(min-width: 960px)');
+  function syncToc() { toc.open = mqWide.matches; }
+  syncToc();
+  mqWide.addEventListener && mqWide.addEventListener('change', syncToc);
+  toc.addEventListener('click', function (e) {
+    if (e.target.closest('a') && !mqWide.matches) toc.open = false;
+  });
+
+  /* Highlight the section being read */
+  var links = {};
+  toc.querySelectorAll('a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  var targets = Object.keys(links).map(function (id) { return document.getElementById(id); }).filter(Boolean)
+    .sort(function (a, b) { return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1; });
+  var current = null, openLi = null;
+  function setCurrent(id) {
+    if (id === current) return;
+    if (current && links[current]) links[current].removeAttribute('aria-current');
+    current = id;
+    var a = links[id];
+    // the top-level entry that owns this link: open its sub-entries, close the last one
+    var li = a ? a.closest('li') : null;
+    while (li && li.parentElement.closest('li')) li = li.parentElement.closest('li');
+    if (li !== openLi) {
+      if (openLi) openLi.classList.remove('open');
+      if (li) li.classList.add('open');
+      openLi = li;
+    }
+    if (!a) return;
+    a.setAttribute('aria-current', 'true');
+    // keep it visible inside the sidebar without scrolling the page
+    var t = toc.getBoundingClientRect(), r = a.getBoundingClientRect();
+    if (r.top < t.top + 40) toc.scrollTop -= (t.top + 40 - r.top);
+    else if (r.bottom > t.bottom - 40) toc.scrollTop += (r.bottom - (t.bottom - 40));
+  }
+  function onScroll() {
+    var line = window.innerHeight * 0.25, best = null;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i].getBoundingClientRect().top - line <= 0) best = targets[i].id; else break;
+    }
+    setCurrent(best);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; onScroll(); }); }
+  }, { passive: true });
+  onScroll();
+})();
+
+/* About this guide: a card shown on hover or focus of the hero button, or toggled by a click */
+(function () {
+  var btn = document.getElementById('aboutBtn'), card = document.getElementById('aboutCard');
+  if (!btn || !card || !card.showPopover) return;
+  var timer = null, pinned = false;
+  function place() {
+    var r = btn.getBoundingClientRect();
+    card.style.top = (r.bottom + window.scrollY + 8) + 'px';
+    card.style.left = Math.max(16, Math.min(r.left, document.documentElement.clientWidth - card.offsetWidth - 16)) + window.scrollX + 'px';
+  }
+  function show() {
+    clearTimeout(timer);
+    if (!card.matches(':popover-open')) { card.showPopover(); place(); }
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  function hide() {
+    clearTimeout(timer); pinned = false;
+    if (card.matches(':popover-open')) card.hidePopover();
+    btn.setAttribute('aria-expanded', 'false');
+  }
+  function later() { if (!pinned) { clearTimeout(timer); timer = setTimeout(hide, 220); } }
+  btn.addEventListener('mouseenter', show);
+  btn.addEventListener('mouseleave', later);
+  btn.addEventListener('focus', show);
+  btn.addEventListener('blur', function () { setTimeout(function () { if (!card.contains(document.activeElement)) later(); }, 0); });
+  card.addEventListener('mouseenter', function () { clearTimeout(timer); });
+  card.addEventListener('mouseleave', later);
+  card.addEventListener('focusout', function (e) { if (!card.contains(e.relatedTarget) && e.relatedTarget !== btn) later(); });
+  btn.addEventListener('click', function () {
+    if (pinned) { hide(); } else { pinned = true; show(); }
+  });
+  card.addEventListener('click', function (e) { if (e.target.closest('a')) hide(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && card.matches(':popover-open')) { hide(); btn.focus(); } });
+  document.addEventListener('pointerdown', function (e) { if (pinned && !card.contains(e.target) && e.target !== btn && !btn.contains(e.target)) hide(); });
+  window.addEventListener('resize', function () { if (card.matches(':popover-open')) place(); });
+})();
+</script>
+<script type="application/json" id="page-data">{"names":{"w1":["Jyushin Thunder Lyger","Star Gaia"],"w2":["Chris Benoit","Masked Helios"],"w3":["Tatsumi Fujinami","Fujigami Ryu"],"w4":["Riki Chosu","Ricky Toshu"],"w5":["Kensuke Sasaki","Saeki Keisuke"],"w6":["Hiroyoshi Tenzan","Tennozan Hiroshi"],"w7":["Black Tiger","Dark Jaguar"],"w8":["Hiroshi Hase","Take Hiroki"],"w9":["Keiji Mutoh","Nito Seishi"],"w10":["Masahiro Chono","Higashino Masayoshi"],"w11":["Shiro Koshinaka","Konaka Sanshiro"],"w12":["Shinya Hashimoto","Harimoto Shinji"],"w13":["Scott Norton","Blood Gordon"],"w14":["Mitsuharu Misawa","Mikawa Masaharu"],"w15":["Toshiaki Kawada","Kamata Toshiyuki"],"w16":["Steve Williams","Smith Reams"],"w17":["Jumbo Tsuruta","Bomb Furuta"],"w18":["Akira Taue","Taguchi Akio"],"w19":["Kenta Kobashi","Dobashi Keita"],"w20":["Stan Hansen","Span Harison"],"w21":["Gary Albright","Jimmy Bryant"],"w22":["Giant Baba","Gulliver Banba"],"w23":["Yoshiaki Fujiwara","Umihara Yoshiyuki"],"w24":["Masakatsu Funaki","Uraki Toshikatsu"],"w25":["Minoru Suzuki","Susaki Hikaru"],"w26":["Kazuo Yamazaki","Yamasaki Kazuya"],"w27":["Akira Maeda","Tsutada Akira"],"w28":["Nobuhiko Takada","Takama Norihiko"],"w29":["Volk Han","Nikolai Mann"],"w30":["Ken Shamrock","Kevin Sherlock"],"w31":["Yoji Anjoh","Nihyaku Katsuo"],"w32":["Bas Rutten","Bow Lassen"],"w33":["Atsushi Onita","Oita Etsuji"],"w34":["Tarzan Goto","Partisan Goto"],"w35":["Hayabusa","Hayate"],"w36":["Sabu","Ta-Boo"],"w37":["Genichiro Tenryu","Homura Ryuichiro"],"w38":["Koji Kitao","Hokuto Koki"],"w39":["The Great Sasuke","Ninja Tasuke"],"w40":["Super Delphin","Skull Erwin"],"w41":["TAKA Michinoku","MITI Takamoku"],"w42":["Jinsei Shinzaki","Shintani Issei"],"w43":["Ultimo Dragon","Astra Dragoon"],"w44":["Power Warrior","Hyper Razor"],"w45":["Vader","Killer Boomer"],"w46":["Rick Steiner","Mick Schneider"],"w47":["Ric Flair","Nick Flyer"],"w48":["The Great Muta","Bloody Musa"],"w49":["Hulk Hogan","Hawk Reagan"],"w50":["Scott Steiner","Stud Schneider"],"w51":["Sting","Smash"],"w52":["Hawk","Doc Razor"],"w53":["Dynamite Kid","Shotgun Boy"],"w54":["Mil Mascaras","The Masquerade"],"w55":["Terry Funk","Teddy Lang"],"w56":["Antonio Inoki","Strongest Toki"],"w57":["Karl Gotch","Mister God"],"w58":["Bruiser Brody","Monster Bulldog"],"w59":["Tiger Mask","Super Jaguar"],"w60":["Andre the Giant","Andy the Gigant"]}}</script>
+<script>
+/* Optional names switch: shows name version 0 or 1 of every <span class="nm" data-k> from the data
+   block's "names" map ({token: [version 0, version 1]}); remembered per browser. Calls
+   window.onNamesChange(v) if the page defines it (to re-render a table), then fires names-changed on
+   the document, which the search listens to. Does nothing without the switch's buttons in the markup. */
+(function () {
+  const btns = document.querySelectorAll('.ns-btn');
+  if (!btns.length) return;
+  let D = null; try { D = JSON.parse(document.getElementById('page-data').textContent); } catch (e) {}
+  const map = (D && D.names) || {};
+  let v = '0'; try { v = localStorage.getItem('guide-names') || '0'; } catch (e) {}
+  function apply() {
+    document.querySelectorAll('.nm[data-k]').forEach(s => { const m = map[s.dataset.k]; if (m) s.textContent = m[+v] ?? m[0]; });
+    btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v)));
+    if (window.onNamesChange) window.onNamesChange(+v);
+    document.dispatchEvent(new Event('names-changed'));
+  }
+  btns.forEach(b => b.addEventListener('click', () => { v = b.dataset.v; try { localStorage.setItem('guide-names', v); } catch (e) {} apply(); }));
+  window.namesVersion = () => +v;
+  apply();
+})();
+</script>
+<script>
+/* Reference table: fills #refRows from the data block above ({"entries":[{id, name, group, text}]}),
+   with a filter box and one chip per group. Edit the column headings in the Reference section;
+   to show more fields, add them to the JSON, a <th>, and the row template below.
+   With no data block, or no entries, the table says so and the page still works. */
+(function () {
+  const tbody = document.getElementById('refRows'), q = document.getElementById('refSearch');
+  const status = document.getElementById('refStatus'), groupsBox = document.getElementById('refGroups');
+  if (!tbody) return;
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  let D = null; try { D = JSON.parse(document.getElementById('page-data').textContent); } catch (e) {}
+  const list = D && Array.isArray(D.entries) ? D.entries : [];
+  const cols = tbody.closest('table').querySelectorAll('thead th').length || 1;
+  if (!list.length) {
+    tbody.innerHTML = `<tr class="empty"><td colspan="${cols}">No entries yet.</td></tr>`;
+    if (q) q.closest('.table-tools').hidden = true;
+    return;
+  }
+  const rowOf = {};
+  const rows = list.map((e, i) => {
+    const tr = document.createElement('tr');
+    tr.id = 'entry-' + String(e.id || i).replace(/[^\w-]+/g, '-');
+    tr.innerHTML = `<td>${esc(e.name)}</td><td>${esc(e.group)}</td><td>${esc(e.text)}</td>`;
+    tr.dataset.text = [e.name, e.group, e.text].join(' ').toLowerCase();
+    tr.dataset.group = e.group || '';
+    rowOf[e.id || i] = tr;
+    tbody.appendChild(tr); return tr;
+  });
+  // group chips, only when there is more than one group
+  let group = '';
+  const groups = [...new Set(list.map(e => e.group).filter(Boolean))];
+  const chips = [];
+  if (groups.length > 1) {
+    ['', ...groups].forEach(g => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.textContent = g || 'All';
+      b.setAttribute('aria-pressed', String(g === group));
+      b.addEventListener('click', () => { group = g; chips.forEach(c => c.setAttribute('aria-pressed', String(c === b))); filter(); });
+      chips.push(b); groupsBox.appendChild(b);
+      groupsBox.appendChild(document.createTextNode(' '));
+    });
+  }
+  function filter() {
+    const t = q.value.trim().toLowerCase(); let n = 0;
+    rows.forEach(r => { const ok = (!t || r.dataset.text.includes(t)) && (!group || r.dataset.group === group); r.hidden = !ok; if (ok) n++; });
+    status.textContent = n === rows.length ? `Showing all ${n} entries.` : `Showing ${n} of ${rows.length} entries.`;
+  }
+  q.addEventListener('input', filter);
+  filter();
+  function showAll() { q.value = ''; if (chips.length) chips[0].click(); else filter(); }
+  // used by the guide search: clear the filters, then bring the row into view
+  window.pageShowEntry = function (id) {
+    const r = rowOf[id]; if (!r) return;
+    showAll();
+    r.scrollIntoView({ block: 'center' });
+    r.classList.remove('flash'); void r.offsetWidth; r.classList.add('flash');
+  };
+  // print every row, then put the filters back
+  let saved = null;
+  window.addEventListener('beforeprint', () => { saved = [q.value, group]; rows.forEach(r => { r.hidden = false; }); });
+  window.addEventListener('afterprint', () => { if (saved) { q.value = saved[0]; group = saved[1]; filter(); saved = null; } });
+})();
+</script>
+<script>
+/* Guide search, section links, screenshot zoom, printing. Nothing to edit here: the search
+   indexes the headings with ids (h2 by its section's id, h3/h4 by their own), the data block's
+   entries, and the text of paragraphs, list items, table cells and captions. */
+(function () {
+  const main = document.querySelector('main');
+  const strip = el => { const c = el.cloneNode(true); c.querySelectorAll('.anchor').forEach(x => x.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); };
+  const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fold = s => s.toLowerCase().replace(/[’']/g, "'");
+  function openTo(el) { for (let d = el.closest('details'); d; d = d.parentElement.closest('details')) d.open = true; }
+  function flash(el) { el.classList.remove('hit-flash'); void el.offsetWidth; el.classList.add('hit-flash'); setTimeout(() => el.classList.remove('hit-flash'), 2100); }
+
+  /* Section links: a link icon on every heading copies the address of that section */
+  const ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>';
+  function copyText(t) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(t);
+    const ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } finally { ta.remove(); }
+    return Promise.resolve();
+  }
+  const heads = [];
+  main.querySelectorAll('section > h2, h3[id], h4[id]').forEach(h => {
+    const id = h.tagName === 'H2' ? h.parentElement.id : h.id;
+    if (!id) return;
+    const title = strip(h);
+    heads.push({ el: h, id, title });
+    const a = document.createElement('a');
+    a.className = 'anchor'; a.href = '#' + id; a.innerHTML = ICON;
+    a.setAttribute('aria-label', 'Copy link to “' + title + '”');
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      history.replaceState(null, '', '#' + id);
+      copyText(location.href).then(() => { a.classList.add('copied'); clearTimeout(a._t); a._t = setTimeout(() => a.classList.remove('copied'), 1600); }, () => {});
+    });
+    h.appendChild(a);
+  });
+
+  /* Screenshot zoom: click a screenshot to see it in a dialog at the largest whole-number scale that fits */
+  const zoom = document.getElementById('zoom');
+  if (zoom && zoom.showModal) {
+    const zi = document.getElementById('zoomImg'), zc = document.getElementById('zoomCap');
+    main.addEventListener('click', e => {
+      const img = e.target.closest('.shots img, figure.shot img');
+      if (!img || !img.naturalWidth) return;
+      zi.src = img.currentSrc || img.src; zi.alt = img.alt;
+      const cap = img.closest('figure') && img.closest('figure').querySelector('figcaption');
+      zc.textContent = cap ? cap.textContent : img.alt;
+      zoom.showModal();
+      const body = zoom.querySelector('.dlg-body');
+      const k = Math.max(1, Math.floor(Math.min((body.clientWidth - 32) / img.naturalWidth, (body.clientHeight - 32) / img.naturalHeight)));
+      zi.width = img.naturalWidth * k; zi.height = img.naturalHeight * k;
+    });
+    zoom.querySelector('.dlg-close').addEventListener('click', () => zoom.close());
+    zoom.addEventListener('click', e => { if (e.target === zoom) zoom.close(); });
+  }
+
+  /* Guide search: sections, data entries and the text itself */
+  const q = document.getElementById('gq'), box = document.getElementById('gres');
+  if (!q || !box || !box.showPopover) return;
+  let index = null, results = [], active = -1;
+  document.addEventListener('names-changed', () => { index = null; });     // the page's text changed
+  function sectionOf(el) {
+    const sec = el.closest('main > section'); const h = sec && sec.querySelector('h2');
+    let sub = null;
+    for (const x of heads) { if (x.el.tagName !== 'H2' && sec && sec.contains(x.el) && (x.el.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING)) sub = strip(x.el); }
+    return (h ? strip(h) : '') + (sub ? ' › ' + sub : '');
+  }
+  function build() {
+    index = [];
+    for (const h of heads) { const t = strip(h.el); index.push({ kind: 'Section', rank: 0, t, s: h.el.tagName === 'H2' ? '' : sectionOf(h.el), key: fold(t), go: () => { openTo(h.el); location.hash = h.id; } }); }
+    let D = null; try { D = JSON.parse(document.getElementById('page-data').textContent); } catch (e) {}
+    const entries = D && Array.isArray(D.entries) ? D.entries : [];
+    entries.forEach((e, i) => {
+      if (!e || !e.name) return;
+      const id = e.id || i, t = String(e.name);
+      index.push({ kind: 'Entry', rank: 1, t, s: e.group ? String(e.group) : '', text: e.text ? String(e.text) : '', key: fold([t, e.group, e.text].join(' ')), go: () => {
+        if (window.pageShowEntry) pageShowEntry(id); else document.getElementById('reference').scrollIntoView({ block: 'start' });
+      } });
+    });
+    /* A page that draws its own tables adds them: window.pageEntries() gives [{ kind ("Table", "Move"),
+       name, text, group or el (where it sits, for the line under the result), go() }], go showing it and
+       returning the element to scroll to and flash, or nothing. */
+    (window.pageEntries ? window.pageEntries() : []).forEach(e => {
+      const t = String(e.name);
+      index.push({ kind: e.kind, rank: 1, t, s: e.group || sectionOf(e.el), text: e.text, key: fold(t + ' ' + e.text), go: () => {
+        const el = e.go(); if (el) { openTo(el); el.scrollIntoView({ block: 'center' }); flash(el); }
+      } });
+    });
+    main.querySelectorAll('p, li, td, dd, figcaption').forEach(el => {
+      if (el.closest('#refRows, .table-tools') || el.querySelector('p, li, td, dd')) return;
+      const text = el.textContent.replace(/\s+/g, ' ').trim();
+      if (text.length < 12) return;
+      index.push({ kind: 'Text', rank: 2, t: '', s: '', text, el, key: fold(text), go: () => { openTo(el); el.scrollIntoView({ block: 'center' }); flash(el); } });
+    });
+  }
+  function hl(text, words) {
+    let out = esc(text);
+    if (words.length > 1 && fold(text).includes(words.join(' '))) words = [words.join(' ')];
+    for (const w of words) out = out.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/'/g, "['’]") + ')', 'gi'), '<mark>$1</mark>');
+    return out;
+  }
+  function snippet(text, w) {
+    const i = Math.max(0, fold(text).indexOf(w)), a = Math.max(0, i - 50), b = Math.min(text.length, i + w.length + 80);
+    return (a ? '…' : '') + text.slice(a, b).trim() + (b < text.length ? '…' : '');
+  }
+  function search(raw) {
+    const words = fold(raw).split(/\s+/).filter(Boolean);
+    results = []; results.words = words;
+    if (!words.length) return results;
+    const phrase = words.join(' '), out = [];
+    for (const it of index) {
+      if (!words.every(w => it.key.includes(w))) continue;
+      if (it.kind === 'Text' && phrase.length < 3) continue;
+      const name = fold(it.t);
+      // by kind first, then: name starts with the phrase, contains it, has every word, or only its notes match
+      const score = it.rank * 10 + (name.startsWith(phrase) ? 0 : name.includes(phrase) ? 2 : words.every(w => name.includes(w)) ? 4 : 6);
+      out.push([score, it]);
+    }
+    out.sort((a, b) => a[0] - b[0]);
+    const named = out.filter(([, it]) => it.kind !== 'Text').slice(0, 9).map(x => x[1]);
+    const text = out.filter(([, it]) => it.kind === 'Text').slice(0, 14 - named.length).map(x => x[1]);
+    const textCount = out.length - out.filter(([, it]) => it.kind !== 'Text').length;
+    results = named.concat(text);
+    results.extra = textCount - text.length;
+    results.words = words;
+    return results;
+  }
+  function place() {
+    const r = q.getBoundingClientRect();
+    box.style.left = Math.max(8, Math.min(r.left, document.documentElement.clientWidth - box.offsetWidth - 8)) + 'px';
+    box.style.top = (r.bottom + 6) + 'px';
+  }
+  function render() {
+    const words = results.words || [];
+    if (!q.value.trim()) { close(); return; }
+    box.innerHTML = results.length ? results.map((it, i) => {
+      const t = it.kind === 'Text' ? hl(snippet(it.text, words[0]), words) : hl(it.t, words);
+      const s = it.kind === 'Text' ? esc(sectionOf(it.el)) : it.rank === 1 && it.text && !words.every(w => fold(it.t).includes(w)) ? hl(snippet(it.text, words[0]), words) : esc(it.s);
+      return `<div class="gr" role="option" id="gr-${i}" data-i="${i}" aria-selected="${i === active}"><span class="gr-kind">${it.kind}</span><span class="gr-t${it.kind === 'Text' ? ' txt' : ''}">${t}</span>${s ? `<span class="gr-s">${s}</span>` : ''}</div>`;
+    }).join('') + (results.extra > 0 ? `<div class="gr-none">${results.extra} more text matches; type more to narrow it down.</div>` : '')
+      : '<div class="gr-none">Nothing matches. Try a shorter word.</div>';
+    if (!box.matches(':popover-open')) box.showPopover();
+    place();
+    q.setAttribute('aria-expanded', 'true');
+    if (active >= 0) q.setAttribute('aria-activedescendant', 'gr-' + active); else q.removeAttribute('aria-activedescendant');
+  }
+  function close() { if (box.matches(':popover-open')) box.hidePopover(); q.setAttribute('aria-expanded', 'false'); q.removeAttribute('aria-activedescendant'); active = -1; }
+  function setActive(i) {
+    active = i;
+    box.querySelectorAll('.gr').forEach(g => g.setAttribute('aria-selected', String(+g.dataset.i === i)));
+    const g = document.getElementById('gr-' + i); if (g) g.scrollIntoView({ block: 'nearest' });
+    if (i >= 0) q.setAttribute('aria-activedescendant', 'gr-' + i); else q.removeAttribute('aria-activedescendant');
+  }
+  function choose(i) { const it = results[i]; if (!it) return; close(); q.blur(); it.go(); }
+  q.addEventListener('input', () => { if (!index) build(); search(q.value); active = results.length ? 0 : -1; render(); });
+  q.addEventListener('focus', () => { if (!index) build(); if (q.value.trim()) { search(q.value); render(); } });
+  q.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown' && results.length) { e.preventDefault(); setActive((active + 1) % results.length); }
+    else if (e.key === 'ArrowUp' && results.length) { e.preventDefault(); setActive((active - 1 + results.length) % results.length); }
+    else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); choose(active); }
+    else if (e.key === 'Escape') { if (box.matches(':popover-open')) { e.preventDefault(); close(); } else { q.value = ''; } }
+  });
+  box.addEventListener('mousedown', e => e.preventDefault());
+  box.addEventListener('click', e => { const g = e.target.closest('.gr'); if (g) choose(+g.dataset.i); });
+  box.addEventListener('mousemove', e => { const g = e.target.closest('.gr'); if (g && +g.dataset.i !== active) setActive(+g.dataset.i); });
+  q.addEventListener('blur', () => setTimeout(() => { if (document.activeElement !== q) close(); }, 0));
+  window.addEventListener('resize', () => { if (box.matches(':popover-open')) place(); });
+  window.addEventListener('scroll', () => { if (box.matches(':popover-open')) place(); }, { passive: true });
+  document.addEventListener('keydown', e => {
+    if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+    const t = e.target; if (t.closest && t.closest('input, textarea, select, [contenteditable="true"], dialog[open]')) return;
+    e.preventDefault();
+    const toc = document.getElementById('toc'); if (toc && !toc.open) toc.open = true;
+    q.focus(); q.select();
+  });
+})();
+
+/* Printing: open every collapsed part (spoilers) and load every picture first */
+(function () {
+  let undo = [];
+  function prep() {
+    if (undo.length) return;
+    document.querySelectorAll('main details:not([open])').forEach(d => { d.open = true; undo.push(() => { d.open = false; }); });
+    document.querySelectorAll('img[loading="lazy"]').forEach(i => { i.loading = 'eager'; });
+  }
+  function unprep() { undo.forEach(f => f()); undo = []; }
+  window.addEventListener('beforeprint', prep);
+  window.addEventListener('afterprint', unprep);
+  const btn = document.getElementById('printBtn');
+  if (btn) btn.addEventListener('click', () => {
+    prep();
+    const waits = [...document.images].filter(i => !i.complete).map(i => new Promise(r => { i.addEventListener('load', r, { once: true }); i.addEventListener('error', r, { once: true }); }));
+    Promise.race([Promise.all(waits), new Promise(r => setTimeout(r, 4000))]).then(() => window.print());
+  });
+})();
+</script>
+<style>
+.rule-box { margin: 16px 0 22px; padding: 14px 18px; border: 1px solid var(--rule); border-left: 5px solid var(--accent); border-radius: 6px; background: var(--panel); max-width: 82ch; }
+.rule-box { display: flow-root; }
+@media (min-width: 1100px) { main .tablewrap.fit { clear: none; } }
+.pair > .rule-box, .pair > .tablewrap, .pair .pair-lead { margin-top: 0; }
+.rule-box p { margin: 4px 0; max-width: none; }
+.rule-box .eq { font-weight: 700; font-size: 1.05em; }
+.callout.means strong.label { color: var(--accent-2); }
+td.num, th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.swatch { display: inline-block; width: 1.1em; height: 1.1em; border-radius: 3px; vertical-align: -0.2em; margin-right: 6px; border: 1px solid var(--rule); }
+.ko-table td:first-child { white-space: nowrap; font-weight: 700; }
+</style>
+
+</body>
+</html>

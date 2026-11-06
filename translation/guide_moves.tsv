@@ -1,0 +1,2265 @@
+# Move names of every wrestler (id = the game's wrestler id 1-60, rec = record in its DAnn.DAT), as in docs/MOVES.md: confirmed against filmed clips of every move; Western names from WCW vs. the World where it has the move. Read by tools/guidedata.py.
+id	rec	name
+1	0	Backhand
+1	1	Big Slap
+1	2	Low Kick
+1	3	Mid Kick
+1	4	Backhand Chop
+1	5	Arm Drag
+1	6	Body Slam
+1	7	Backbreaker
+1	8	Quick Suplex
+1	9	Cradle Piledriver
+1	10	DDT
+1	11	Fisherman's Buster
+1	12	Lyger Bomb
+1	13	Mahistral Rolling Cradle
+1	14	Small Package
+1	15	Suplex Counter
+1	16	Small Package
+1	17	Pendulum Backbreaker
+1	18	Lift-up Backdrop
+1	19	Release German Suplex
+1	20	Backdrop Suplex Pin
+1	21	Reverse Snapmare
+1	22	Hip Toss
+1	23	Tilt-a-Whirl Backbreaker
+1	24	Dropkick to Knee
+1	25	Rolling Heel Kick
+1	27	Ultra Slap Combo
+1	28	Dragon Screw Leg Whip
+1	29	Super Fisherman Buster
+1	30	Knock Off Reversal
+1	31	Camel Clutch
+1	32	Surfboard Stretch
+1	33	Standing Backsplash
+1	34	Shooting Star Press
+1	35	Rolling Attack
+1	36	Leap Frog
+1	37	Taunt: Crosses arms, goes down on knees and raises right arm
+1	40	Running Senton
+1	41	Cross Body Splash
+2	0	Hard Elbow Smash
+2	1	Big Slap
+2	2	Knee
+2	3	Hard Kick
+2	4	Elbow to the Back of the Head
+2	5	Snapmare
+2	6	Body Slam
+2	7	Gut Wrench
+2	8	Suplex
+2	9	Cradle Piledriver
+2	10	Butterfly DDT
+2	11	Snap Suplex
+2	12	Powerbomb
+2	13	Razor's Edge to Power Bomb
+2	14	Gutwrench Reversal
+2	15	Suplex Counter
+2	16	Small Package
+2	17	Reverse Suplex
+2	18	Lift-up Backdrop
+2	19	German Suplex
+2	20	Full Nelson Suplex
+2	21	Reverse Arm Drag
+2	22	Standing Flapjack
+2	23	Monkey Flip
+2	24	Spinning Dropkick
+2	25	Clothesline
+2	27	Backslide
+2	28	Heel Trip
+2	29	Top Rope Spinning Power Bomb
+2	30	Push Off Reversal
+2	31	Camel Clutch
+2	32	Boston Crab
+2	33	Leg Drop
+2	34	Diving Headbutt
+2	35	Flying Clothesline
+2	36	Leap Frog
+2	37	Taunt: "I want the belt" gesture
+2	40	Suicide Dive
+2	41	Springboard Cross Body Block
+3	0	Slap
+3	1	Big Slap
+3	2	Knee
+3	3	Hard Leg Kick
+3	4	Short European Uppercut
+3	5	Snapmare
+3	6	Body Slam
+3	7	Double Underhook Suplex
+3	8	Quick Suplex
+3	9	Swinging Neckbreaker
+3	10	Backdrop
+3	11	Elbow Breaker
+3	12	Jumping Piledriver
+3	13	Dragon Screw
+3	14	Double Underhook Reversal
+3	15	Suplex Counter
+3	16	Neckbreaker Counter
+3	17	Modified Backbreaker
+3	18	Lift-up Backdrop
+3	19	German Suplex
+3	20	Full Nelson Suplex
+3	21	Reverse Snapmare
+3	22	Back Body Drop
+3	23	Sleeper Hold
+3	24	Enzuigiri Kick
+3	25	Back Dropkick
+3	27	Backslide
+3	28	Snapping Dragon Screw Leg Whip
+3	29	Superplex
+3	30	Knock Off Reversal
+3	31	Dragon Sleeper
+3	32	Bow and Arrow Submission
+3	33	Knee Drop
+3	34	Knee Drop
+3	35	Flying Cross Body Block
+3	36	Drop Down
+3	37	Taunt: Pumps both arms and gestures for the belt
+3	40	Suicide Dive
+3	41	Cross Body Splash
+4	0	Slap
+4	1	Punch
+4	2	Knee
+4	3	Hard Kick
+4	4	Headbutt
+4	5	Fireman's Carry
+4	6	Body Slam
+4	7	Double Underhook Suplex
+4	8	Vertical Suplex to Body Slam
+4	9	Swinging Neckbreaker
+4	10	Power Headbutt
+4	11	Suplex
+4	12	Piledriver
+4	13	Backdrop Suplex Pin
+4	14	Double Underhook Reversal
+4	15	Suplex Counter
+4	16	Neckbreaker Counter
+4	17	Clothesline to Back
+4	18	Kneebreaker
+4	19	Lift-up Backdrop
+4	20	Abdominal Stretch
+4	21	Reverse Snapmare
+4	22	Back Body Drop
+4	23	Knee to Gut
+4	24	Standing Clothesline
+4	25	Clothesline
+4	27	Headbutt
+4	28	Standing Lariat
+4	29	Super Brainbuster
+4	30	Push Off Reversal
+4	31	Mounted Headbutts
+4	32	Scorpion Deathlock
+4	33	Foot Stomp
+4	34	Knee Drop
+4	35	Tomahawk Chop
+4	36	Drop Down
+4	37	Taunt: Swings right arm downwards
+5	0	Slap
+5	1	Palm Thrust
+5	2	Knee
+5	3	Mid Kick
+5	4	Open Hand Chop
+5	5	Backhand Chop
+5	6	Headlock Takedown
+5	7	Over-the-Hip Throw
+5	8	Quick Suplex
+5	9	Neckbreaker
+5	10	DDT
+5	11	Fisherman's Brainbuster
+5	12	Powerbomb
+5	13	Brainbuster
+5	14	Arm Throw Counter
+5	15	Suplex Counter
+5	16	Neckbreaker Counter
+5	17	Bulldog
+5	18	Clothesline to Back
+5	19	Lift-up Backdrop
+5	20	German Suplex
+5	21	Reverse Arm Drag
+5	22	Powerslam
+5	23	Rolling Shoulder Throw
+5	24	Dropkick
+5	25	Clothesline
+5	27	Over-the-Shoulder Throw
+5	28	Standing Lariat
+5	29	Superplex
+5	30	Knock Off Reversal
+5	31	Mounted Shoulder Lock
+5	32	Reverse Fuji Leg Bar
+5	33	Foot Stomp
+5	34	Back Elbow Drop
+5	35	Flying Forearm
+5	36	Drop Down
+5	37	Taunt: Throat Slash
+6	0	Elbow Slam
+6	1	Punch
+6	2	Knee
+6	3	Mid Kick
+6	4	Jumping Headbutt
+6	5	Knife Hand Chop
+6	6	Snapmare
+6	7	Double Chop to Collarbone
+6	8	Quick Suplex
+6	9	Backbreaker
+6	10	Inverted Atomic Drop
+6	11	Snap Suplex
+6	12	Powerbomb
+6	13	Inverted Piledriver
+6	14	Chop Block
+6	15	Suplex Counter
+6	16	Small Package
+6	17	Double Chop to Back
+6	18	Lift-up Backdrop
+6	19	Sleeper Hold
+6	20	German Suplex
+6	21	Reverse Low Blow
+6	22	Hip Toss
+6	23	Fallaway Samoan Drop
+6	24	Discus Punch
+6	25	Spinwheel Kick
+6	27	Headbutt
+6	28	Inverted Atomic Drop
+6	29	Top Rope Samoan Drop
+6	30	Double Chop Top Rope Reversal
+6	31	Rake to Eyes
+6	32	Boston Crab
+6	33	Windup Chop
+6	34	Moonsault
+6	35	Double Tomahawk Chop
+6	36	Drop Down
+6	37	Taunt: Crosses throat and poses
+6	41	Cross Body Splash
+7	0	Elbow Smash
+7	1	Big Slap
+7	2	Knee
+7	3	Mid Kick
+7	4	Clubbing Forearm
+7	5	Arm Drag
+7	6	Body Slam
+7	7	Fall-away Slam
+7	8	Jumping Head Scissors
+7	9	Cradle Piledriver
+7	10	Side Slam
+7	11	Brainbuster
+7	12	Razor's Edge to Power Bomb
+7	13	Hurracanrana
+7	14	Small Package
+7	15	Rana Handstand Counter
+7	16	Small Package
+7	17	Pendulum Backbreaker
+7	18	Backdrop Suplex Snap
+7	19	Reverse Brainbuster
+7	20	German Suplex
+7	21	Reverse Arm Drag
+7	22	Standing Flapjack
+7	23	Flying Head Scissors
+7	24	Dropkick to Knee
+7	25	Flying Shoulder Block
+7	27	Thumb to Eye
+7	28	Low Blow (Oh No Taunt)
+7	29	Top Rope Razor's Edge
+7	30	Spinning DDT Reversal
+7	31	Rake to Eyes
+7	32	Surfboard Stretch
+7	33	Standing Backsplash
+7	34	Frog Splash
+7	35	Flying Forearm
+7	36	Leap Frog
+7	37	Taunt: Rodeo
+7	40	Running Senton
+7	41	Springboard Cross Body Block
+8	0	Elbow Smash
+8	1	Big Slap
+8	2	Knee
+8	3	Mid Kick
+8	4	Knife Hand Chop
+8	5	Fireman's Carry
+8	6	Body Slam
+8	7	Gut Wrench
+8	8	Quick Suplex
+8	9	Russian Leg Sweep
+8	10	Overhead Belly-to-Belly Suplex
+8	11	Northern Lights Suplex
+8	12	Side Slam
+8	13	Giant Swing
+8	14	Gutwrench Reversal
+8	15	Suplex Counter
+8	16	Escape Counter
+8	17	Lift-up Backdrop
+8	18	Uranage Slam
+8	19	Abdominal Stretch
+8	20	German Suplex
+8	21	Reverse Snapmare
+8	22	Standing Hook Kick to Jaw
+8	23	Overhead Belly-to-Belly Suplex
+8	24	Standing Thrust Kick
+8	25	Clothesline
+8	27	Elbow Breaker
+8	28	Heel Trip to Elbow Drop
+8	29	Top Rope Uranage Slam
+8	30	Knock Off Reversal
+8	31	Camel Clutch
+8	32	Knee Drop to Thigh
+8	33	Foot Stomp
+8	34	Double Knee Drop
+8	35	Double Axehandle
+8	36	Drop Down
+8	37	Taunt: Hip Gyration
+8	41	Cross Body Splash
+9	0	Slap
+9	1	Punch
+9	2	Low Kick
+9	3	Hard Leg Kick
+9	4	Backhand Chop
+9	5	Snapmare
+9	6	Body Slam
+9	7	Over-the-Shoulder Throw
+9	8	Quick Suplex
+9	9	Backbreaker
+9	10	Dragon Screw Leg Whip
+9	11	Hurracanrana
+9	12	Piledriver
+9	13	Power Bomb into Rolling Cradle
+9	14	Arm Throw Counter
+9	15	Suplex Counter
+9	16	Small Package
+9	17	Facecrusher
+9	18	Lift-up Backdrop
+9	19	Octopus Hold
+9	20	Full Nelson Suplex
+9	21	Reverse Arm Drag
+9	22	Hip Toss
+9	23	Sleeper Hold
+9	24	Jump Spinning Gut Kick
+9	25	Handspring Back Elbow
+9	27	Elbow Breaker
+9	28	Dragon Screw Leg Whip
+9	29	Top Rope Hurracanrana
+9	30	Knock Off Reversal
+9	31	Fuji Arm Bar
+9	32	Figure 4 Leglock
+9	33	Snap Elbow Drop
+9	34	Moonsault
+9	35	Torpedo Dropkick
+9	36	Drop Down
+9	37	Taunt: Claps his hands and shoots one arm up
+9	41	Cross Body Splash
+10	0	Elbow Smash
+10	1	Punch
+10	2	Knee
+10	3	Hard Kick
+10	4	Forearm Strike
+10	5	Snapmare
+10	6	Body Slam
+10	7	Swinging Neckbreaker
+10	8	Waterwheel Drop
+10	9	Shoulderbreaker
+10	10	Modified Northern Lights Suplex
+10	11	Snap Suplex
+10	12	Inverted Atomic Drop
+10	13	Powerbomb
+10	14	Neckbreaker Counter
+10	15	Flip Counter
+10	16	Small Package
+10	17	Triple Headbutt
+10	18	Backdrop Suplex Snap
+10	19	Reverse DDT
+10	20	German Suplex
+10	21	Reverse Low Blow
+10	22	Drop Toe Hold
+10	23	Samoan Drop
+10	24	Jumping Roundhouse
+10	25	Mafia Kick
+10	27	Elbow Breaker
+10	28	Low Blow (Come On Taunt!)
+10	29	Top Rope Samoan Drop
+10	30	Push Off Reversal
+10	31	Rake to Eyes
+10	32	STF
+10	33	Elbow Drop
+10	34	Back Elbow Drop
+10	35	Flying Shoulder Block
+10	36	Drop Down
+10	37	Taunt: "Who's the man?"
+10	40	Suicide Dive
+11	0	Slap
+11	1	Punch
+11	2	Knee
+11	3	Mid Kick
+11	4	Hip Smash
+11	5	Forearm Strike
+11	6	Body Slam
+11	7	Gut Wrench
+11	8	Quick Suplex
+11	9	Double Underhook Suplex
+11	10	Side Slam
+11	11	Delayed Power Bomb
+11	12	Piledriver
+11	13	Gutwrench Power Bomb
+11	14	Gutwrench Reversal
+11	15	Suplex Counter
+11	16	Double Underhook Reversal
+11	17	Pendulum Backbreaker
+11	18	Facecrusher
+11	19	German Suplex
+11	20	Full Nelson Suplex
+11	21	Reverse Snapmare
+11	22	Arm Drag
+11	23	Piledriver
+11	24	Dropkick
+11	25	Hip Check
+11	27	Backslide
+11	28	Heel Trip
+11	29	Top Rope Double Underhook Suplex
+11	30	Knock Off Reversal
+11	31	Camel Clutch
+11	32	Boston Crab
+11	33	Foot Stomp
+11	34	Double Foot Stomp
+11	35	Flying Hip Attack
+11	36	Drop Down
+11	37	Taunt: Flails about like a madman
+12	0	Slap
+12	1	Big Slap
+12	2	Low Kick
+12	3	Side Kick
+12	4	Open Hand Slap
+12	5	Headlock Takedown
+12	6	Body Slam
+12	7	Over-the-Shoulder Throw
+12	8	Vertical Suplex to Body Slam
+12	9	Triple Knee Smash
+12	10	DDT
+12	11	Brainbuster
+12	12	Fisherman's Buster
+12	13	Armbreaker Stretch
+12	14	Arm Throw Counter
+12	15	Suplex Counter
+12	16	Knee Block Counter
+12	17	Lift-up Backdrop
+12	18	Spinning Leg Sweep
+12	19	Reverse DDT
+12	20	German Suplex
+12	21	Reverse Snapmare
+12	22	Back Body Toss
+12	23	Powerslam
+12	24	Front Leg Roundhouse
+12	25	Spinwheel Kick
+12	27	Falling Elbow Breaker
+12	28	Shove Off
+12	29	Super Fisherman Buster
+12	30	Knock Off Reversal
+12	31	Triangle Chokehold
+12	32	Knee Lock
+12	33	Jumping Elbow Drop
+12	34	Back Elbow Drop
+12	35	Tomahawk Chop
+12	36	Drop Down
+12	37	Taunt: Crosses his arms above his head
+13	0	Elbow Slam
+13	1	Stomach Punch
+13	2	Knee
+13	3	Mid Kick
+13	4	Clubbing Forearm
+13	5	Press Slam
+13	6	Headlock Takedown
+13	7	Neckbreaker
+13	8	Vertical Suplex to Body Slam
+13	9	Backbreaker
+13	10	Belly-to-Belly Takedown
+13	11	Choke Lift
+13	12	Jackknife Powerbomb
+13	13	Standing Lariat
+13	14	Neckbreaker Counter
+13	15	Suplex Counter
+13	16	Small Package
+13	17	Forearm to Kidneys
+13	18	Full Nelson Throw
+13	19	High Angle German Suplex
+13	20	Backdrop Suplex Pin
+13	21	Reverse Elbow
+13	22	Samoan Drop
+13	23	Powerslam
+13	24	3-Point Shoulder Tackle
+13	25	Flying Shoulder Block
+13	27	Falling Elbow Breaker
+13	28	Standing Lariat
+13	29	Top Rope Samoan Drop
+13	30	Double Chop Top Rope Reversal
+13	31	Reverse Chinlock
+13	32	Single Leg Boston Crab
+13	33	Jumping Elbow Drop
+13	34	Back Elbow Drop
+13	35	Flying Shoulder Block
+13	36	Drop Down
+13	37	Taunt: Raises arms
+14	0	Elbow Smash
+14	1	Big Slap
+14	2	Low Kick
+14	3	High Kick
+14	4	Forearm Smash
+14	5	Jumping Knee Lift
+14	6	Arm Toss
+14	7	Gut Wrench
+14	8	Quick Suplex
+14	9	Jumping Head Scissors
+14	10	Tombstone Piledriver
+14	11	Rolling Elbow
+14	12	Butterfly Power Bomb
+14	13	Tiger Driver
+14	14	Gutwrench Reversal
+14	15	Suplex Counter
+14	16	Rana Handstand Counter
+14	17	Spinning Elbow
+14	18	Spinning Backdrop
+14	19	Release German Suplex
+14	20	Dragon Suplex
+14	21	Reverse Elbow
+14	22	Wheel Kick to Chest
+14	23	Monkey Flip
+14	24	Spinning Dropkick
+14	25	Torpedo Clothesline
+14	27	Elbow Breaker
+14	28	Heel Trip
+14	29	Superplex
+14	30	Knock Off Reversal
+14	31	Step Over Facelock
+14	32	Single Leg Boston Crab
+14	33	Standing Backsplash
+14	34	Frog Splash
+14	35	Flying Forearm
+14	36	Leap Frog
+14	37	Taunt: Loosens up his shoulder
+14	40	Suicide Forearm Smash
+14	41	Cross Body Splash
+15	0	Elbow Smash
+15	1	Big Slap
+15	2	Low Kick
+15	3	High Kick
+15	4	Triple Kick to Face
+15	5	Backhand Chop
+15	6	Body Slam
+15	7	Over-the-Hip Throw
+15	8	Quick Suplex
+15	9	Piledriver
+15	10	Snap DDT
+15	11	5x Chop Combo
+15	12	Powerbomb
+15	13	Delayed Power Bomb
+15	14	Arm Throw Counter
+15	15	Suplex Counter
+15	16	Backtoss Counter
+15	17	Clothesline to Back
+15	18	Backdrop Suplex
+15	19	Release Tiger Suplex
+15	20	Stretch Plum
+15	21	Reverse Elbow
+15	22	Back Body Drop
+15	23	Standing Hook Kick to Jaw
+15	24	Enzuigiri Kick
+15	25	Running Axe Kick
+15	27	Triple Chop Combo
+15	28	Shove Off
+15	29	Superplex
+15	30	Push Off Reversal
+15	31	Step Over Facelock
+15	32	Boston Crab
+15	33	Soccer Kick
+15	34	Back Elbow Drop
+15	35	Double Tomahawk Chop
+15	36	Drop Down
+15	37	Taunt: Adjusts his wrist tape
+16	0	Elbow Slam
+16	1	Punch
+16	2	Knee
+16	3	Mid Kick
+16	4	Clubbing Forearm
+16	5	Headlock Takedown
+16	6	Body Slam
+16	7	Standing Powerslam
+16	8	Military Press Slam
+16	9	Backbreaker
+16	10	Inverted Atomic Drop
+16	11	Choke Lift
+16	12	Oklahoma Stampede
+16	13	Gutwrench Power Bomb
+16	14	Small Package
+16	15	Small Package
+16	16	Small Package
+16	17	Modified Backbreaker
+16	18	Backdrop Suplex
+16	19	Release Tiger Suplex
+16	20	Doctor Bomb
+16	21	Reverse Headlock Punch
+16	22	Spinebuster
+16	23	Powerslam
+16	24	3-Point Shoulder Tackle
+16	25	Shoulder Block
+16	27	Falling Shoulder Breaker
+16	28	Inverted Atomic Drop
+16	29	Superplex
+16	30	Knock Off Reversal
+16	31	RYU Special
+16	32	Boston Crab
+16	33	Elbow Drop
+16	34	Back Elbow Drop
+16	35	Flying Shoulder Block
+16	36	Drop Down
+16	37	Taunt: Football Run
+17	0	Elbow Smash
+17	1	Big Slap
+17	2	Knee
+17	3	Mid Kick
+17	4	Axehandle Smash
+17	5	Open Hand Chop
+17	6	Body Slam
+17	7	Russian Leg Sweep
+17	8	Vertical Suplex to Body Slam
+17	9	Triple Knee Smash
+17	10	Backdrop
+17	11	Suplex
+17	12	Powerbomb
+17	13	Backdrop Suplex Pin
+17	14	Escape Counter
+17	15	Suplex Counter
+17	16	Knee Block Counter
+17	17	Atomic Drop
+17	18	Lift-up Backdrop
+17	19	Abdominal Stretch Push
+17	20	Backdrop Suplex Pin
+17	21	Reverse Elbow
+17	22	Knee to Gut
+17	23	Thesz Vertical Press
+17	24	Dropkick
+17	25	High Kneelift
+17	27	Elbow Breaker
+17	28	Standing Lariat
+17	29	Super Brainbuster
+17	30	Knock Off Reversal
+17	31	Rowboat Stretch
+17	32	Boston Crab
+17	33	Foot Stomp
+17	34	Back Elbow Drop
+17	35	Knee Smash
+17	36	Drop Down
+17	37	Taunt: Shoots one arm up
+18	0	Overhand Chop
+18	1	Big Slap
+18	2	Knee
+18	3	High Kick
+18	4	Clubbing Chop
+18	5	Arm Toss
+18	6	Body Slam
+18	7	Russian Leg Sweep
+18	8	Quick Suplex
+18	9	Over-the-Hip Throw
+18	10	DDT
+18	11	Chokeslam Drop
+18	12	Tiger Bomb
+18	13	Smash Face on Knee
+18	14	Escape Counter
+18	15	Suplex Counter
+18	16	Arm Throw Counter
+18	17	Atomic Drop
+18	18	Lift-up Backdrop
+18	19	Torture Rack
+18	20	Release German Suplex
+18	21	Reverse Headlock Throw
+18	22	Back Body Drop
+18	23	Abdominal Stretch
+18	24	Enzuigiri Kick
+18	25	Jumping Giant Boot
+18	27	Falling Shoulder Breaker
+18	28	Shove Off
+18	29	Top Rope Samoan Drop
+18	30	Knock Off Reversal
+18	31	Camel Clutch
+18	32	Wishbone Stretch
+18	33	Foot Stomp
+18	34	Body Splash
+18	35	Tomahawk Chop
+18	36	Drop Down
+18	37	Taunt: Flexes biceps, stretches and turns to side
+18	40	Suicide Dive
+19	0	Slap
+19	1	Big Slap
+19	2	Knee
+19	3	Hard Leg Kick
+19	4	Backhand Chop
+19	5	Snapmare
+19	6	Body Slam
+19	7	Neckbreaker
+19	8	Quick Suplex
+19	9	Triple Knee Smash
+19	10	5x Chop Combo
+19	11	Modified Northern Lights Suplex
+19	12	Power Bomb into Rolling Cradle
+19	13	Screwdriver
+19	14	Neckbreaker Counter
+19	15	Suplex Counter
+19	16	Knee Block Counter
+19	17	Bulldog
+19	18	Lift-up Backdrop
+19	19	Release Tiger Suplex
+19	20	Pump Handle Power Bomb
+19	21	Reverse Elbow
+19	22	Hip Toss
+19	23	Falling Clothesline
+19	24	Jumping Spinning Backhand Chop
+19	25	Flying Shoulder Block
+19	27	Chop Combo
+19	28	Heel Trip to Elbow Drop
+19	29	Superplex
+19	30	Knock Off Reversal
+19	31	Reverse Chinlock
+19	32	Boston Crab
+19	33	Leg Drop
+19	34	Moonsault
+19	35	Knee Smash
+19	36	Drop Down
+19	37	Taunt: Pumps one arm downwards
+19	40	Suicide Dive
+20	0	Elbow Slam
+20	1	Palm Thrust
+20	2	Knee
+20	3	Mid Kick
+20	4	Elbow to the Back of the Head
+20	5	Axehandle Smash
+20	6	Body Slam
+20	7	Russian Leg Sweep
+20	8	Quick Suplex
+20	9	Shoulderbreaker
+20	10	DDT
+20	11	Neck Throw
+20	12	Jackknife Powerbomb
+20	13	Short-Arm Lariat
+20	14	Escape Counter
+20	15	Suplex Counter
+20	16	Small Package
+20	17	Forearm to Kidneys
+20	18	Clothesline to Back
+20	19	Sleeper Hold
+20	20	Backdrop Suplex
+20	21	Reverse Headlock Punch
+20	22	Back Body Drop
+20	23	Knee to Gut
+20	24	Dropkick
+20	25	Lariat
+20	27	Elbow Breaker
+20	28	Standing Lariat
+20	29	Superplex
+20	30	Push Off Reversal
+20	31	Rowboat Stretch
+20	32	Boston Crab
+20	33	Elbow Drop
+20	34	Back Elbow Drop
+20	35	Double Axehandle
+20	36	Drop Down
+20	37	Taunt: Horns Up!
+21	0	Elbow Smash
+21	1	Stomach Punch
+21	2	Knee
+21	3	Mid Kick
+21	4	Clubbing Forearm
+21	5	Forearm Smash
+21	6	Body Slam
+21	7	Knee Strike to Double Underhook Suplex
+21	8	Over-the-Shoulder Throw
+21	9	Falling Slam
+21	10	Side Slam
+21	11	Rolling Belly-to-Belly Suplexes
+21	12	Rolling Front Dragon Suplex
+21	13	Locomotion German Suplexes
+21	14	Double Underhook Reversal
+21	15	Arm Throw Counter
+21	16	Small Package
+21	17	Forearm to Kidneys
+21	18	Pendulum Backbreaker
+21	19	Quick Release German Suplex
+21	20	Release Full Nelson Suplex
+21	21	Reverse Snapmare
+21	22	Fallaway Slam
+21	23	Front Dragon Suplex
+21	24	Enzuigiri Kick
+21	25	Shoulder Block
+21	27	Over-the-Shoulder Throw
+21	28	Inverted Atomic Drop
+21	29	Top Rope Belly-to-Belly Suplex
+21	30	Knock Off Reversal
+21	31	Fuji Arm Bar
+21	32	Muscle German Suplex
+21	33	Elbow Drop
+21	34	Back Elbow Drop
+21	35	Double Axehandle
+21	36	Drop Down
+21	37	Taunt: Holds both arms high, then lowers them
+22	0	Overhand Chop
+22	1	Big Slap
+22	2	Knee
+22	3	High Kick
+22	4	Clubbing Chop
+22	5	Headlock Punch
+22	6	Headlock Takedown
+22	7	Russian Leg Sweep
+22	8	Suplex
+22	9	Swinging Neckbreaker
+22	10	DDT
+22	11	Smash Face on Knee
+22	12	Piledriver
+22	13	Giant Swing
+22	14	Escape Counter
+22	15	Suplex Counter
+22	16	Neckbreaker Counter
+22	17	Russian Leg Sweep
+22	18	Atomic Drop
+22	19	Standing Rowboat Stretch
+22	20	Spinning Backdrop
+22	21	Reverse Russian Leg Sweep
+22	22	Back Body Drop
+22	23	Falling Clothesline
+22	24	Standing Big Boot
+22	25	Torpedo Dropkick
+22	27	Elbow Breaker
+22	28	Shove Off
+22	29	Superplex
+22	30	Knock Off Reversal
+22	31	Reverse Chinlock
+22	32	Wishbone Stretch
+22	33	Casual Kick
+22	34	Body Splash
+22	35	Tomahawk Chop
+22	36	Drop Down
+22	37	Taunt: Raises both hands, then adjusts his tights
+23	0	Uppercut
+23	1	Big Slap
+23	2	Low Kick
+23	3	Hard Leg Kick
+23	4	Headbutt
+23	5	Headlock Punch
+23	6	Headlock Takedown
+23	7	Over-the-Hip Throw
+23	8	Waterwheel Drop
+23	9	Jumping Piledriver
+23	10	Double Wristlock Takedown
+23	11	Power Headbutt
+23	12	Armbreaker Stretch
+23	13	Body Scissors to Inverted Figure 4
+23	14	Arm Throw Counter
+23	15	Flip Counter
+23	16	Backtoss Counter
+23	17	Triple Headbutt
+23	18	Uranage Slam
+23	19	Neck Wringer
+23	20	Armbreaker Stretch
+23	21	Reverse Headlock Throw
+23	22	Drop Toe Hold
+23	23	Arm Breaker
+23	24	Lunging Headbutt
+23	25	Shoulder Block
+23	27	Headbutt
+23	28	Heel Trip to Standing Achilles Lock
+23	29	Superplex
+23	30	Push Off Reversal
+23	31	Mounted Headbutts
+23	32	Knee Lock
+23	33	Foot Stomp
+23	34	Knee Drop
+23	35	Tomahawk Chop
+23	36	Drop Down
+23	37	Taunt: Raises arms and slaps his palms together
+24	0	Backhand
+24	1	Big Slap
+24	2	Knee
+24	3	Side Kick
+24	4	Knee Smash
+24	5	Arm Drag
+24	6	Shoulder Tackle Takedown
+24	7	Gut Wrench
+24	8	Waterwheel Drop
+24	9	Knee Strike to Double Underhook Suplex
+24	10	Rolling Front Dragon Suplex
+24	11	Overhead Belly-to-Belly Suplex
+24	12	Slap Combo to Knee Strike
+24	13	Jump Spinning Kick to Back
+24	14	Gutwrench Reversal
+24	15	Flip Counter
+24	16	Double Underhook Reversal
+24	17	Jump Spin Kick to Back
+24	18	Backdrop Suplex Snap
+24	19	Armbreaker Stretch
+24	20	Full Nelson Suplex
+24	21	Reverse Elbow
+24	22	Drop Toe Hold
+24	23	Fallaway Slam
+24	24	Spinning Backhand Chop
+24	25	Rolling Heel Kick
+24	27	Reverse Arm Bar
+24	28	Back Heel Trip
+24	29	Top Rope Double Underhook Suplex
+24	30	Knock Off Reversal
+24	31	Triangle Chokehold
+24	32	Reverse Fuji Leg Bar
+24	33	Foot Stomp
+24	34	Knee Drop
+24	35	Torpedo Dropkick
+24	36	Leap Frog
+24	37	Taunt: Tomahawk chop motion
+24	41	Cross Body Splash
+25	0	Backhand
+25	1	Big Slap
+25	2	Fast Low Kick
+25	3	Side Kick
+25	4	Knee Smash
+25	5	Fireman's Carry
+25	6	Shoulder Tackle Takedown
+25	7	Over-the-Shoulder Throw
+25	8	Waterwheel Drop
+25	9	Jumping Piledriver
+25	10	Double Wristlock Takedown
+25	11	Snap Double Arm Takedown
+25	12	Takedown Armbar
+25	13	Northern Lights Suplex
+25	14	Arm Throw Counter
+25	15	Flip Counter
+25	16	Backtoss Counter
+25	17	Backdrop Suplex Snap
+25	18	Neck Wringer
+25	19	Sleeper Hold
+25	20	Headbutt to German Suplex
+25	21	Reverse Arm Drag
+25	22	Arm Drag
+25	23	Overhead Belly-to-Belly Suplex
+25	24	Standing Roundhouse
+25	25	Torpedo Dropkick
+25	27	Reverse Arm Bar
+25	28	Heel Trip
+25	29	Top Rope Belly-to-Belly Suplex
+25	30	Knock Off Reversal
+25	31	Slap Armbar
+25	32	Ankle Lock
+25	33	Foot Stomp
+25	34	Double Knee Drop
+25	35	Top Rope Dropkick
+25	36	Drop Down
+25	37	Taunt: Crosses arms at his chest and lifts them apart
+26	0	Backhand
+26	1	Short Slap
+26	2	Fast Low Kick
+26	3	Side Kick
+26	4	Standing Axe Kick
+26	5	Snapmare
+26	6	Jumping Headbutt
+26	7	Russian Leg Sweep
+26	8	Gut Wrench
+26	9	Triple Knee Smash
+26	10	Snap DDT
+26	11	Foot Sweep to Kick Combo
+26	12	Armbreaker Stretch
+26	13	Locomotion German Suplexes
+26	14	Escape Counter
+26	15	Gutwrench Reversal
+26	16	Knee Block Counter
+26	17	Triple Headbutt
+26	18	Jump Spin Kick to Back
+26	19	Scissor Takedown to Fuji Arm Bar
+26	20	Headbutt to German Suplex
+26	21	Reverse Arm Throw
+26	22	Drop Toe Hold
+26	23	Overhead Belly-to-Belly Suplex
+26	24	Spinwheel Kick
+26	25	Spinwheel Kick
+26	27	Big Elbow Breaker
+26	28	Dragon Screw Leg Whip
+26	29	Top Rope DDT
+26	30	Push Off Reversal
+26	31	Fuji Arm Bar
+26	32	Reverse Fuji Leg Bar
+26	33	Knee Drop
+26	34	Knee Drop
+26	35	Spinwheel Kick
+26	36	Drop Down
+26	37	Taunt: "Gimme the belt!"
+27	0	Uppercut
+27	1	Big Slap
+27	2	Fast Low Kick
+27	3	Side Kick
+27	4	Knee Smash
+27	5	Headlock Takedown
+27	6	Foot Sweep
+27	7	Knee Strike to Double Underhook Suplex
+27	8	Gut Wrench
+27	9	Triple Knee Smash
+27	10	Spin Kick Combo
+27	11	Single Leg Cradle Suplex
+27	12	Body Scissors to Inverted Figure 4
+27	13	Brutal Kick Combo
+27	14	Double Underhook Reversal
+27	15	Gutwrench Reversal
+27	16	Knee Block Counter
+27	17	Lift-up Backdrop
+27	18	Spinning Leg Sweep
+27	19	Standing Crossface Chickenwing
+27	20	German Suplex
+27	21	Reverse Elbow
+27	22	Overhead Belly-to-Belly Suplex
+27	23	Arm Breaker
+27	24	Rolling Kick
+27	25	Spinwheel Kick
+27	27	Headbutt
+27	28	Single Leg Cradle Suplex
+27	29	Top Rope Belly-to-Belly Suplex
+27	30	Push Off Reversal
+27	31	Reverse Chinlock
+27	32	Knee Stretch
+27	33	Kick
+27	34	Back Elbow Drop
+27	35	Knee Smash
+27	36	Drop Down
+27	37	Taunt: Shoots one arm into the air
+28	0	Slap
+28	1	Big Slap
+28	2	Low Kick
+28	3	Thigh Kick
+28	4	Knee Smash
+28	5	Fireman's Carry
+28	6	Foot Sweep
+28	7	Over-the-Hip Throw
+28	8	Waterwheel Drop
+28	9	Triple Knee Smash
+28	10	Modified Northern Lights Suplex
+28	11	Slap to Triple Kick Combo
+28	12	Four Kick Combo to Knee Strike
+28	13	Knee Strike to Double Slap to Three Kick Combo
+28	14	Arm Throw Counter
+28	15	Flip Counter
+28	16	Knee Block Counter
+28	17	Jump Spin Kick to Back
+28	18	Lift-up Backdrop
+28	19	Standing Crossface Chickenwing
+28	20	Full Nelson Suplex
+28	21	Reverse Elbow
+28	22	Fallaway Slam
+28	23	Arm Breaker
+28	24	Standing Roundhouse
+28	25	Spinwheel Kick
+28	27	Over-the-Shoulder Throw
+28	28	Jump Spinning Back Kick to Gut
+28	29	Superplex
+28	30	Knock Off Reversal
+28	31	Fuji Arm Bar
+28	32	Knee Lock
+28	33	Kick
+28	34	Knee Drop
+28	35	Torpedo Dropkick
+28	36	Drop Down
+28	37	Taunt: Foot Shuffle
+29	0	Uppercut
+29	1	Big Slap
+29	2	Knee
+29	3	High Kick
+29	4	Knee Smash
+29	5	Standing Axe Kick
+29	6	Headlock Takedown
+29	7	Gut Wrench
+29	8	Over-the-Shoulder Throw
+29	9	Over-the-Hip Throw
+29	10	Snap Double Arm Takedown
+29	11	Standing Reverse Arm Bar
+29	12	Body Scissors to Inverted Figure 4
+29	13	Arm Wrench Toss
+29	14	Gutwrench Reversal
+29	15	Arm Throw Counter
+29	16	Arm Throw Counter
+29	17	Kidney Stab
+29	18	Spinning Elbow
+29	19	Standing Crossface Chickenwing
+29	20	Scissor Takedown to Fuji Arm Bar
+29	21	Reverse Elbow
+29	22	Drop Toe Hold
+29	23	Front Dragon Suplex
+29	24	Spinning Backhand Chop
+29	25	Running Axe Kick
+29	27	Arm Wringer Takedown
+29	28	Heel Trip to Standing Achilles Lock
+29	29	Top Rope DDT
+29	30	Knock Off Reversal
+29	31	Slap Armbar
+29	32	Ankle Lock
+29	33	Kick
+29	34	Knee Drop
+29	35	Double Axehandle
+29	36	Drop Down
+29	37	Taunt: Air Slap
+30	0	Uppercut
+30	1	Big Slap
+30	2	Fast Low Kick
+30	3	Side Kick
+30	4	Hip Smash
+30	5	Arm Drag
+30	6	Shoulder Tackle Takedown
+30	7	Gut Wrench
+30	8	Waterwheel Drop
+30	9	Knee Strike to Double Underhook Suplex
+30	10	Rolling Front Dragon Suplex
+30	11	Snap Suplex
+30	12	Standing Reverse Arm Bar
+30	13	Northern Lights Suplex
+30	14	Gutwrench Reversal
+30	15	Flip Counter
+30	16	Double Underhook Reversal
+30	17	Side Slam
+30	18	Uranage Slam
+30	19	Sleeper Hold
+30	20	Release Full Nelson Suplex
+30	21	Reverse Snapmare
+30	22	Hip Toss
+30	23	Overhead Belly-to-Belly Suplex
+30	24	Standing Roundhouse
+30	25	Giant Boot
+30	27	Over-the-Shoulder Throw
+30	28	Shove Off
+30	29	Top Rope Belly-to-Belly Suplex
+30	30	Knock Off Reversal
+30	31	Reverse Chinlock
+30	32	Knee Stretch
+30	33	Foot Stomp
+30	34	Body Splash
+30	35	Torpedo Dropkick
+30	36	Drop Down
+30	37	Taunt: Crosses arms at his chest and lifts them apart
+31	0	Elbow Smash
+31	1	Short Slap
+31	2	Fast Low Kick
+31	3	Side Kick
+31	4	Knee Smash
+31	5	Headlock Punches
+31	6	Fireman's Carry
+31	7	Over-the-Hip Throw
+31	8	Over-the-Shoulder Throw
+31	9	Triple Knee Smash
+31	10	Belly-to-Belly Takedown
+31	11	German Suplex
+31	12	Foot Stomps to Kick
+31	13	Rolling Belly-to-Belly Suplexes
+31	14	Arm Throw Counter
+31	15	Arm Throw Counter
+31	16	Knee Block Counter
+31	17	Spinning Elbow
+31	18	Uranage Slam
+31	19	Standing Crossface Chickenwing
+31	20	German Suplex
+31	21	Reverse Low Blow
+31	22	Knee to Gut
+31	23	Arm Breaker
+31	24	Jump Spinning Gut Kick
+31	25	Back Elbow Smash
+31	27	Arm Wringer Takedown
+31	28	Dragon Screw Leg Whip
+31	29	Top Rope Belly-to-Belly Suplex
+31	30	Knock Off Reversal
+31	31	Mounted Punches
+31	32	Reverse Figure 4 Leglock
+31	33	Knee Drop
+31	34	Knee Drop
+31	35	Top Rope Dropkick
+31	36	Leap Frog
+31	37	Taunt: Raises his arms and pumps them four times
+31	41	Cross Body Splash
+32	0	Elbow Smash
+32	1	Short Slap
+32	2	Knee
+32	3	Side Kick
+32	4	Knee Smash
+32	5	Standing Axe Kick
+32	6	Shoulder Tackle Takedown
+32	7	Knee Strike to Double Underhook Suplex
+32	8	Waterwheel Drop
+32	9	Triple Knee Smash
+32	10	Snap Double Arm Takedown
+32	11	Single Leg Cradle Suplex
+32	12	Four Kick Combo to Knee Strike
+32	13	Foot Stomps to Kick
+32	14	Double Underhook Reversal
+32	15	Flip Counter
+32	16	Knee Block Counter
+32	17	Spinning Leg Sweep
+32	18	Reverse Suplex
+32	19	Sleeper Hold
+32	20	Headbutt to German Suplex
+32	21	Reverse Elbow
+32	22	Knee to Gut
+32	23	Sleeper Hold
+32	24	Palm Thrust
+32	25	Giant Boot
+32	27	Reverse Arm Bar
+32	28	Shove Off
+32	29	Top Rope Belly-to-Belly Suplex
+32	30	Knock Off Reversal
+32	31	Reverse Chinlock
+32	32	Ankle Lock
+32	33	Kick
+32	34	Knee Drop
+32	35	Spinwheel Kick
+32	36	Leap Frog
+32	37	Taunt: Jumping splits
+33	0	Elbow Slam
+33	1	Big Slap
+33	2	Knee
+33	3	Mid Kick
+33	4	Headbutt
+33	5	Headlock Takedown
+33	6	Body Slam
+33	7	Fall-away Slam
+33	8	Suplex
+33	9	Swinging Neckbreaker
+33	10	DDT
+33	11	Power Headbutt
+33	12	Thunderbomb
+33	13	Delayed Power Bomb
+33	14	Small Package
+33	15	Suplex Counter
+33	16	Neckbreaker Counter
+33	17	Triple Headbutt
+33	18	Facecrusher
+33	19	Abdominal Stretch
+33	20	Lift-up Backdrop
+33	21	Reverse Flip Throw
+33	22	Back Body Drop
+33	23	Inverted Atomic Drop
+33	24	Headbutt
+33	25	Back Elbow Smash
+33	27	Falling Shoulder Breaker
+33	28	Heel Trip to Elbow Drop
+33	29	Top Rope DDT
+33	30	Push Off Reversal
+33	31	RYU Special
+33	32	Single Leg Boston Crab
+33	33	Leg Drop
+33	34	Back Elbow Drop
+33	35	Tomahawk Chop
+33	36	Drop Down
+33	37	Taunt: Point to the Audience
+34	0	Elbow Smash
+34	1	Big Slap
+34	2	Knee
+34	3	Thigh Kick
+34	4	Jumping Headbutt
+34	5	Headlock Punch
+34	6	Body Slam
+34	7	Gut Wrench
+34	8	Quick Suplex
+34	9	Falling Slam
+34	10	Power Headbutt
+34	11	Brainbuster
+34	12	Facebuster
+34	13	Smash Face on Knee
+34	14	Gutwrench Reversal
+34	15	Suplex Counter
+34	16	Small Package
+34	17	Full Nelson Throw
+34	18	Bulldog
+34	19	Sleeper Hold
+34	20	Backdrop Suplex
+34	21	Reverse Headlock Punch
+34	22	Hip Toss
+34	23	Powerslam
+34	24	Headbutt
+34	25	Clothesline
+34	27	Falling Shoulder Breaker
+34	28	Heel Trip to Elbow Drop
+34	29	Superplex
+34	30	Push Off Reversal
+34	31	Mounted Headbutts
+34	32	Figure 4 Leglock
+34	33	Standing Backsplash
+34	34	Body Splash
+34	35	Flying Hip Attack
+34	36	Drop Down
+34	37	Taunt: Adjusts his wrist tape
+35	0	Elbow Smash
+35	1	Short Slap
+35	2	Fast Low Kick
+35	3	Thigh Kick
+35	4	Forearm Smash
+35	5	Jumping Knee Lift
+35	6	Body Slam
+35	7	Jumping Head Scissors
+35	8	Quick Suplex
+35	9	Falling Slam
+35	10	Jumping Tombstone
+35	11	Fisherman's Buster
+35	12	Thunderbomb
+35	13	Screwdriver
+35	14	Rana Handstand Counter
+35	15	Suplex Counter
+35	16	Small Package
+35	17	Jump Spin Kick to Back
+35	18	Backdrop Suplex Snap
+35	19	German Suplex
+35	20	Hurricanrana 
+35	21	Reverse Flip Throw
+35	22	Standing Hook Kick to Jaw
+35	23	Hurracanrana
+35	24	Spinwheel Kick
+35	25	Inverted Spinwheel Kick
+35	27	Mahistral Rolling Cradle
+35	28	Dragon Screw Leg Whip
+35	29	Top Rope Hurracanrana
+35	30	Knock Off Reversal
+35	31	Triangle Chokehold
+35	32	Knee Lock
+35	33	Standing Moonsault
+35	34	Corkscrew 450 Splash
+35	35	Spinwheel Kick
+35	36	Leap Frog
+35	37	Taunt: Opens arms then crosses them
+35	40	Running Senton
+35	41	Asai Moonsault
+36	0	Elbow Smash
+36	1	Punch
+36	2	Low Kick
+36	3	High Kick
+36	4	Spear to Throat
+36	5	Jumping Headbutt
+36	6	Shoulder Tackle Takedown
+36	7	Double Chop to Collarbone
+36	8	Jumping Head Scissors
+36	9	Neckbreaker
+36	10	Double Wristlock Takedown
+36	11	Snap Suplex
+36	12	Inverted Atomic Drop
+36	13	Hurracanrana
+36	14	Chop Block
+36	15	Rana Handstand Counter
+36	16	Neckbreaker Counter
+36	17	Facecrusher
+36	18	Atomic Drop
+36	19	Victory Roll
+36	20	German Suplex to Rolling Cradle
+36	21	Reverse Elbow
+36	22	Drop Toe Hold
+36	23	Flying Head Scissors
+36	24	Dropkick to Knee
+36	25	Knee Tackle
+36	27	Thumb to Eye
+36	28	Low Blow (Oh No Taunt)
+36	29	Top Rope Hurracanrana
+36	30	Double Chop Top Rope Reversal
+36	31	Camel Clutch
+36	32	Headbutt to Groin
+36	33	Leg Drop
+36	34	Twisting Moonsault
+36	35	Rolling Attack
+36	36	Leap Frog
+36	37	Taunt: Crouch and Point at the Sky
+36	40	Spring Board Body Splash
+36	41	Springboard Senton Backsplash
+37	0	Elbow Slam
+37	1	Punch
+37	2	Low Kick
+37	3	Mid Kick
+37	4	Backhand Chop
+37	5	Headlock Takedown
+37	6	Body Slam
+37	7	Over-the-Shoulder Throw
+37	8	Vertical Suplex to Body Slam
+37	9	Piledriver
+37	10	DDT
+37	11	Sumo Slap Combo to Rolling Heel Kick
+37	12	Powerbomb
+37	13	Thunderbomb
+37	14	Arm Throw Counter
+37	15	Suplex Counter
+37	16	Backtoss Counter
+37	17	Kneebreaker
+37	18	Clothesline to Back
+37	19	Octopus Hold
+37	20	Lift-up Backdrop
+37	21	Reverse Headlock Punch
+37	22	Back Body Drop
+37	23	Abdominal Stretch
+37	24	Enzuigiri Kick
+37	25	Clothesline
+37	27	Triple Chop Combo
+37	28	Standing Lariat
+37	29	Super Brainbuster
+37	30	Knock Off Reversal
+37	31	RYU Special
+37	32	Figure 4 Leglock
+37	33	Casual Kick
+37	34	Back Elbow Drop
+37	35	Knee Smash
+37	36	Drop Down
+37	37	Taunt: Adjusts his wrist tape
+38	0	Elbow Slam
+38	1	Palm Thrust
+38	2	Knee
+38	3	Thigh Kick
+38	4	Clubbing Forearm
+38	5	Fireman's Carry
+38	6	Foot Sweep
+38	7	Over-the-Hip Throw
+38	8	Suplex
+38	9	Falling Slam
+38	10	Axe Kick Combo
+38	11	Standing Backbreaker
+38	12	Inverted Piledriver
+38	13	Giant Swing
+38	14	Arm Throw Counter
+38	15	Suplex Counter
+38	16	Small Package
+38	17	Double Chop to Back
+38	18	Side Slam
+38	19	Uranage Slam
+38	20	High Angle German Suplex
+38	21	Reverse Headlock Throw
+38	22	Knee to Gut
+38	23	Piledriver
+38	24	Standing Axe Kick
+38	25	Jumping Giant Boot
+38	27	Falling Shoulder Breaker
+38	28	Shove Off
+38	29	Top Rope Uranage Slam
+38	30	Knock Off Reversal
+38	31	Mounted Punches
+38	32	Knee Stretch
+38	33	Kick
+38	34	Leg Drop
+38	35	Knee Smash
+38	36	Drop Down
+38	37	Taunt: Bows to opponent
+39	0	Slap
+39	1	Punch
+39	2	Low Kick
+39	3	Hard Side Kick
+39	4	Forearm Strike
+39	5	Arm Toss
+39	6	Body Slam
+39	7	Double Underhook Suplex
+39	8	Jumping Head Scissors
+39	9	Piledriver
+39	10	Jumping Tombstone
+39	11	Suplex
+39	12	Razor's Edge
+39	13	Hurracanrana
+39	14	Double Underhook Reversal
+39	15	Rana Handstand Counter
+39	16	Backtoss Counter
+39	17	Lift-up Backdrop
+39	18	Release German Suplex
+39	19	Octopus Hold
+39	20	Dragon Suplex
+39	21	Reverse Flip Throw
+39	22	Drop Toe Hold
+39	23	Tilt-a-Whirl Backbreaker
+39	24	Spinwheel Kick
+39	25	Handspring Back Splash
+39	27	Big Elbow Breaker
+39	28	Back Heel Trip
+39	29	Top Rope Hurracanrana
+39	30	Knock Off Reversal
+39	31	Mounted Punches
+39	32	Reverse Fuji Leg Bar
+39	33	Leg Drop
+39	34	Twisting Moonsault
+39	35	Senton Backsplash
+39	36	Leap Frog
+39	37	Taunt: Claps hands, raises right arm
+39	40	Cart-wheel Senton
+39	41	Asai Moonsault
+40	0	Slap
+40	1	Big Slap
+40	2	Knee
+40	3	Mid Kick
+40	4	Open Hand Chop
+40	5	Elbow to the Back of the Head
+40	6	Arm Toss
+40	7	Double Underhook Suplex
+40	8	Suplex
+40	9	Neckbreaker
+40	10	Inverted Atomic Drop
+40	11	Brainbuster
+40	12	Jump Spinning Kick to Back
+40	13	Crucifix Bomb
+40	14	Double Underhook Reversal
+40	15	Suplex Counter
+40	16	Neckbreaker Counter
+40	17	Backdrop Suplex Snap
+40	18	Reverse DDT
+40	19	German Suplex to Inverted Cradle Pin
+40	20	Hurricanrana 
+40	21	Reverse Low Blow
+40	22	Flying Head Scissors
+40	23	Spinning Backbreaker
+40	24	Spinning Dropkick
+40	25	Shoulder Block
+40	27	Elbow Breaker
+40	28	Low Blow (Flexing Taunt)
+40	29	Top Rope DDT
+40	30	Spinning DDT Reversal
+40	31	Show-off Pin
+40	32	Headbutt to Groin
+40	33	Knee Drop
+40	34	Back Elbow Drop
+40	35	Top Rope Dropkick
+40	36	Leap Frog
+40	37	Taunt: Turn and Wave
+40	40	Suicide Dive
+40	41	Cross Body Splash
+41	0	Elbow Slam
+41	1	Big Slap
+41	2	Knee
+41	3	Hard Leg Kick
+41	4	Open Hand Chop
+41	5	Short European Uppercut
+41	6	Arm Toss
+41	7	Gut Wrench
+41	8	Jumping Head Scissors
+41	9	Backbreaker
+41	10	Butterfly DDT
+41	11	Inverted Piledriver
+41	12	Crucifix Bomb
+41	13	Razor's Edge to Power Bomb
+41	14	Gutwrench Reversal
+41	15	Rana Handstand Counter
+41	16	Small Package
+41	17	Side Slam
+41	18	Backdrop Suplex Snap
+41	19	Victory Roll
+41	20	Dragon Suplex
+41	21	Reverse Flip Throw
+41	22	Overhead Belly-to-Belly Suplex
+41	23	Flying Head Scissors
+41	24	Dropkick to Knee
+41	25	Back Dropkick
+41	27	Mahistral Rolling Cradle
+41	28	Low Blow (Oh No Taunt)
+41	29	Top Rope DDT
+41	30	Push Off Reversal
+41	31	Mounted Punches
+41	32	Boston Crab
+41	33	Jumping Elbow Drop
+41	34	Double Knee Drop
+41	35	Flying Forearm
+41	36	Leap Frog
+41	37	Taunt: Raises arms and beckons opponent to come to him
+41	40	Spring Board Body Splash
+41	41	Springboard Cross Body Block
+42	0	Elbow Slam
+42	1	Big Slap
+42	2	Knee
+42	3	Mid Kick
+42	4	Spear to Throat
+42	5	Jumping Headbutt
+42	6	Arm Toss
+42	7	Russian Leg Sweep
+42	8	Quick Suplex
+42	9	Shoulderbreaker
+42	10	Tombstone Piledriver
+42	11	Chokeslam Drop
+42	12	Praying Powerbomb
+42	13	Razor's Edge
+42	14	Escape Counter
+42	15	Suplex Counter
+42	16	Small Package
+42	17	Full Nelson Throw
+42	18	Lift-up Backdrop
+42	19	Sleeper Hold
+42	20	Uranage Slam
+42	21	Reverse Elbow
+42	22	Lift Up Power Slam
+42	23	Standing Enzuigiri Slam
+42	24	Standing Thrust Kick
+42	25	Back Elbow Smash
+42	27	Thrust to Throat
+42	28	Shove Off
+42	29	Top Rope Uranage Slam
+42	30	Walk the Top Rope, Flying Punch
+42	31	Camel Clutch
+42	32	Single Leg Boston Crab
+42	33	Knee Drop
+42	34	Kamikaze Headbutt
+42	35	Kamikaze Headbutt
+42	36	Leap Frog
+42	37	Taunt: Shaolin prayer
+42	40	Cart-Wheel Moonsault
+42	41	Asai Moonsault
+43	0	Elbow Smash
+43	1	Short Slap
+43	2	Low Kick
+43	3	Thigh Kick
+43	4	Open Hand Chop
+43	5	Arm Toss
+43	6	Body Slam
+43	7	Gut Wrench
+43	8	Quick Suplex
+43	9	Jumping Head Scissors
+43	10	DDT
+43	11	Northern Lights Suplex
+43	12	Tombstone Piledriver
+43	13	Mahistral Rolling Cradle
+43	14	Gutwrench Reversal
+43	15	Suplex Counter
+43	16	Rana Handstand Counter
+43	17	Jump Spin Kick to Back
+43	18	Backdrop Suplex Snap
+43	19	Victory Roll
+43	20	German Suplex to Rolling Cradle
+43	21	Reverse Flip Throw
+43	22	Arm Drag
+43	23	Tilt-a-Whirl Backbreaker
+43	24	Jump Spinning Gut Kick
+43	25	Spinwheel Kick
+43	27	Mahistral Rolling Cradle
+43	28	Heel Trip
+43	29	Superplex
+43	30	Knock Off Reversal
+43	31	Camel Clutch
+43	32	Surfboard Stretch
+43	33	Somersault Senton Splash
+43	34	Corkscrew Backsplash
+43	35	Rolling Attack
+43	36	Leap Frog
+43	37	Taunt: "I can't hear you!"
+43	40	Suicide Dive
+43	41	Asai Moonsault
+44	0	Elbow Slam
+44	1	Palm Thrust
+44	2	Knee
+44	3	Hard Kick
+44	4	Open Hand Chop
+44	5	Snapmare
+44	6	Body Slam
+44	7	Military Press Slam
+44	8	Vertical Suplex to Body Slam
+44	9	Backbreaker
+44	10	Rolling Shoulder Throw
+44	11	Brainbuster
+44	12	Powerbomb
+44	13	Fisherman's Brainbuster
+44	14	Small Package
+44	15	Suplex Counter
+44	16	Small Package
+44	17	Facecrusher
+44	18	Full Nelson Throw
+44	19	Sleeper Hold
+44	20	Release German Suplex
+44	21	Reverse Arm Throw
+44	22	Powerslam
+44	23	Rolling Shoulder Throw
+44	24	Standing Clothesline
+44	25	Torpedo Clothesline
+44	27	Over-the-Shoulder Throw
+44	28	Standing Lariat
+44	29	Super Brainbuster
+44	30	Knock Off Reversal
+44	31	Mounted Shoulder Lock
+44	32	Reverse Fuji Leg Bar
+44	33	Foot Stomp
+44	34	Back Elbow Drop
+44	35	Flying Clothesline
+44	36	Drop Down
+44	37	Taunt: Throat Slash
+44	41	Cross Body Splash
+45	0	Uppercut
+45	1	Palm Thrust
+45	2	Knee
+45	3	Mid Kick
+45	4	Clubbing Forearm
+45	5	Press Slam
+45	6	Jumping Headbutt
+45	7	Falling Slam
+45	8	Suplex
+45	9	Shoulderbreaker
+45	10	Choke Slam
+45	11	Choke Lift
+45	12	Jackknife Powerbomb
+45	13	Standing Lariat
+45	14	Small Package
+45	15	Suplex Counter
+45	16	Small Package
+45	17	Double Chop to Back
+45	18	Backdrop Suplex
+45	19	German Back Drop
+45	20	High Angle German Suplex
+45	21	Reverse Elbow
+45	22	Fallaway Samoan Drop
+45	23	Standing Enzuigiri Slam
+45	24	Spinning Knife Edge
+45	25	Double Forearm Smash
+45	27	Falling Shoulder Breaker
+45	28	Standing Lariat
+45	29	Top Rope Samoan Drop
+45	30	Knock Off Reversal
+45	31	Dragon Sleeper
+45	32	Single Leg Boston Crab
+45	33	Big Splash
+45	34	Moonsault
+45	35	Double Axehandle
+45	36	Drop Down
+45	37	Taunt: Raises arms and poses showing biceps
+46	0	Elbow Slam
+46	1	Palm Thrust
+46	2	Knee
+46	3	Mid Kick
+46	4	Elbow to the Back of the Head
+46	5	Press Slam
+46	6	Headlock Takedown
+46	7	Double Underhook Suplex
+46	8	Vertical Suplex to Body Slam
+46	9	Shoulderbreaker
+46	10	Belly-to-Belly Takedown
+46	11	Standing Backbreaker
+46	12	Oklahoma Stampede
+46	13	Gutwrench Power Bomb
+46	14	Double Underhook Reversal
+46	15	Suplex Counter
+46	16	Small Package
+46	17	Bulldog
+46	18	Release German Suplex
+46	19	Torture Rack
+46	20	Release Full Nelson Suplex
+46	21	Reverse Headlock Throw
+46	22	Lift Up Power Slam
+46	23	Spinebuster
+46	24	Discus Punch
+46	25	Flying Shoulder Block
+46	27	Falling Shoulder Breaker
+46	28	Standing Lariat
+46	29	Top Rope Belly-to-Belly Suplex
+46	30	Knock Off Reversal
+46	31	Camel Clutch
+46	32	Boston Crab
+46	33	Delay Elbow Drop
+46	34	Back Elbow Drop
+46	35	Tomahawk Chop
+46	36	Drop Down
+46	37	Taunt: Football Run
+47	0	Elbow Slam
+47	1	Punch
+47	2	Knee
+47	3	Hard Leg Kick
+47	4	Backhand Chop
+47	5	Forearm Strike
+47	6	Snapmare
+47	7	Russian Leg Sweep
+47	8	Suplex
+47	9	Neckbreaker
+47	10	Inverted Atomic Drop
+47	11	Standing Backbreaker
+47	12	Piledriver
+47	13	Tiger Bomb
+47	14	Escape Counter
+47	15	Suplex Counter
+47	16	Neckbreaker Counter
+47	17	Forearm to Kidneys
+47	18	Kneebreaker
+47	19	Abdominal Stretch
+47	20	Spinning Backdrop
+47	21	Reverse Headlock Punch
+47	22	Back Body Toss
+47	23	Sleeper Hold
+47	24	Dropkick
+47	25	Shoulder Block
+47	27	Elbow Breaker
+47	28	Heel Trip to Elbow Drop
+47	29	Superplex
+47	30	Knock Off Reversal
+47	31	Rowboat Stretch
+47	32	Figure 4 Leglock
+47	33	Delay Elbow Drop
+47	34	Back Elbow Drop
+47	35	Double Axehandle
+47	36	Drop Down
+47	37	Taunt: Begs off from opponent
+48	0	Elbow Smash
+48	1	Punch
+48	2	Low Kick
+48	3	Hard Leg Kick
+48	4	Spear to Throat
+48	5	Snapmare
+48	6	Headlock Takedown
+48	7	Russian Leg Sweep
+48	8	Jumping Head Scissors
+48	9	Backbreaker
+48	10	Inverted Atomic Drop
+48	11	Brainbuster
+48	12	Jumping Piledriver
+48	13	Dragon Screw Leg Whip
+48	14	Escape Counter
+48	15	Rana Handstand Counter
+48	16	Small Package
+48	17	Facecrusher
+48	18	Backdrop Suplex Snap
+48	19	Neck Wringer
+48	20	Release German Suplex
+48	21	Reverse Low Blow
+48	22	Drop Toe Hold
+48	23	Sleeper Hold
+48	24	Standing Thrust Kick
+48	25	Handspring Back Elbow
+48	27	Thrust to Throat
+48	28	Low Blow (Staredown Taunt)
+48	29	Top Rope Hurracanrana
+48	30	Push Off Reversal
+48	31	Rake to Eyes
+48	32	Headbutt to Groin
+48	33	Snap Elbow Drop
+48	34	Moonsault
+48	35	Double Axehandle
+48	36	Drop Down
+48	37	Taunt: Throat-slitting gesture, then thumbs-down
+48	40	Suicide Forearm Smash
+48	41	Cross Body Splash
+49	0	Elbow Slam
+49	1	Big Slap
+49	2	Knee
+49	3	High Kick
+49	4	Clubbing Forearm
+49	5	Headlock Punches
+49	6	Body Slam
+49	7	Standing Powerslam
+49	8	Suplex
+49	9	Piledriver
+49	10	Overhead Press Slam
+49	11	Choke Lift
+49	12	Oklahoma Stampede
+49	13	Standing Backbreaker
+49	14	Small Package
+49	15	Suplex Counter
+49	16	Backtoss Counter
+49	17	Facecrusher
+49	18	Atomic Drop
+49	19	Lift-up Backdrop
+49	20	Torture Rack
+49	21	Reverse Headlock Throw
+49	22	Back Body Toss
+49	23	Knee to Gut
+49	24	Dropkick
+49	25	Forearm Smash
+49	27	Elbow Breaker
+49	28	Standing Lariat
+49	29	Super Brainbuster
+49	30	Knock Off Reversal
+49	31	Rowboat Stretch
+49	32	Knee Drop to Thigh
+49	33	Leg Drop
+49	34	Leg Drop
+49	35	Knee Smash
+49	36	Drop Down
+49	37	Taunt: Pose and bicep flex
+50	0	Elbow Slam
+50	1	Big Slap
+50	2	Knee
+50	3	Hard Kick
+50	4	Clubbing Forearm
+50	5	Fireman's Carry
+50	6	Shoulder Tackle Takedown
+50	7	Gutwrench Suplex
+50	8	Military Press Slam
+50	9	Double Underhook Power Bomb
+50	10	Overhead Belly-to-Belly Suplex
+50	11	Screwdriver
+50	12	Butterfly Power Bomb
+50	13	Gutwrench Power Bomb
+50	14	Gutwrench Reversal
+50	15	Small Package
+50	16	Double Underhook Reversal
+50	17	Pump Handle Slam
+50	18	Full Nelson Throw
+50	19	Reverse Brainbuster
+50	20	Full Nelson Suplex
+50	21	Reverse Elbow
+50	22	Tilt-a-whirl Slam
+50	23	Hurracanrana
+50	24	3-Point Shoulder Tackle
+50	25	Shoulder Block
+50	27	Over-the-Shoulder Throw
+50	28	Shove Off
+50	29	Top Rope Belly-to-Belly Suplex
+50	30	Knock Off Reversal
+50	31	Dragon Sleeper
+50	32	STF
+50	33	Elbow Drop
+50	34	Back Elbow Drop
+50	35	Double Tomahawk Chop
+50	36	Drop Down
+50	37	Taunt: Oh Yeah
+51	0	Elbow Smash
+51	1	Punch
+51	2	Knee
+51	3	Mid Kick
+51	4	Clubbing Forearm
+51	5	Forearm Strike
+51	6	Body Slam
+51	7	Military Press Slam
+51	8	Quick Suplex
+51	9	Piledriver
+51	10	DDT
+51	11	Inverted Atomic Drop
+51	12	Powerbomb
+51	13	Power Bomb into Rolling Cradle
+51	14	Small Package
+51	15	Suplex Counter
+51	16	Backtoss Counter
+51	17	Facecrusher
+51	18	Atomic Drop
+51	19	Reverse DDT
+51	20	German Suplex
+51	21	Reverse Snapmare
+51	22	Back Body Toss
+51	23	Samoan Drop
+51	24	Discus Punch
+51	25	Torpedo Clothesline
+51	27	Over-the-Shoulder Throw
+51	28	Low Blow (Oh No Taunt)
+51	29	Superplex
+51	30	Knock Off Reversal
+51	31	Mounted Punches
+51	32	Scorpion Deathlock
+51	33	Leg Drop
+51	34	Body Splash
+51	35	Flying Clothesline
+51	36	Drop Down
+51	37	Taunt: Stinger Yell
+51	40	Diving Cross Body
+51	41	Cross Body Splash
+52	0	Elbow Smash
+52	1	Stomach Punch
+52	2	Knee
+52	3	Mid Kick
+52	4	Backhand Chop
+52	5	Clubbing Forearm
+52	6	Body Slam
+52	7	Backbreaker
+52	8	Military Press Slam
+52	9	Shoulderbreaker
+52	10	Side Slam
+52	11	Standing Backbreaker
+52	12	Crucifix Bomb
+52	13	Fisherman's Brainbuster
+52	14	Small Package
+52	15	Small Package
+52	16	Small Package
+52	17	Lift-up Backdrop
+52	18	Clothesline to Back
+52	19	Standing Rowboat Stretch
+52	20	Release German Suplex
+52	21	Reverse Snapmare
+52	22	Spinebuster
+52	23	Powerslam
+52	24	Dropkick
+52	25	Flying Shoulder Block
+52	27	Falling Elbow Breaker
+52	28	Standing Lariat
+52	29	Top Rope Spinning Power Bomb
+52	30	Knock Off Reversal
+52	31	Reverse Chinlock
+52	32	Boston Crab
+52	33	Jumping Fist Drop
+52	34	Knee Drop
+52	35	Flying Clothesline
+52	36	Drop Down
+52	37	Taunt: Oh Yeah
+52	40	Diving Cross Body
+53	0	Hard Elbow Smash
+53	1	Punch
+53	2	Knee
+53	3	Hard Kick
+53	4	Jumping Headbutt
+53	5	Axehandle Smash
+53	6	Body Slam
+53	7	Gutwrench Suplex
+53	8	Quick Suplex
+53	9	Standing Powerslam
+53	10	Side Slam
+53	11	Snap Suplex
+53	12	Cradle Piledriver
+53	13	Screwdriver
+53	14	Gutwrench Reversal
+53	15	Suplex Counter
+53	16	Small Package
+53	17	Reverse Suplex
+53	18	Snap Belly-to-Back Suplex
+53	19	Reverse Brainbuster
+53	20	Headbutt to German Suplex
+53	21	Reverse Elbow
+53	22	Monkey Flip
+53	23	Spinning Backbreaker
+53	24	Lunging Headbutt
+53	25	Shoulder Block
+53	27	Falling Elbow Breaker
+53	28	Heel Trip to Elbow Drop
+53	29	Top Rope Razor's Edge
+53	30	Push Off Reversal
+53	31	Falling Headbutt
+53	32	Boston Crab
+53	33	Elbow Drop
+53	34	Diving Headbutt
+53	35	Torpedo Dropkick
+53	36	Drop Down
+53	37	Taunt: F You, Give Me the Belt
+53	41	Cross Body Splash
+54	0	Uppercut
+54	1	Big Slap
+54	2	Knee
+54	3	Thigh Kick
+54	4	Headlock Punch
+54	5	Short European Uppercut
+54	6	Headlock Takedown
+54	7	Corkscrew Head Scissors
+54	8	Vertical Suplex to Body Slam
+54	9	Double Underhook Power Bomb
+54	10	DDT
+54	11	Standing Backbreaker
+54	12	Tombstone Piledriver
+54	13	Crucifix Bomb
+54	14	Headscissor Cartwheel Counter
+54	15	Suplex Counter
+54	16	Double Underhook Reversal
+54	17	Full Nelson Throw
+54	18	Backdrop Suplex Snap
+54	19	Standing Rowboat Stretch
+54	20	Pump Handle Power Bomb
+54	21	Reverse Flip Throw
+54	22	Flying Head Scissors
+54	23	Tilt-a-whirl Slam
+54	24	Spinning Dropkick
+54	25	Flying Forearm Smash
+54	27	Backslide
+54	28	Inverted Atomic Drop
+54	29	Superplex
+54	30	Knock Off Reversal
+54	31	Rowboat Stretch
+54	32	Surfboard Stretch
+54	33	Standing Backsplash
+54	34	Body Splash
+54	35	Flying Cross Body Block
+54	36	Leap Frog
+54	37	Taunt: Raises arms above head, then takes a short bow
+54	40	Suicide Dive
+54	41	Cross Body Splash
+55	0	Elbow Slam
+55	1	Short Slap
+55	2	Knee
+55	3	High Kick
+55	4	Backhand Chop
+55	5	Forearm Strike
+55	6	Body Slam
+55	7	Double Chop to Collarbone
+55	8	Suplex
+55	9	Piledriver
+55	10	Oklahoma Stampede
+55	11	Stiff Jabs to Punch
+55	12	Tiger Bomb
+55	13	Thunderbomb
+55	14	Chop Block
+55	15	Suplex Counter
+55	16	Backtoss Counter
+55	17	Bulldog
+55	18	Kneebreaker
+55	19	Snap Belly-to-Back Suplex
+55	20	Stretch Plum
+55	21	Reverse Snapmare
+55	22	Spinebuster
+55	23	Falling Clothesline
+55	24	Discus Punch
+55	25	Back Elbow Smash
+55	27	Triple Chop Combo
+55	28	Heel Trip to Elbow Drop
+55	29	Superplex
+55	30	Push Off Reversal
+55	31	RYU Special
+55	32	Spinning Toe Hold
+55	33	Delay Elbow Drop
+55	34	Back Elbow Drop
+55	35	Double Axehandle
+55	36	Drop Down
+55	37	Taunt: Boxing shuffle
+56	0	Slap
+56	1	Big Slap
+56	2	Low Kick
+56	3	Hard Leg Kick
+56	4	Left Hook
+56	5	Snapmare
+56	6	Body Slam
+56	7	Double Underhook Suplex
+56	8	Quick Suplex
+56	9	Jumping Piledriver
+56	10	Snap DDT
+56	11	Elbow Breaker
+56	12	Stiff Right Punch
+56	13	Left/Right Hook Combo to Thigh Kick to Scissors
+56	14	Double Underhook Reversal
+56	15	Suplex Counter
+56	16	Backtoss Counter
+56	17	Lift-up Backdrop
+56	18	Neck Wringer
+56	19	Octopus Hold
+56	20	German Suplex
+56	21	Reverse Headlock Punch
+56	22	Back Body Toss
+56	23	Abdominal Stretch
+56	24	Jumping Roundhouse
+56	25	Back Dropkick
+56	27	Elbow Breaker
+56	28	Heel Trip to Standing Achilles Lock
+56	29	Super Brainbuster
+56	30	Knock Off Reversal
+56	31	Fuji Arm Bar
+56	32	Inverted Indian Deathlock
+56	33	Foot Stomp
+56	34	Knee Drop
+56	35	Tomahawk Chop
+56	36	Drop Down
+56	37	Taunt: Claps hands, beckons opponent to come closer
+57	0	Uppercut
+57	1	Short Slap
+57	2	Fast Low Kick
+57	3	Mid Kick
+57	4	Short European Uppercut
+57	5	Fireman's Carry
+57	6	Shoulder Tackle Takedown
+57	7	Knee Strike to Double Underhook Suplex
+57	8	Corkscrew Head Scissors
+57	9	Gutwrench Suplex
+57	10	Belly-to-Belly Takedown
+57	11	Standing Reverse Arm Bar
+57	12	Armbreaker Stretch
+57	13	Corkscrew Drop Toe Hold
+57	14	Double Underhook Reversal
+57	15	Headscissor Cartwheel Counter
+57	16	Gutwrench Reversal
+57	17	Backdrop Suplex Snap
+57	18	Uranage Slam
+57	19	Standing Crossface Chickenwing
+57	20	German Suplex
+57	21	Reverse Flip Throw
+57	22	Monkey Flip
+57	23	Sleeper Hold
+57	24	Dropkick to Knee
+57	25	High Kneelift
+57	27	Arm Wringer Takedown
+57	28	Snapping Dragon Screw Leg Whip
+57	29	Top Rope Uranage Slam
+57	30	Knock Off Reversal
+57	31	Mounted Shoulder Lock
+57	32	Bow and Arrow Submission
+57	33	Standing Backsplash
+57	34	Knee Drop
+57	35	Double Axehandle
+57	36	Drop Down
+57	37	Taunt: Salutes, then bows
+58	0	Elbow Slam
+58	1	Big Slap
+58	2	Knee
+58	3	Mid Kick
+58	4	Clubbing Forearm
+58	5	Jumping Headbutt
+58	6	One Handed Body Slam
+58	7	Double Chop to Collarbone
+58	8	Vertical Suplex to Body Slam
+58	9	Standing Powerslam
+58	10	Oklahoma Stampede
+58	11	Standing Backbreaker
+58	12	Inverted Piledriver
+58	13	Razor's Edge to Power Bomb
+58	14	Chop Block
+58	15	Suplex Counter
+58	16	Small Package
+58	17	Side Slam
+58	18	Uranage Slam
+58	19	Reverse Brainbuster
+58	20	Backdrop Suplex Pin
+58	21	Reverse Headlock Punch
+58	22	Powerslam
+58	23	Tombstone Piledriver
+58	24	Dropkick
+58	25	Jumping Giant Boot
+58	27	Thrust to Throat
+58	28	Standing Lariat
+58	29	Top Rope Razor's Edge
+58	30	Push Off Reversal
+58	31	Jumping Knee Drop
+58	32	Knee Drop to Thigh
+58	33	Leg Drop
+58	34	Double Knee Drop
+58	35	Tomahawk Chop
+58	36	Drop Down
+58	37	Taunt: Raises one arm high, then looks around
+59	0	Hard Elbow Smash
+59	1	Short Slap
+59	2	Fast Low Kick
+59	3	Hard Side Kick
+59	4	European Uppercut
+59	5	Snapmare
+59	6	Arm Drag
+59	7	Double Underhook Suplex
+59	8	Quick Suplex
+59	9	Corkscrew Head Scissors
+59	10	Snap DDT
+59	11	Corkscrew Drop Toe Hold
+59	12	Tombstone Piledriver
+59	13	Tiger Driver
+59	14	Double Underhook Reversal
+59	15	Suplex Counter
+59	16	Headscissor Cartwheel Counter
+59	17	Jump Spin Kick to Back
+59	18	Uranage Slam
+59	19	German Suplex
+59	20	Dragon Suplex
+59	21	Reverse Flip Throw
+59	22	Monkey Flip
+59	23	Tilt-a-Whirl Backbreaker
+59	24	Jump Spinning Back Kick
+59	25	Handspring Cross Body Block
+59	27	Mahistral Rolling Cradle
+59	28	Back Heel Trip
+59	29	Super Fisherman Buster
+59	30	Knock Off Reversal
+59	31	Jumping Knee Drop
+59	32	Spinning Toe Drop
+59	33	Somersault Senton Splash
+59	34	Twisting Moonsault
+59	35	Flying Cross Body Block
+59	36	Leap Frog
+59	37	Taunt: Sidestep shuffle
+59	40	Cartwheel Cross Body Splash
+59	41	Fake Out Suicide Dive
+60	0	Overhand Chop
+60	1	Big Slap
+60	2	Knee
+60	3	High Kick
+60	4	Jumping Headbutt
+60	5	Headlock Punch
+60	6	Body Slam
+60	7	Double Chop to Collarbone
+60	8	Suplex
+60	9	Cradle Piledriver
+60	10	Rolling Front Dragon Suplex
+60	11	Chokeslam Drop
+60	12	Smash Face on Knee
+60	13	Tiger Bomb
+60	14	Chop Block
+60	15	Suplex Counter
+60	16	Small Package
+60	17	Triple Headbutt
+60	18	Russian Leg Sweep
+60	19	Atomic Drop
+60	20	High Angle German Suplex
+60	21	Reverse Russian Leg Sweep
+60	22	Thesz Vertical Press
+60	23	Choke Lift
+60	24	Standing Big Boot
+60	25	Hip Check
+60	27	Big Elbow Breaker
+60	28	Shove Off
+60	29	Superplex
+60	30	Double Chop Top Rope Reversal
+60	31	Rake to Eyes
+60	32	Wishbone Stretch
+60	33	Big Splash
+60	34	Body Splash
+60	35	Flying Hip Attack
+60	36	Drop Down
+60	37	Taunt: Flexes biceps, stretches and turns to side

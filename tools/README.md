@@ -65,6 +65,7 @@ Set up from the translation kit (version 50b7b18). Tools marked *game* are stubs
 | [asciiscan.py](asciiscan.py) | finds names the game keeps as plain ASCII (a HUD table) and spells differently from the names CSV (`LYGER` for Liger); run it on the original and on every build |
 | [pagecheck.py](pagecheck.py) | reads guide pages as a player does: hedging ("not tested"), fact markers, author notes, template placeholders, empty brackets, bad `alt`, doubled headings; runs in `check.py` (`--allow-markers` or `private/guide.json` `{"fact_markers": true}` for an owner who wants markings) |
 | [pagedata.py](pagedata.py) | fills the JSON data block of a reference page in `docs/` (`--check`); a game's data tool calls `pagedata.write()` |
+| [guidedata.py](guidedata.py) | builds the wrestler guide's data (stats, dives, specials, moves by input group, heights/weights, promotions, select cells, unlocks, rings, music) from `extracted/` and `translation/names.json`, `guide_roster.json`, `guide_moves.tsv`, and fills `docs/guide/wrestlers/index.html` (`--check`, in `check.py`; with no page yet writes `build/work/guide_data.json`) |
 | [emu.py](emu.py) | headless runner: PCSX ReARMed core via ctypes, steps (press, poke, until, shot, save/load, dump) and live main-RAM access; HLE BIOS unless an SCPH BIOS is installed; `emu.py setup` |
 | [mipsdis.py](mipsdis.py) | *capstone*: disassembler with reference and call search |
 | [mipsim.py](mipsim.py) | a small R3000 interpreter for offline hook tests (delay slots honoured) |

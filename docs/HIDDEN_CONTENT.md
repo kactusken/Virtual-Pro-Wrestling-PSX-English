@@ -193,3 +193,8 @@ All 25 `RING/*.DAT` mats can be loaded, but not all from the Mat Select screen:
 | Debug display | Write non-zero to 0x80074d6c every frame from before the match loads (RAM poke) |
 | Costume | Press START instead of Circle on the select screen |
 | Unused intro cut | Replace the file name VPW12SON with VPW10SON in MOV.EXE's string, or swap the files on the disc |
+
+## Official Match opponent order (checked headless on the original disc, 2026-11-06)
+- Picking a promotion builds a six-entry opponent list (RAM 0x8006d9f8, copied to scratchpad 0x1f800008): bouts 1-5 are drawn at random from that promotion's own wrestlers, bout 6 is fixed (table at 0x8005d7dc). The draw is new each time you pick a promotion, and a copy of your own wrestler can be drawn.
+- Bosses (bout 6): NSW Antonio Inoki, EWF Bruiser Brody, WOU Karl Gotch, DAW Terry Funk, ILW Mil Mascaras, IAWA Dynamite Kid. SUPER HEAVY: 5 random heavyweights from any promotion, then Andre the Giant; SUPER Jr.: 5 random juniors, then Tiger Mask.
+- Not found: the code that makes the draw, and whether Rematch draws again.

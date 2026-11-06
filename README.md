@@ -73,6 +73,7 @@ the game's formats.
 | [docs/PATCHES.md](docs/PATCHES.md) | How each code patch works |
 | [docs/TECHNICAL.md](docs/TECHNICAL.md) | The game's disc layout, archives, compression, data formats, and memory map |
 | [docs/PLATFORM.md](docs/PLATFORM.md) | PS1 pitfalls for this kind of work |
+| [docs/guide/](docs/guide/index.html) | The player's guide: how to play, controls, rules, all 60 wrestlers with stats and moves, secrets (GitHub Pages: `guide/`) |
 | [docs/HIDDEN_CONTENT.md](docs/HIDDEN_CONTENT.md) | Unlockables, debug features, and unused and cut content |
 | [tools/README.md](tools/README.md) | Every tool, what it's for and how to run it |
 
