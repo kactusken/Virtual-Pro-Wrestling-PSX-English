@@ -46,7 +46,7 @@ PUBLISHER = 'Asmik Ace Entertainment'
 RELEASE_DATE = '1996-09-13'
 # The AI disclosure for README.txt, the release notes and submissions: a short generic line, e.g.
 # 'AI assisted with the translation.' make_patches.py won't make a release without it (FRAMEWORK.md section 11).
-AI_DISCLOSURE = ''
+AI_DISCLOSURE = 'AI assisted with the translation.'
 # The original the patches apply to (make_patches.py and build.py check it)
 ORIGINAL = {'size': 149998800, 'crc32': 'bcdc83c9', 'md5': '10c07a01b5780b3287102425ef642467', 'sha1': '7431095ef7713e440a7e080bf92881eeaa9dc819'}
 
