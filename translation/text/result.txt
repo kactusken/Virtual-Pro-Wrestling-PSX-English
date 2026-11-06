@@ -1,0 +1,523 @@
+# RESULT.EXE message lines: 32 bytes each (16 Japanese characters or 32 half-width letters; two letters share one 16-px cell, see docs/TECHNICAL.md "English text path").
+# limit chars=32
+# Meta on the @ line: file, address of the first line, line count (the next line is +0x21). English: one EN line per source line, padded with spaces by the build.
+
+@ R_0008a0 RESULT.EXE 0x8a0 1
+JP 　すでに勝敗は決しています。　　
+EN The result is already decided.
+
+@ R_0008c1 RESULT.EXE 0x8c1 1
+JP 　「対抗戦」を終了しますか？　　
+EN End the Team Match?
+
+@ R_0008e2 RESULT.EXE 0x8e2 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ R_000904 RESULT.EXE 0x904 2
+JP プレイヤーの参加する試合ですが、
+JP 飛ばしますか？　　　　　　　　　
+EN This match has a player in it.
+EN Skip it?
+
+@ R_000946 RESULT.EXE 0x946 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ R_000968 RESULT.EXE 0x968 1
+JP 全参加プレイヤーが敗退しました。
+EN All players are eliminated.
+
+@ R_000989 RESULT.EXE 0x989 1
+JP トーナメントを終了しますか？　　
+EN End the tournament?
+
+@ R_0009aa RESULT.EXE 0x9aa 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ R_0009cc RESULT.EXE 0x9cc 1
+JP プレイヤーが全員敗退しています。
+EN All players are eliminated.
+
+@ R_0009f0 RESULT.EXE 0x9f0 2
+JP プレイヤーが参加する試合ですが、
+JP 飛ばしますか？　　　　　　　　　
+EN This match has a player in it.
+EN Skip it?
+
+@ R_000a32 RESULT.EXE 0xa32 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ R_000a54 RESULT.EXE 0xa54 2
+JP プレイヤーが優勝する可能性はあり
+JP ません。リーグ戦を終了しますか？
+EN No player can win the league.
+EN End the league?
+
+@ R_000a96 RESULT.EXE 0xa96 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ R_000ab8 RESULT.EXE 0xab8 1
+JP プレイヤーの優勝の可能性は失われ
+EN No player can win the league
+
+@ R_000adc RESULT.EXE 0xadc 1
+JP ました。リーグ戦を終了しますか？
+EN any more. End the league?
+
+@ R_000b00 RESULT.EXE 0xb00 2
+JP 同率１位が複数のためトーナメント
+JP による「決着戦」を行います。　　
+EN Several players tied for 1st, so
+EN a tournament playoff is held.
+
+@ R_000b44 RESULT.EXE 0xb44 1
+JP 全参加プレイヤーが敗退しているの
+EN All players are eliminated,
+
+@ R_000b68 RESULT.EXE 0xb68 1
+JP で決勝トーナメントは行いません。
+EN so no final tournament is held.
+
+@ R_000b9c RESULT.EXE 0xb9c 1
+JP 残念ながら「レスラー１」の優勝の
+EN Sorry, but Wrestler １ can't
+
+@ R_000bbd RESULT.EXE 0xbbd 1
+JP 可能性はなくなりました。　　　　
+EN win the title any more.
+
+@ R_000be0 RESULT.EXE 0xbe0 3
+JP この試合に「レスラー０」が勝利　
+JP すると、「レスラー０」の優勝の　
+JP 可能性はなくなります。　　　　　
+EN In case of Wrestler ０ winning,
+EN in turn, Wrestler ０ cannot
+EN win the title any more.
+
+@ R_000ca8 RESULT.EXE 0xca8 2
+JP すると、「レスラー０」の優勝が　
+JP 決定します。　　　　　　　　　　
+EN in turn, Wrestler ０ becomes
+EN the champion.
+
+@ R_000cea RESULT.EXE 0xcea 2
+JP すると、プレイヤーによる優勝の　
+JP 可能性はなくなります。　　　　　
+EN no player will be able to
+EN win the title any more.
+
+@ R_000d2c RESULT.EXE 0xd2c 4
+JP この試合の結果が「引き分け」に　
+JP 終わると「レスラー０」の優勝の　
+JP 終わると「レスラー０」の優勝が　
+JP 決定します。　　　　　　　　　　
+EN If this match ends in a draw,
+EN and then Wrestler ０ cannot
+EN and then Wrestler ０ becomes
+EN the champion.
+
+@ R_000db0 RESULT.EXE 0xdb0 2
+JP 終わると、プレイヤーによる優勝の
+JP 可能性はなくなります。　　　　　
+EN no player will be able to
+EN win the title any more.
+
+@ R_02d718 RESULT.EXE 0x2d718 1
+JP 「１Ｐチーム」の勝利です。　　　
+EN "1P Team" wins.
+
+@ R_02d739 RESULT.EXE 0x2d739 1
+JP 　　　何かボタンを押して下さい。
+EN Please press any button.
+
+@ R_02d75a RESULT.EXE 0x2d75a 1
+JP 「２Ｐチーム」の勝利です。　　　
+EN "2P Team" wins.
+
+@ R_02d77b RESULT.EXE 0x2d77b 1
+JP 　　　何かボタンを押して下さい。
+EN Please press any button.
+
+@ R_02d79c RESULT.EXE 0x2d79c 1
+JP 「ＣＯＭチーム」の勝利です。　　
+EN "COM Team" wins.
+
+@ R_02d7bd RESULT.EXE 0x2d7bd 1
+JP 　　　何かボタンを押して下さい。
+EN Please press any button.
+
+@ R_02d7de RESULT.EXE 0x2d7de 2
+JP 「引き分け」のため、選択レスラー
+JP による「決着戦」を行います。　　
+EN Draw! The chosen wrestlers will
+EN fight a tiebreaker.
+
+@ R_02d820 RESULT.EXE 0x2d820 2
+JP 「引き分け」のため、レフリーに　
+JP よる「判定」を行います。　　　　
+EN Draw! The referee will decide
+EN by judgment.
+@ R_02d8a4 RESULT.EXE 0x2d8a4 2
+JP 　　「超新星スターガイア」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N1>
+EN is the champion!
+
+@ R_02d8e6 RESULT.EXE 0x2d8e6 2
+JP 　　「マスクド・ヘリオス」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N2>
+EN is the champion!
+
+@ R_02d928 RESULT.EXE 0x2d928 2
+JP 　「藤神　リュウ」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N3>
+EN is the champion!
+
+@ R_02d96a RESULT.EXE 0x2d96a 2
+JP 　「リッキー闘州」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N4>
+EN is the champion!
+
+@ R_02d9ac RESULT.EXE 0x2d9ac 2
+JP 　　「佐伯　啓介」の優勝です　　
+JP 　　　　　　　　　　　　　　　　
+EN <N5>
+EN is the champion!
+
+@ R_02d9ee RESULT.EXE 0x2d9ee 2
+JP 　「天王斬　浩志」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N6>
+EN is the champion!
+
+@ R_02da30 RESULT.EXE 0x2da30 2
+JP 「ダークジャガー」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N7>
+EN is the champion!
+
+@ R_02da72 RESULT.EXE 0x2da72 2
+JP 　　「武　弘樹」の優勝です。　　
+JP 　　　　　　　　　　　　　　　　
+EN <N8>
+EN is the champion!
+
+@ R_02dab4 RESULT.EXE 0x2dab4 2
+JP 　　「仁藤　成史」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N9>
+EN is the champion!
+
+@ R_02daf6 RESULT.EXE 0x2daf6 2
+JP 　　「東野　正善」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N10>
+EN is the champion!
+
+@ R_02db38 RESULT.EXE 0x2db38 2
+JP 　「小中　三四郎」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N11>
+EN is the champion!
+
+@ R_02db7a RESULT.EXE 0x2db7a 2
+JP 　　「張本　真司」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N12>
+EN is the champion!
+
+@ R_02dbbc RESULT.EXE 0x2dbbc 2
+JP 　　「ブラッド・ゴードン」　　　
+JP 　　　　　の優勝です　　　　　　
+EN <N13>
+EN is the champion!
+
+@ R_02dbfe RESULT.EXE 0x2dbfe 2
+JP 　　「三河　雅治」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N14>
+EN is the champion!
+
+@ R_02dc40 RESULT.EXE 0x2dc40 2
+JP 　　「蒲田　俊之」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N15>
+EN is the champion!
+
+@ R_02dc82 RESULT.EXE 0x2dc82 2
+JP 　　「スミス・リーアムズ」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N16>
+EN is the champion!
+
+@ R_02dcc4 RESULT.EXE 0x2dcc4 2
+JP 　　「ボンブ古田」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N17>
+EN is the champion!
+
+@ R_02dd06 RESULT.EXE 0x2dd06 2
+JP 　　「田口　明雄」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N18>
+EN is the champion!
+
+@ R_02dd48 RESULT.EXE 0x2dd48 2
+JP 　　「土橋　圭太」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N19>
+EN is the champion!
+
+@ R_02dd8a RESULT.EXE 0x2dd8a 2
+JP 　　　「スパン・ハリスン」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N20>
+EN is the champion!
+
+@ R_02ddcc RESULT.EXE 0x2ddcc 2
+JP 　　「ジミー・ブライアント」　　
+JP 　　　　　の優勝です。　　　　　
+EN <N21>
+EN is the champion!
+
+@ R_02de0e RESULT.EXE 0x2de0e 2
+JP 　「ガリバー番場」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N22>
+EN is the champion!
+
+@ R_02de50 RESULT.EXE 0x2de50 2
+JP 　　「海原　善行」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N23>
+EN is the champion!
+
+@ R_02de92 RESULT.EXE 0x2de92 2
+JP 　　「浦木　敏克」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N24>
+EN is the champion!
+
+@ R_02ded4 RESULT.EXE 0x2ded4 2
+JP 　「須崎　ひかる」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N25>
+EN is the champion!
+
+@ R_02df16 RESULT.EXE 0x2df16 2
+JP 　　「山咲　和也」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N26>
+EN is the champion!
+
+@ R_02df58 RESULT.EXE 0x2df58 2
+JP 　「　田　あきら」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N27>
+EN is the champion!
+
+@ R_02df9a RESULT.EXE 0x2df9a 2
+JP 　　「高間　憲彦」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N28>
+EN is the champion!
+
+@ R_02dfdc RESULT.EXE 0x2dfdc 2
+JP 「ニコライ・マン」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N29>
+EN is the champion!
+
+@ R_02e01e RESULT.EXE 0x2e01e 2
+JP 　　「ケビン・シャーロック」　　
+JP 　　　　　　の優勝です。　　　　
+EN <N30>
+EN is the champion!
+
+@ R_02e060 RESULT.EXE 0x2e060 2
+JP 　　「二百　勝男」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N31>
+EN is the champion!
+
+@ R_02e0a2 RESULT.EXE 0x2e0a2 2
+JP 　「ボウ・ラッセン」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N32>
+EN is the champion!
+
+@ R_02e0e4 RESULT.EXE 0x2e0e4 2
+JP 　「大位多　悦司」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N33>
+EN is the champion!
+
+@ R_02e126 RESULT.EXE 0x2e126 2
+JP 　「パルチザン五頭」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N34>
+EN is the champion!
+
+@ R_02e168 RESULT.EXE 0x2e168 2
+JP 　　　「ハヤテ」の優勝です。　　
+JP 　　　　　　　　　　　　　　　　
+EN <N35>
+EN is the champion!
+
+@ R_02e1aa RESULT.EXE 0x2e1aa 2
+JP 　　「タ・ブー」の優勝です。　　
+JP 　　　　　　　　　　　　　　　　
+EN <N36>
+EN is the champion!
+
+@ R_02e1ec RESULT.EXE 0x2e1ec 2
+JP 　　「炎　龍一郎」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N37>
+EN is the champion!
+
+@ R_02e22e RESULT.EXE 0x2e22e 2
+JP 　　「北斗　光輝」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N38>
+EN is the champion!
+
+@ R_02e270 RESULT.EXE 0x2e270 2
+JP 　　「忍者タスケ」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N39>
+EN is the champion!
+
+@ R_02e2b2 RESULT.EXE 0x2e2b2 2
+JP 　　　「スカル・エルウィン」　　
+JP 　　　　　　の優勝です。　　　　
+EN <N40>
+EN is the champion!
+
+@ R_02e2f4 RESULT.EXE 0x2e2f4 2
+JP 「ＭＩＴＩたかもく」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N41>
+EN is the champion!
+
+@ R_02e336 RESULT.EXE 0x2e336 2
+JP 　　「新谷　一生」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N42>
+EN is the champion!
+
+@ R_02e378 RESULT.EXE 0x2e378 2
+JP 　　「アストラ・ドラグーン」　　
+JP 　　　　　の優勝です。　　　　　
+EN <N43>
+EN is the champion!
+
+@ R_02e3ba RESULT.EXE 0x2e3ba 2
+JP 　　「ハイパー・レイザー」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N44>
+EN is the champion!
+
+@ R_02e3fc RESULT.EXE 0x2e3fc 2
+JP 「キラー・ブーマー」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N45>
+EN is the champion!
+
+@ R_02e43e RESULT.EXE 0x2e43e 2
+JP 　　「ミック・シュナイダー」　　
+JP 　　　　　の優勝です。　　　　　
+EN <N46>
+EN is the champion!
+
+@ R_02e480 RESULT.EXE 0x2e480 2
+JP 　　「ニック・フライヤー」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N47>
+EN is the champion!
+
+@ R_02e4c2 RESULT.EXE 0x2e4c2 2
+JP 「ブラッディ・ムサ」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N48>
+EN is the champion!
+
+@ R_02e504 RESULT.EXE 0x2e504 2
+JP 「ホーク・リーガン」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N49>
+EN is the champion!
+
+@ R_02e546 RESULT.EXE 0x2e546 2
+JP 　「スタッド・シュナイダー」　　
+JP 　　　　　の優勝です。　　　　　
+EN <N50>
+EN is the champion!
+
+@ R_02e588 RESULT.EXE 0x2e588 2
+JP 　　「スマッシュ」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N51>
+EN is the champion!
+
+@ R_02e5ca RESULT.EXE 0x2e5ca 2
+JP 「ドク・レイザー」の優勝です。　
+JP 　　　　　　　　　　　　　　　　
+EN <N52>
+EN is the champion!
+
+@ R_02e60c RESULT.EXE 0x2e60c 2
+JP 　　「ショットガン・ボーイ」　　
+JP 　　　　　の優勝です。　　　　　
+EN <N53>
+EN is the champion!
+
+@ R_02e64e RESULT.EXE 0x2e64e 2
+JP 「ザ・マスカレード」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N54>
+EN is the champion!
+
+@ R_02e690 RESULT.EXE 0x2e690 2
+JP 　「テディ・ラング」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N55>
+EN is the champion!
+
+@ R_02e6d2 RESULT.EXE 0x2e6d2 2
+JP 　　「ストロンゲスト闘鬼」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N56>
+EN is the champion!
+
+@ R_02e714 RESULT.EXE 0x2e714 2
+JP 「ミスター・ゴッド」の優勝です。
+JP 　　　　　　　　　　　　　　　　
+EN <N57>
+EN is the champion!
+
+@ R_02e756 RESULT.EXE 0x2e756 2
+JP 　「モンスター・ブルドッグ」　　
+JP 　　　　　の優勝です。　　　　　
+EN <N58>
+EN is the champion!
+
+@ R_02e798 RESULT.EXE 0x2e798 2
+JP 　　「スーパー・ジャガー」　　　
+JP 　　　　　の優勝です。　　　　　
+EN <N59>
+EN is the champion!
+
+@ R_02e7da RESULT.EXE 0x2e7da 2
+JP 　「アンディ・ザ・ギガント」　　
+JP 　　　　　の優勝です。　　　　　
+EN <N60>
+EN is the champion!
+

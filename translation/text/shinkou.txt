@@ -1,0 +1,833 @@
+# SHINKOU.EXE message lines: 32 bytes each (16 Japanese characters or 32 half-width letters; two letters share one 16-px cell, see docs/TECHNICAL.md "English text path").
+# limit chars=32
+# Meta on the @ line: file, address of the first line, line count (the next line is +0x21). English: one EN line per source line, padded with spaces by the build.
+
+@ S_000824 SHINKOU.EXE 0x824 2
+JP 保存する場所を選択して　　　　　
+JP 下さい。　　　　　　　　　　　　
+EN Please select where
+EN to save.
+
+@ S_000866 SHINKOU.EXE 0x866 2
+JP 賭けるベルトを選択して　　　　　
+JP 下さい。　　　　　　　　　　　　
+EN Please select the belt
+EN to bet.
+
+@ S_0008a8 SHINKOU.EXE 0x8a8 2
+JP １Ｐ側の賭けるベルトを　　　　　
+JP 選択して下さい。　　　　　　　　
+EN 1P: Select the belt
+EN you will bet.
+
+@ S_0008ea SHINKOU.EXE 0x8ea 2
+JP 　ボタンでベルトの歴代　　　　　
+JP 保持者を表示します。　　　　　　
+EN   button: view the
+EN belt's past holders.
+
+@ S_00092c SHINKOU.EXE 0x92c 1
+JP ２Ｐ側の賭けるベルトを　　　　　
+EN 2P: Select the belt
+
+@ S_000950 SHINKOU.EXE 0x950 1
+JP 選択して下さい。　　　　　　　　
+EN you will bet.
+
+@ S_000974 SHINKOU.EXE 0x974 2
+JP 獲得したベルトを保存せずに終了　
+JP しますが、よろしいですか？　　　
+EN Quit without saving the belt
+EN you won. Are you sure?
+
+@ S_0009b6 SHINKOU.EXE 0x9b6 2
+JP このベルトデータに「上書き」して
+JP もよろしいですか？　　　　　　　
+EN Really overwrite this belt
+EN data?
+
+@ S_0009f8 SHINKOU.EXE 0x9f8 2
+JP このベルトデータを「削除」しても
+JP よろしいですか？　　　　　　　　
+EN Really delete this belt
+EN data?
+
+@ S_000a3c SHINKOU.EXE 0xa3c 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_000a78 SHINKOU.EXE 0xa78 1
+JP 第　　代　　　　　　　　　　王者
+EN #                       Champion
+
+@ S_000ac0 SHINKOU.EXE 0xac0 1
+JP 　　　　　＜歴代保持者＞　　　　
+EN           [Past Holders]
+
+@ S_000ae4 SHINKOU.EXE 0xae4 1
+JP 第　　代　　　　　　　　　　　　
+EN #
+
+@ S_000bfc SHINKOU.EXE 0xbfc 2
+JP １Ｐ側のメモリーカードが初期化　
+JP されていません。初期化しますか？
+EN The 1P Memory Card is not
+EN formatted. Format it now?
+
+@ S_000c3e SHINKOU.EXE 0xc3e 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_000c5f SHINKOU.EXE 0xc5f 2
+JP ２Ｐ側のメモリーカードが初期化　
+JP されていません。初期化しますか？
+EN The 2P Memory Card is not
+EN formatted. Format it now?
+
+@ S_000ca1 SHINKOU.EXE 0xca1 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_000cc4 SHINKOU.EXE 0xcc4 2
+JP １Ｐ側のメモリーカードには空き　
+JP ブロックがありません。　　　　　
+EN The 1P Memory Card has no
+EN free blocks.
+
+@ S_000d06 SHINKOU.EXE 0xd06 2
+JP 誠に残念ながら１Ｐ側のメモリー　
+JP カードは壊れています。　　　　　
+EN We're sorry, the 1P Memory
+EN Card is damaged.
+
+@ S_000d48 SHINKOU.EXE 0xd48 2
+JP 誠に残念ながら１Ｐ側のメモリー　
+JP カードはデータが壊れています。　
+EN We're sorry, the data on the
+EN 1P Memory Card is corrupted.
+
+@ S_000d8a SHINKOU.EXE 0xd8a 2
+JP ２Ｐ側のメモリーカードには空き　
+JP ブロックがありません。　　　　　
+EN The 2P Memory Card has no
+EN free blocks.
+
+@ S_000dcc SHINKOU.EXE 0xdcc 2
+JP 誠に残念ながら２Ｐ側のメモリー　
+JP カードは壊れています。　　　　　
+EN We're sorry, the 2P Memory
+EN Card is damaged.
+
+@ S_000e0e SHINKOU.EXE 0xe0e 2
+JP 誠に残念ながら２Ｐ側のメモリー　
+JP カードはデータが壊れています。　
+EN We're sorry, the data on the
+EN 2P Memory Card is corrupted.
+
+@ S_000e50 SHINKOU.EXE 0xe50 2
+JP 初期化されているメモリーカードを
+JP 接続して下さい。　　　　　　　　
+EN Please insert a Memory Card
+EN that has been formatted.
+
+@ S_000eec SHINKOU.EXE 0xeec 2
+JP 団体を問わずヘビー級世界最強を　
+JP 決定する選手権。　　　　　　　　
+EN Decides the world's best
+EN Heavyweight, any promotion.
+
+@ S_000f30 SHINKOU.EXE 0xf30 2
+JP 団体を問わずＪｒヘビー級世界最強
+JP を決定する選手権。　　　　　　　
+EN Decides the world's best Jr.
+EN Heavyweight, any promotion.
+
+@ S_00130c SHINKOU.EXE 0x130c 2
+JP 獲得したベルトを保存せずに終了し
+JP ますが、よろしいですか？　　　　
+EN Quit without saving the belt
+EN you won. Are you sure?
+
+@ S_00134e SHINKOU.EXE 0x134e 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_0457f4 SHINKOU.EXE 0x457f4 2
+JP 各団体のレスラーを倒し、「６冠　
+JP 統一王者」を目指す１Ｐモード。　
+EN Beat every group's wrestlers to
+EN be Six-Crown Champ. 1P mode.
+
+@ S_045836 SHINKOU.EXE 0x45836 2
+JP ７人の強豪に勝ち抜き、自分だけの
+JP ベルトを手に入れる１Ｐモード。　
+EN Win seven bouts in a row to
+EN earn your own belt. 1P mode.
+
+@ S_045878 SHINKOU.EXE 0x45878 2
+JP 通常の対戦を行うモード。「コン　
+JP ピュータ」との対戦も可能です。　
+EN A standard match mode. You can
+EN also play against the computer.
+
+@ S_0458ba SHINKOU.EXE 0x458ba 2
+JP 双方５人ずつのレスラーを選び、　
+JP チームで対戦する団体戦モード。　
+EN Pick 5 wrestlers per side for
+EN a team battle mode.
+
+@ S_0458fc SHINKOU.EXE 0x458fc 2
+JP ８人まで参加可能な勝ち抜き戦モー
+JP ド。「ベルト」も賭けられます。　
+EN Elimination mode for up to 8
+EN players. Belts can be bet too.
+
+@ S_04593e SHINKOU.EXE 0x4593e 2
+JP ８人まで参加可能な総当たり戦モー
+JP ド。「ベルト」も賭けられます。　
+EN Round-robin mode for up to 8
+EN players. Belts can be bet too.
+
+@ S_045980 SHINKOU.EXE 0x45980 2
+JP メモリーカード上の「ベルト」を　
+JP 賭けて闘う対戦専用のモード。　　
+EN A versus-only mode where you
+EN bet Memory Card belts.
+
+@ S_0459c2 SHINKOU.EXE 0x459c2 2
+JP プレイヤー１とプレイヤー２で　　
+JP 対戦を行います。　　　　　　　　
+EN A match between Player 1 and
+EN Player 2.
+
+@ S_045a04 SHINKOU.EXE 0x45a04 2
+JP プレイヤー１とコンピュータで　　
+JP 対戦を行います。　　　　　　　　
+EN A match between Player 1 and
+EN the computer.
+
+@ S_045a46 SHINKOU.EXE 0x45a46 2
+JP 相手チームの５人全員を先に倒した
+JP 側が勝利する対戦方式。　　　　　
+EN The side that first defeats all
+EN 5 opposing wrestlers wins.
+
+@ S_045a88 SHINKOU.EXE 0x45a88 2
+JP 決められた対戦順に闘い、先に３勝
+JP した側が勝利する対戦方式。　　　
+EN Fight in a set order; the side
+EN that wins 3 first takes it.
+
+@ S_045aca SHINKOU.EXE 0x45aca 2
+JP 「プロレスこそ最強」を旗印に掲げ
+JP る人気と実力を備えた正当派団体。
+EN A mainstream group of skill and
+EN fame: "Pro wrestling is best".
+
+@ S_045b0c SHINKOU.EXE 0x45b0c 2
+JP 威厳と格式を重んじる日本プロレス
+JP 界における老舗的団体。　　　　　
+EN A long-established Japanese
+EN pro wrestling group of dignity.
+
+@ S_045b4e SHINKOU.EXE 0x45b4e 2
+JP 妥協のない究極のレスリングを目指
+JP す格闘技色の強い革新的団体。　　
+EN An innovative shoot-style group
+EN that seeks the ultimate match.
+
+@ S_045b90 SHINKOU.EXE 0x45b90 2
+JP 全く新しいデスマッチを提唱する　
+JP 超過激派団体。　　　　　　　　　
+EN An ultra-extreme group that
+EN proposes brand-new deathmatches.
+
+@ S_045bd2 SHINKOU.EXE 0x45bd2 2
+JP 「地方に根ざすプロレス」を原点に
+JP 和製ルチャを体現する異色団体。　
+EN "Regional pro wrestling" roots,
+EN a unique home-grown lucha group.
+
+@ S_045c14 SHINKOU.EXE 0x45c14 2
+JP 本国アメリカで絶大な人気を誇る　
+JP 全世界規模の国際的団体。　　　　
+EN A global group hugely popular
+EN in its home country, the USA.
+
+@ S_045c56 SHINKOU.EXE 0x45c56 2
+JP 団体を問わずヘビー級世界最強を　
+JP 決定する選手権。　　　　　　　　
+EN Decides the world's best
+EN Heavyweight, any promotion.
+
+@ S_045c98 SHINKOU.EXE 0x45c98 2
+JP 団体を問わずＪｒヘビー級世界最強
+JP を決定する選手権。　　　　　　　
+EN Decides the world's best Jr.
+EN Heavyweight, any promotion.
+
+@ S_045cda SHINKOU.EXE 0x45cda 2
+JP メモリーカード内に記録された　　
+JP ゲームデータを読み込みます。　　
+EN Loads game data saved on a
+EN Memory Card.
+
+@ S_045d1c SHINKOU.EXE 0x45d1c 2
+JP メモリーカードに現在プレイ中の　
+JP ゲームデータを保存します。　　　
+EN Saves the game data you are
+EN playing to a Memory Card.
+
+@ S_045d5e SHINKOU.EXE 0x45d5e 2
+JP メモリーカード上の「ベルト」の　
+JP データを見ることができます。　　
+EN View the belt data stored on
+EN the Memory Card.
+
+@ S_045da0 SHINKOU.EXE 0x45da0 2
+JP 難易度など、ゲーム中の各種設定を
+JP 行います。　　　　　　　　　　　
+EN Change various game settings,
+EN such as the difficulty.
+
+@ S_045de2 SHINKOU.EXE 0x45de2 1
+JP 試合中のルールを設定します。　　
+EN Set the rules for matches.
+
+@ S_045e24 SHINKOU.EXE 0x45e24 1
+JP タイトルに戻ります。　　　　　　
+EN Return to the title.
+
+@ S_045e66 SHINKOU.EXE 0x45e66 2
+JP １Ｐ側のメモリーカードを　　　　
+JP 「ロード」します。　　　　　　　
+EN Load from the 1P
+EN Memory Card.
+
+@ S_045ea8 SHINKOU.EXE 0x45ea8 2
+JP ２Ｐ側のメモリーカードを　　　　
+JP 「ロード」します。　　　　　　　
+EN Load from the 2P
+EN Memory Card.
+
+@ S_045eea SHINKOU.EXE 0x45eea 2
+JP １Ｐ側のメモリーカードに　　　　
+JP 「セーブ」します。　　　　　　　
+EN Save to the 1P
+EN Memory Card.
+
+@ S_045f2c SHINKOU.EXE 0x45f2c 2
+JP ２Ｐ側のメモリーカードに　　　　
+JP 「セーブ」します。　　　　　　　
+EN Save to the 2P
+EN Memory Card.
+
+@ S_045f6e SHINKOU.EXE 0x45f6e 1
+JP オプション画面に戻ります。　　　
+EN Return to the Options screen.
+
+@ S_045fb0 SHINKOU.EXE 0x45fb0 2
+JP コンピュータが操るレスラーの強さ
+JP を設定します。　　　　　　　　　
+EN Set the strength of the
+EN computer-controlled wrestlers.
+
+@ S_045ff2 SHINKOU.EXE 0x45ff2 2
+JP 試合中にレスラーの精神力を表示　
+JP するかどうかを設定します。　　　
+EN Set whether wrestler spirit is
+EN shown during matches.
+
+@ S_046034 SHINKOU.EXE 0x46034 2
+JP 試合中に大技が決まった時、視点を
+JP 切り替えるかどうかを設定します。
+EN Set whether the view changes
+EN when a big move connects.
+
+@ S_046076 SHINKOU.EXE 0x46076 2
+JP 試合中のＢＧＭ及び効果音のステレ
+JP オ／モノラルを切り替えます。　　
+EN Switch match BGM and sound FX
+EN between stereo and mono.
+
+@ S_0460b8 SHINKOU.EXE 0x460b8 1
+JP オプション画面に戻ります。　　　
+EN Return to the Options screen.
+
+@ S_0460fa SHINKOU.EXE 0x460fa 2
+JP 試合を行うリングのマットを選択　
+JP します。　　　　　　　　　　　　
+EN Select the ring mat for
+EN the match.
+
+@ S_04613c SHINKOU.EXE 0x4613c 1
+JP １試合の制限時間を設定します。　
+EN Set the time limit per match.
+
+@ S_04617e SHINKOU.EXE 0x4617e 1
+JP 勝敗を決める試合数を設定します。
+EN Set the falls needed to win.
+
+@ S_0461c0 SHINKOU.EXE 0x461c0 2
+JP リングアウト時の制限カウントの　
+JP ＯＮ・ＯＦＦを設定します。　　　
+EN Turn the ring-out count limit
+EN ON or OFF.
+
+@ S_046202 SHINKOU.EXE 0x46202 2
+JP ロープ際でのフォール及び関節技の
+JP 無効のＯＮ・ＯＦＦを設定します。
+EN Rope break ON/OFF (no pins or
+EN holds near the ropes).
+
+@ S_046244 SHINKOU.EXE 0x46244 2
+JP レフリーの判断によるＴＫＯの　　
+JP ＯＮ・ＯＦＦを設定します。　　　
+EN Turn referee-called TKOs
+EN ON or OFF.
+
+@ S_046286 SHINKOU.EXE 0x46286 2
+JP 弱いＣＯＭキャラと闘えます。格闘
+JP ゲーム初心者や女の子におすすめ。
+EN Weaker COM wrestlers. For
+EN fighting-game beginners.
+
+@ S_0462c8 SHINKOU.EXE 0x462c8 2
+JP 標準的な強さのＣＯＭキャラと闘え
+JP ます。まずはここから挑戦しよう！
+EN Average-strength COM wrestlers.
+EN Start here!
+
+@ S_04630a SHINKOU.EXE 0x4630a 2
+JP 強いＣＯＭキャラと闘えます。格闘
+JP マニアやゲーマーにおすすめ。　　
+EN Strong COM wrestlers. For
+EN fans and hardcore gamers.
+
+@ S_04634c SHINKOU.EXE 0x4634c 2
+JP 試合を行うリングマットがランダム
+JP で選択されます。　　　　　　　　
+EN The ring mat is chosen
+EN at random.
+
+@ S_04638e SHINKOU.EXE 0x4638e 2
+JP 「ネオ・ストロング・レスリング」
+JP のリングマットです。　　　　　　
+EN Neo Strong Wrestling's
+EN ring mat.
+
+@ S_0463d0 SHINKOU.EXE 0x463d0 2
+JP 「帝国プロレス」のリングマット　
+JP です。　　　　　　　　　　　　　
+EN Empire Pro Wrestling's
+EN ring mat.
+
+@ S_046412 SHINKOU.EXE 0x46412 2
+JP 「レッスル・ユニバース」のリング
+JP マットです。　　　　　　　　　　
+EN Wrestle Universe's
+EN ring mat.
+
+@ S_046454 SHINKOU.EXE 0x46454 2
+JP 「デッド・オア・アライブ」の　　
+JP リングマットです。　　　　　　　
+EN Dead or Alive's
+EN ring mat.
+
+@ S_046496 SHINKOU.EXE 0x46496 2
+JP 「ろうかるプロレス」のリング　　
+JP マットです。　　　　　　　　　　
+EN Local Wrestling's
+EN ring mat.
+
+@ S_0464d8 SHINKOU.EXE 0x464d8 2
+JP 「インター・アメリカン」のリング
+JP マットです。　　　　　　　　　　
+EN Inter-American's
+EN ring mat.
+
+@ S_04651a SHINKOU.EXE 0x4651a 1
+JP 時間無制限で試合を行います。　　
+EN Matches have no time limit.
+
+@ S_04655c SHINKOU.EXE 0x4655c 1
+JP 制限時間５分で試合を行います。　
+EN Matches have a 5-minute limit.
+
+@ S_04659e SHINKOU.EXE 0x4659e 1
+JP 制限時間１０分で試合を行います。
+EN Matches have a 10-minute limit.
+
+@ S_0465e0 SHINKOU.EXE 0x465e0 1
+JP 制限時間３０分で試合を行います。
+EN Matches have a 30-minute limit.
+
+@ S_046622 SHINKOU.EXE 0x46622 1
+JP 制限時間６０分で試合を行います。
+EN Matches have a 60-minute limit.
+
+@ S_046664 SHINKOU.EXE 0x46664 2
+JP 「選び直し」は双方のレスラーを　
+JP 全て選び直すことになります。　　
+EN "Reselect" means choosing all
+EN wrestlers on both sides again.
+
+@ S_0466a6 SHINKOU.EXE 0x466a6 1
+JP 選び直しますか？　　　　　　　　
+EN Reselect?
+
+@ S_0466c7 SHINKOU.EXE 0x466c7 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_04670c SHINKOU.EXE 0x4670c 2
+JP 「ロード」を行うとプレイ中の　　
+JP ゲームデータは消去されます。　　
+EN "Load" will erase the game
+EN data currently in play.
+
+@ S_04674e SHINKOU.EXE 0x4674e 1
+JP 「ロード」しますか？　　　　　　
+EN Load?
+
+@ S_04676f SHINKOU.EXE 0x4676f 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_0467b1 SHINKOU.EXE 0x467b1 2
+JP 「セーブ」を行うと以前の記録は　
+JP 消去されます。　　　　　　　　　
+EN "Save" will erase your
+EN previous record.
+
+@ S_0467f3 SHINKOU.EXE 0x467f3 1
+JP 「セーブ」しますか？　　　　　　
+EN Save?
+
+@ S_046814 SHINKOU.EXE 0x46814 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_046858 SHINKOU.EXE 0x46858 1
+JP メモリーカードを接続して下さい。
+EN Please insert a Memory Card.
+
+@ S_04689a SHINKOU.EXE 0x4689a 1
+JP 　　「ロード」が終了しました。　
+EN Loading is complete.
+
+@ S_0468dc SHINKOU.EXE 0x468dc 1
+JP 　　「セーブ」が終了しました。　
+EN Saving is complete.
+
+@ S_04691e SHINKOU.EXE 0x4691e 2
+JP このカードには「バーチャルプロレ
+JP スリング」のデータがありません。
+EN This card has no Virtual Pro
+EN Wrestling data.
+
+@ S_046960 SHINKOU.EXE 0x46960 2
+JP メモリーカードに空きがないため、
+JP 「セーブ」ができません。　　　　
+EN The Memory Card is full, so
+EN you can't save.
+
+@ S_0469a2 SHINKOU.EXE 0x469a2 2
+JP 誠に残念なことですが、メモリー　
+JP カード上のデータが壊れています。
+EN We're sorry, the data on the
+EN Memory Card is corrupted.
+
+@ S_0469e4 SHINKOU.EXE 0x469e4 2
+JP メモリーカード上にベルトデータが
+JP ありません。　　　　　　　　　　
+EN There is no belt data on the
+EN Memory Card.
+
+@ S_046a28 SHINKOU.EXE 0x46a28 2
+JP 方向キーの左右でプレイ　　　　　
+JP ヤー人数を変更します。　　　　　
+EN Left/Right changes the
+EN number of players.
+
+@ S_046a6a SHINKOU.EXE 0x46a6a 2
+JP 方向キーの左右でＣＯＭ　　　　　
+JP の人数を変更します。　　　　　　
+EN Left/Right changes the
+EN number of COM players.
+
+@ S_046aac SHINKOU.EXE 0x46aac 2
+JP 試合にベルトを賭けるか　　　　　
+JP どうかを決定します。　　　　　　
+EN Decide whether to bet
+EN a belt on the match.
+
+@ S_048ee4 SHINKOU.EXE 0x48ee4 3
+JP メモリーカードが接続されていない
+JP ため、獲得したベルトを保存せずに
+JP 終了しますが、よろしいですか？　
+EN No Memory Card is inserted, so
+EN the belt you won won't be saved.
+EN Quit anyway?
+
+@ S_048f47 SHINKOU.EXE 0x48f47 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_048f68 SHINKOU.EXE 0x48f68 3
+JP メモリーカードに空きがないため、
+JP 獲得したベルトを保存せずに終了　
+JP しますが、よろしいですか？　　　
+EN The Memory Card is full, so
+EN the belt you won won't be saved.
+EN Quit anyway?
+
+@ S_048fcb SHINKOU.EXE 0x48fcb 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_048fec SHINKOU.EXE 0x48fec 3
+JP メモリーカードが壊れているため、
+JP 獲得したベルトを保存せずに終了　
+JP しますが、よろしいですか？　　　
+EN The Memory Card is damaged, so
+EN the belt you won won't be saved.
+EN Quit anyway?
+
+@ S_04904f SHINKOU.EXE 0x4904f 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_049070 SHINKOU.EXE 0x49070 3
+JP メモリーカードに異常があるため、
+JP 獲得したベルトを保存せずに終了　
+JP しますが、よろしいですか？　　　
+EN The Memory Card has an error, so
+EN the belt you won won't be saved.
+EN Quit anyway?
+
+@ S_0490d3 SHINKOU.EXE 0x490d3 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_0490f4 SHINKOU.EXE 0x490f4 3
+JP メモリーカードが初期化されていな
+JP いため、獲得したベルトを保存せず
+JP に終了しますが、よろしいですか？
+EN The Memory Card isn't formatted,
+EN so the belt you won won't be
+EN saved. Quit anyway?
+
+@ S_049157 SHINKOU.EXE 0x49157 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_049178 SHINKOU.EXE 0x49178 3
+JP メモリーカードへのセーブができま
+JP せん。獲得したベルトを保存せずに
+JP 終了しますが、よろしいですか？　
+EN Saving to the Memory Card isn't
+EN possible. The belt you won won't
+EN be saved. Quit anyway?
+
+@ S_0491db SHINKOU.EXE 0x491db 1
+JP 　　　　　　　　○はい　×いいえ
+EN                 ○Yes   ×No
+
+@ S_0491fc SHINKOU.EXE 0x491fc 1
+JP メモリーカードにアクセス中です。
+EN Accessing the Memory Card.
+
+@ S_04921d SHINKOU.EXE 0x4921d 1
+JP 　　　　　ロード中です。　　　　
+EN Loading.
+
+@ S_04923e SHINKOU.EXE 0x4923e 1
+JP 　　　　　セーブ中です。　　　　
+EN Saving.
+
+@ S_04925f SHINKOU.EXE 0x4925f 1
+JP 　　「ロード」が終了しました。　
+EN Loading is complete.
+
+@ S_049280 SHINKOU.EXE 0x49280 1
+JP 　　「セーブ」が終了しました。　
+EN Saving is complete.
+
+@ S_0492a1 SHINKOU.EXE 0x492a1 1
+JP 　　　ベルトを削除しています。　
+EN Deleting the belt.
+
+@ S_0492c4 SHINKOU.EXE 0x492c4 1
+JP メモリーカードを接続して下さい。
+EN Please insert a Memory Card.
+
+@ S_049306 SHINKOU.EXE 0x49306 2
+JP 空きブロックのあるメモリーカード
+JP を接続して下さい。　　　　　　　
+EN Please insert a Memory Card
+EN with free blocks.
+
+@ S_049348 SHINKOU.EXE 0x49348 2
+JP 　メモリーカードがないため、　　
+JP 　「炎の七番勝負」は行えません。
+EN No Memory Card, so Seven-Bout
+EN Blaze can't be played.
+
+@ S_04938a SHINKOU.EXE 0x4938a 2
+JP メモリーカードに空きがないため、
+JP 「炎の七番勝負」は行えません。　
+EN The Memory Card is full, so
+EN Seven-Bout Blaze can't be run.
+
+@ S_0493cc SHINKOU.EXE 0x493cc 2
+JP 誠に残念ながらこのメモリーカード
+JP は壊れています。　　　　　　　　
+EN We're sorry, this Memory Card
+EN is damaged.
+
+@ S_04940e SHINKOU.EXE 0x4940e 2
+JP メモリーカードの情報に何らかの　
+JP 異常があります。　　　　　　　　
+EN There is some error in the
+EN Memory Card's information.
+
+@ S_049450 SHINKOU.EXE 0x49450 2
+JP 正常なメモリーカードを接続して　
+JP 下さい。　　　　　　　　　　　　
+EN Please insert a Memory Card
+EN that is working normally.
+
+@ S_049492 SHINKOU.EXE 0x49492 2
+JP 初期化されているメモリーカードを
+JP 接続して下さい。　　　　　　　　
+EN Please insert a Memory Card
+EN that has been formatted.
+
+@ S_0494d4 SHINKOU.EXE 0x494d4 2
+JP メモリーカード上にベルトデータが
+JP ありません。　　　　　　　　　　
+EN There is no belt data on the
+EN Memory Card.
+
+@ S_049518 SHINKOU.EXE 0x49518 3
+JP 双方のスロットにメモリーカードが
+JP 接続されていなければ、「ダブルタ
+JP イトル戦」は行えません。　　　　
+EN Double Title Match can't be
+EN played unless both slots hold
+EN Memory Cards.
+
+@ S_04957b SHINKOU.EXE 0x4957b 3
+JP スロット１のメモリーカードに空き
+JP がないため、「ダブルタイトル戦」
+JP は行えません。　　　　　　　　　
+EN Slot 1's Memory Card is full,
+EN so Double Title Match can't be
+EN played.
+
+@ S_0495de SHINKOU.EXE 0x495de 3
+JP スロット２のメモリーカードに空き
+JP がないため、「ダブルタイトル戦」
+JP は行えません。　　　　　　　　　
+EN Slot 2's Memory Card is full,
+EN so Double Title Match can't be
+EN played.
+
+@ S_049641 SHINKOU.EXE 0x49641 3
+JP 双方のメモリーカードに空きがない
+JP ため、「ダブルタイトル戦」は行え
+JP ません　　　　　　　　　　　　　
+EN Both Memory Cards are full, so
+EN Double Title Match can't be
+EN played.
+
+@ S_0496a4 SHINKOU.EXE 0x496a4 3
+JP スロット１のメモリーカード上にベ
+JP ルトデータがないため、「ダブルタ
+JP イトル戦」は行えません。　　　　
+EN Slot 1's Memory Card has no
+EN belt data, so Double Title
+EN Match can't be played.
+
+@ S_049707 SHINKOU.EXE 0x49707 3
+JP スロット２のメモリーカード上にベ
+JP ルトデータがないため、「ダブルタ
+JP イトル戦」は行えません。　　　　
+EN Slot 2's Memory Card has no
+EN belt data, so Double Title
+EN Match can't be played.
+
+@ S_04976a SHINKOU.EXE 0x4976a 3
+JP 双方のメモリーカード上にベルトデ
+JP ータがないため、「ダブルタイトル
+JP 戦」は行えません。　　　　　　　
+EN Neither Memory Card has belt
+EN data, so Double Title Match
+EN can't be played.
+
+@ S_0497cd SHINKOU.EXE 0x497cd 2
+JP 誠に残念なことですが、スロット１
+JP のメモリーカードが壊れています。
+EN We're sorry, the Memory Card
+EN in slot 1 is damaged.
+
+@ S_049830 SHINKOU.EXE 0x49830 2
+JP 誠に残念なことですが、スロット２
+JP のメモリーカードが壊れています。
+EN We're sorry, the Memory Card
+EN in slot 2 is damaged.
+
+@ S_049893 SHINKOU.EXE 0x49893 2
+JP 非常に珍しいことですが、双方の　
+JP メモリーカードが壊れています。　
+EN How unusual: both Memory Cards
+EN are damaged.
+
+@ S_0498f6 SHINKOU.EXE 0x498f6 2
+JP 誠に残念なことですが、メモリー　
+JP カード上のデータが壊れています。
+EN We're sorry, the data on the
+EN Memory Card is corrupted.
+
+@ S_04995c SHINKOU.EXE 0x4995c 1
+JP メモリーカードを接続して下さい。
+EN Please insert a Memory Card.
+
+@ S_04999e SHINKOU.EXE 0x4999e 2
+JP メモリーカード上にベルトデータが
+JP ありません。　　　　　　　　　　
+EN There is no belt data on the
+EN Memory Card.
+
+@ S_0499e0 SHINKOU.EXE 0x499e0 2
+JP メモリーカードに空きがないため、
+JP ベルトを作ることができません。　
+EN The Memory Card is full, so a
+EN belt can't be made.
+
+@ S_049a22 SHINKOU.EXE 0x49a22 2
+JP 誠に残念ながらこのメモリーカード
+JP は壊れています。　　　　　　　　
+EN We're sorry, this Memory Card
+EN is damaged.
+
+@ S_049a64 SHINKOU.EXE 0x49a64 2
+JP 誠に残念なことですが、メモリー　
+JP カード上のデータが壊れています。
+EN We're sorry, the data on the
+EN Memory Card is corrupted.
+
+@ S_048d0e SHINKOU.EXE 0x48d0e 6
+JP 　ベルトネームを入力して下さい。
+JP 　あなたの名前を入力して下さい。
+JP 　　　日付を入力して下さい。　　
+JP 　前の画面に戻りますか？　　　　
+JP 　これでよろしいですか？　　　　
+JP 　　　　　　　　○はい　×いいえ
+EN Please enter the belt name.
+EN Please enter your name.
+EN Please enter the date.
+EN Return to the previous screen?
+EN Is this OK?
+EN                 ○Yes   ×No
