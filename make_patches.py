@@ -35,6 +35,8 @@ import paths  # noqa: E402
 VARIANTS = [
     (f'{paths.GAME_FILE} (English) (Real Names)', ['--names', 'real', '--unlocks', 'none'], "The English translation with the real wrestlers' names."),
     (f'{paths.GAME_FILE} (English) (Parody Names)', ['--names', 'parody', '--unlocks', 'none'], "The English translation with the game's own parody wrestler names."),
+    (f'{paths.GAME_FILE} (English) (Real Names) (All Wrestlers Unlocked)', ['--names', 'real', '--unlocks', 'all-wrestlers'], "The English translation (real names) with the eight secret wrestlers selectable from the start (Exhibition, Elimination, Tournament, League and Double Title modes)."),
+    (f'{paths.GAME_FILE} (English) (Parody Names) (All Wrestlers Unlocked)', ['--names', 'parody', '--unlocks', 'all-wrestlers'], "The English translation (parody names) with the eight secret wrestlers selectable from the start (same modes)."),
     # (f'{paths.GAME_FILE} (English) (All Unlocked)', ['--unlocks', 'all'], 'The English translation with every unlock.'),
     # (f'{paths.GAME_FILE} (Japan) (All Unlocked)', ['--no-translation', '--unlocks', 'all'], 'The original game with every unlock.'),
     # An extra released as its own patch (its group isn't debug-*, which is refused below):

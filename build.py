@@ -55,11 +55,16 @@ def _label_patches():
     return out
 
 
-CODE_PATCHES = _label_patches()
+CODE_PATCHES = _label_patches() + [
+    # Secret wrestlers 53-60 (docs/HIDDEN_CONTENT.md): the select-screen setup shows a secret cell only if bit i of the
+    # progress word 0x800a3974 is set (and only in modes >= 2). Make both bit tests always pass.
+    ('all-wrestlers', 'SHINKOU.EXE', 0x8002e098, bytes.fromhex('24104300'), bytes.fromhex('01000234'), 'select cells: and v0,v0,v1 -> ori v0,zero,1 (bit always set)'),
+    ('all-wrestlers', 'SHINKOU.EXE', 0x8002f2d4, bytes.fromhex('24104300'), bytes.fromhex('01000234'), 'select name sprites: same bit test always set'),
+]
 ALWAYS_GROUPS = {'labels', 'texthook'}               # in every translated build, not a choice (--unlocks ignores them): the English's own fixes
 UNLOCK_GROUPS = sorted({p[0] for p in CODE_PATCHES} - ALWAYS_GROUPS)
 PLAYER_GROUPS = [g for g in UNLOCK_GROUPS if not g.startswith('debug-')]
-DEFAULT_GROUPS = set(PLAYER_GROUPS)  # without --unlocks; set() when the extras ship as separate "(All Unlocked)" patches
+DEFAULT_GROUPS = set()  # was set(PLAYER_GROUPS): the all-wrestlers extra ships as its own variant; without --unlocks; set() when the extras ship as separate "(All Unlocked)" patches
 
 # --boot: (part, file, address, original, new) - patches that start the game in a given part.
 BOOT_PATCHES = {
