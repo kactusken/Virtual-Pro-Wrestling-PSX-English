@@ -56,6 +56,8 @@ def _label_patches():
 
 
 CODE_PATCHES = _label_patches() + [
+    # Belt info screen (Triangle on Belt Record): '初代' (first holder) is a 8-byte string at SHINKOU.EXE 0xb08, not one of the 32-byte message lines.
+    ('labels', 'SHINKOU.EXE', 0x8001d000 + 0xb08 - 0x800, bytes.fromhex('81408f8991e38140'), b'  1st   ', "belt info: '初代' -> '1st'"),
     # Secret wrestlers 53-60 (docs/HIDDEN_CONTENT.md): the select-screen setup shows a secret cell only if bit i of the
     # progress word 0x800a3974 is set (and only in modes >= 2). Make both bit tests always pass.
     ('all-wrestlers', 'SHINKOU.EXE', 0x8002e098, bytes.fromhex('24104300'), bytes.fromhex('01000234'), 'select cells: and v0,v0,v1 -> ori v0,zero,1 (bit always set)'),

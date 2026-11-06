@@ -58,7 +58,7 @@ EN                 ○Yes   ×No
 
 @ S_000a78 SHINKOU.EXE 0xa78 1
 JP 第　　代　　　　　　　　　　王者
-EN #                       Champion
+EN #                           Ace
 
 @ S_000ac0 SHINKOU.EXE 0xac0 1
 JP 　　　　　＜歴代保持者＞　　　　

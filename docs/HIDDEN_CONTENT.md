@@ -21,7 +21,7 @@ automatically and has not been read. The Western sibling, WCW vs. the World, has
 here. Everything else below is new.
 
 ## Contents
-- [Secret wrestlers](#secret-wrestlers) · [Debug display](#debug-display) · [Costume select](#costume-select) · [Rings](#rings) · [Ring set](#ring-set-d0617dat) · [Shared animation bank](#shared-animation-bank-ks0704bin) · [Staff roll](#staff-roll) · [Dead scratch-pad viewer](#dead-scratch-pad-viewer) · [Unused intro cut](#unused-intro-cut) · [Unused music and sound](#unused-music-and-sound) · [Smaller leftovers](#smaller-leftovers) · [Searched and not found](#searched-and-not-found) · [How to see it yourself](#how-to-see-it-yourself)
+- [Secret wrestlers](#secret-wrestlers) · [Debug display](#debug-display) · [Test cheat](#test-cheat-1p-wins-at-once) · [Costume select](#costume-select) · [Rings](#rings) · [Ring set](#ring-set-d0617dat) · [Shared animation bank](#shared-animation-bank-ks0704bin) · [Staff roll](#staff-roll) · [Dead scratch-pad viewer](#dead-scratch-pad-viewer) · [Unused intro cut](#unused-intro-cut) · [Unused music and sound](#unused-music-and-sound) · [Smaller leftovers](#smaller-leftovers) · [Searched and not found](#searched-and-not-found) · [How to see it yourself](#how-to-see-it-yourself)
 
 ## Secret wrestlers
 *verified in game (2026-11-06: all wrestlers selectable with `build.py --unlocks all-wrestlers`; the owner also confirmed the unlock path below); the code addresses are from the code, the names and rough path from fans*
@@ -58,6 +58,16 @@ A debug flag at MAIN 0x80074d6c is cleared at start and never set by the game. S
 match draws the camera values (VPX/VPY/VPZ) and each wrestler's PAT, ANGLE, FRAME, HP, MP, HIT_B and
 BODY0-5 values over the screen, and skips two HUD draws. It has to be written every frame through
 the match load. Not reachable in the original game, and not in any release patch.
+
+## Test cheat: 1P wins at once
+*seen headless (2026-11-06, RAM poke on a match savestate; the code is from MAIN 0x8003d4a0..0x8003d5bc)*
+
+Not in the game; a tester's shortcut. The match loop ends the match when a wrestler's state word has bit 0x4 set:
+for 1P that is the word at 0x800CEA74 (struct 0x800CE7E0 + 0x294), for 2P 0x800CED20. With 1P's bit set the loop
+writes winner 1 (0x80074ED0) and end state 1 (0x80074F58), and the normal result screen follows. Poking 4 there
+once ended the match within 20 frames. The word is zero in every menu, so writing it all the time is harmless
+there. GameShark/Action Replay form: `300CEA74 0004` (8-bit constant write; PS1 GameShark and PCSX-style
+cheat lists). Bit 0x200 gives the same win with end state 4; 0x20 is the pin winner mark.
 
 ## Costume select
 *verified in game (2026-11-06: START on the wrestler select gives the other costume); the mechanism is from the code, the texture comparison from the data*
