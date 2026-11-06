@@ -11,7 +11,7 @@ is:
 Addresses are PlayStation RAM addresses of the original Japanese disc (SLPS-00449). The
 SHINKOU.EXE overlay loads at 0x8001d000 (file offset = address - 0x8001d000 + 0x800); MAIN.EXE
 addresses are as loaded. "Seen headless" means seen in the project's headless emulator with a
-RAM poke, not played through. Marked *verified in game* where the owner played it; the normal unlock path (winning the Official Match challenges) has not been played through.
+RAM poke, not played through. Marked *verified in game* where the owner played it.
 
 **Prior art (2026-11-05).** Japanese Wikipedia and one fan blog list the eight hidden
 wrestlers and a rough unlock path (below). No cheat codes, button codes, debug menu or test
@@ -24,7 +24,7 @@ here. Everything else below is new.
 - [Secret wrestlers](#secret-wrestlers) · [Debug display](#debug-display) · [Costume select](#costume-select) · [Rings](#rings) · [Ring set](#ring-set-d0617dat) · [Shared animation bank](#shared-animation-bank-ks0704bin) · [Staff roll](#staff-roll) · [Dead scratch-pad viewer](#dead-scratch-pad-viewer) · [Unused intro cut](#unused-intro-cut) · [Unused music and sound](#unused-music-and-sound) · [Smaller leftovers](#smaller-leftovers) · [Searched and not found](#searched-and-not-found) · [How to see it yourself](#how-to-see-it-yourself)
 
 ## Secret wrestlers
-*verified in game (2026-11-06, `build.py --unlocks all-wrestlers`: all wrestlers selectable); the unlock path is from the code, the names and rough path from fans*
+*verified in game (2026-11-06: all wrestlers selectable with `build.py --unlocks all-wrestlers`; the owner also confirmed the unlock path below); the code addresses are from the code, the names and rough path from fans*
 
 The game has 60 wrestlers; the select screen shows 52 at the start. The other eight (ids 53-60)
 are hidden: Strongest Toki (ストロンゲスト闘魂), Monster Bull Dog, Mr. God, Teddy Lang, The
@@ -143,7 +143,7 @@ is also never played.
 - SHINKOU_008, the 開発中 ("in development") placeholder portrait, is portrait 0; no wrestler has id 0.
 
 ## Rings
-*from the code (MAIN ring loader 0x8001f8a0, table at 0x8006b9cc, 25 entries of 20 bytes), run in the simulator for every counter value and Mat Select setting (2026-11-06); the Mat Select list and its stored value seen headless; the random pick not yet seen in a played match*
+*from the code (MAIN ring loader 0x8001f8a0, table at 0x8006b9cc, 25 entries of 20 bytes), run in the simulator for every counter value and Mat Select setting (2026-11-06); the Mat Select list and its stored value seen headless; Random giving different mats verified in game (2026-11-06); that it never gives the SUPER mats, and the odds, are from the code and simulator only*
 
 All 25 `RING/*.DAT` mats can be loaded, but not all from the Mat Select screen:
 - **The six named mats** (NSW, EWF, WOU, DAW, ILW, IAWA) each pick a mat; for all but ILW the game chooses randomly between two
